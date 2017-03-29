@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes }   from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { OauthComponent } from './oauth/oauth.component';
@@ -15,6 +16,11 @@ const firebaseConfig = {
     messagingSenderId: "577838942819"
 };
 
+// routing
+const appRoutes: Routes = [
+  { path: 'oauth', component: OauthComponent },
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +29,8 @@ const firebaseConfig = {
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
