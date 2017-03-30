@@ -9,3 +9,10 @@ export class AppComponent {
   title = 'Deredorm';
   subTitle = 'subtitle';
 }
+
+@Component({
+  selector: 'sidenav-overview-example',
+  // templateUrl: './sidenav-overview-example.html',
+  // styleUrls: ['./sidenav-overview-example.css'],
+})
+export class SidenavOverviewExample {}

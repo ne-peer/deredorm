@@ -1,7 +1,24 @@
-<h1>
-  {{title}} <small>{{subTitle}}</small>
-</h1>
-<section>
-  <a class="btn btn-primary" href="/oauth" role="button">Sign in</a>
-</section>
-<router-outlet></router-outlet>
+<md-sidenav-container class="container-flux">
+  <md-sidenav #sidenav class="sidenav">
+    <section>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+      penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+      pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+      In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer
+      tincidunt. Cras dapibus. Vivamus elementum
+    </section>
+  </md-sidenav>
+
+  <div class="sidenav-content">
+    <h1>
+      {{title}} <small>{{subTitle}}</small>
+    </h1>
+    <section>
+      <div>
+        <button md-button (click)="sidenav.open()">Side Menu</button>
+        <a class="btn btn-primary" href="/oauth" role="button">Sign in</a>
+      </div>
+    </section>
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>
