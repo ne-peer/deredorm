@@ -1,4 +1,13 @@
-* {
-  margin: 0;
-  padding: 0;
+.container-flux {
+  height: 1100px;
+}
+
+.sidenav-content {
+  height: 100%;
+  padding: 20px;
+}
+
+.sidenav {
+  padding: 20px;
+  width: 300px;
 }
