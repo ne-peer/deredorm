@@ -13,6 +13,7 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { OauthComponent } from './oauth/oauth.component';
 import { SideNavbarComponent } from './side-navbar/side-navbar.component';
+import { DereAddComponent } from './manage/dere-add/dere-add.component';
 
 // firebase seittings
 const firebaseConfig = {
@@ -26,13 +27,15 @@ const firebaseConfig = {
 // routing
 const appRoutes: Routes = [
   { path: 'oauth', component: OauthComponent },
+  { path: 'manage/add', component: DereAddComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     OauthComponent,
-    SideNavbarComponent
+    SideNavbarComponent,
+    DereAddComponent
   ],
   imports: [
     BrowserModule,
