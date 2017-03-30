@@ -12,6 +12,7 @@ import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { OauthComponent } from './oauth/oauth.component';
+import { SideNavbarComponent } from './side-navbar/side-navbar.component';
 
 // firebase seittings
 const firebaseConfig = {
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    OauthComponent
+    OauthComponent,
+    SideNavbarComponent
   ],
   imports: [
     BrowserModule,
