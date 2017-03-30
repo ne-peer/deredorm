@@ -6,10 +6,10 @@
   </md-sidenav>
 
   <div class="sidenav-content">
-    <h1>
-      {{title}} <small>{{subTitle}}</small>
-    </h1>
-    <section>
+    <section class="header">
+      <h1>
+        {{title}} <small>{{subTitle}}</small>
+      </h1>
       <div>
         <button md-button (click)="sidenav.open()">Side Menu</button>
         <a class="btn btn-primary" href="/oauth" role="button">Sign in</a>
