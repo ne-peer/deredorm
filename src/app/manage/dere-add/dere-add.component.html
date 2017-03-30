@@ -2,16 +2,17 @@
   <h3>Add the new dere!</h3>
   <form>
     <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" required>
+      <md-input-container>
+        <input mdInput placeholder="Name" class="form-control" id="name" required>
+      </md-input-container>
     </div>
     <div class="form-group">
       <label for="position">Position</label>
-      <select class="form-control" id="power" required>
-        <option value="cute">cute</option>
-        <option value="cool">cool</option>
-        <option value="passion">passion</option>
-      </select>
+      <md-select class="form-control" id="position" placeholder="Position" [(ngModel)]="selectedValue" name="Position">
+        <md-option value="cute">cute</md-option>
+        <md-option value="cool">cool</md-option>
+        <md-option value="passion">passion</md-option>
+      </md-select>
     </div>
     <div class="form-group">
       <label for="description">Description</label>
