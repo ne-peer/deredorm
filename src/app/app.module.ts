@@ -3,6 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes }   from '@angular/router';
+import { 
+  AngularFireModule, 
+  AuthMethods, 
+  AuthProviders 
+} from "angularfire2";
 
 import { AppComponent } from './app.component';
 import { OauthComponent } from './oauth/oauth.component';
@@ -30,7 +35,11 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(firebaseConfig,{
+      provider: AuthProviders.Google,
+      method: AuthMethods.Popup
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
