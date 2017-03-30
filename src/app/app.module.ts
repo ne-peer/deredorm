@@ -8,6 +8,7 @@ import {
   AuthMethods, 
   AuthProviders 
 } from "angularfire2";
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { OauthComponent } from './oauth/oauth.component';
@@ -39,7 +40,8 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(firebaseConfig,{
       provider: AuthProviders.Google,
       method: AuthMethods.Popup
-    })
+    }),
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
