@@ -24,3 +24,7 @@ section.main-content {
   margin: 0 auto;
   padding: 30px;
 }
+
+.link-button {
+    text-decoration: none;
+}
