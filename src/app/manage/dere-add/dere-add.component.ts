@@ -29,8 +29,6 @@ export class DereAddComponent implements OnInit {
 
   /**
    * 登録する
-   * 
-   * @param void
    */
   addIdol(): Promise<void> {
     return this.idols.push({

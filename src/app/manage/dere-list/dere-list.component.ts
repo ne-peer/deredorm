@@ -12,14 +12,10 @@ import { Idol } from '../../models/dere/idol';
 export class DereListComponent implements OnInit {
 
   // Firebaseと同期したもの
-  // idols: FirebaseListObservable<Idol[]>;
+  afIdols: FirebaseListObservable<Idol[]>;
 
-  idols = [
-    new Idol(1, "aaa", "cute", "thi sis mode"),
-    new Idol(1, "aaa", "cute", "thi sis mode"),
-    new Idol(1, "aaa", "cute", "thi sis mode"),
-    new Idol(1, "aaa", "cute", "thi sis mode"),
-  ];
+  // 表示用
+  idols: Idol[];
 
   /**
    * コンストラクタ
@@ -27,10 +23,14 @@ export class DereListComponent implements OnInit {
    * @param af AngularFire
    */
   constructor(private af: AngularFire) {
-    // this.idols = this.af.database.list('/idols');
+    this.afIdols = this.af.database.list('/idols');
   }
 
+  /**
+   * 初期表示
+   */
   ngOnInit() {
+    this.afIdols.subscribe(idols => this.idols = idols);
   }
 
 }
