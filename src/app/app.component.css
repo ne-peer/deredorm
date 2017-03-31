@@ -11,3 +11,20 @@
   padding: 20px;
   width: 300px;
 }
+
+section.header {
+  background-color: #eee;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+section.main-content {
+  width: 600px;
+  border: 1px solid #ccc;  
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.link-button {
+    text-decoration: none;
+}
