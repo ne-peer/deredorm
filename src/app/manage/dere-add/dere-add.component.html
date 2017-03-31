@@ -9,9 +9,7 @@
     <div class="form-group">
       <label for="position">Position</label>
       <md-select class="form-control" id="position" placeholder="Position" [(ngModel)]="selectedValue" name="Position">
-        <md-option value="cute">cute</md-option>
-        <md-option value="cool">cool</md-option>
-        <md-option value="passion">passion</md-option>
+        <md-option *ngFor="let position of positions" [value]="position">{{position}}</md-option>
       </md-select>
     </div>
     <div class="form-group">
