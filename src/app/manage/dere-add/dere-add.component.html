@@ -3,17 +3,17 @@
   <form (ngSubmit)="onSubmit()" #dereForm="ngForm">
     <div class="form-group">
       <md-input-container>
-        <input type="text" mdInput placeholder="Name" id="name" required [(ngModel)]="model.name" name="name">
+        <input type="text" mdInput placeholder="Name" id="name" required [(ngModel)]="idol.name" name="name">
       </md-input-container>
     </div>
     <div class="form-group">
-      <md-select id="position" placeholder="Position" [(ngModel)]="model.position" name="Position">
+      <md-select id="position" placeholder="Position" [(ngModel)]="idol.position" name="Position">
         <md-option *ngFor="let position of positions" [value]="position">{{position}}</md-option>
       </md-select>
     </div>
     <p>
       {{diagnostic}}
     </p>
-    <button type="button" md-button (click)="newIdol(); dereForm.reset();">Registory</button>
+    <button type="button" md-button (click)="addIdol(); dereForm.reset();">Registory</button>
   </form>
 </div>
