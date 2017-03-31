@@ -1,3 +1,11 @@
-<p>
-  dere-list works!
-</p>
+<h3>Belong to the idol lists.</h3>
+<br />
+<div class="grid grid-pad">
+  <div *ngFor="let idol of idols" [routerLink]="['/detail', idol.$key]" class="col-1-4">
+    <md-card>
+      <p>{{idol.name}}</p>
+      <p>{{idol.position}}</p>
+      <p>{{idol.model}}</p>
+    </md-card>
+  </div>
+</div>
