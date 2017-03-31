@@ -3,7 +3,7 @@
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
 ## とりあえず動かすには？
-`Node.js` をインストールして、クローンしたディレクトリのなかで
+[Node.js](https://nodejs.org/ja/) をインストールして、クローンしたディレクトリのなかで
 
 ```
 npm install　// 必要なパッケージインストール
