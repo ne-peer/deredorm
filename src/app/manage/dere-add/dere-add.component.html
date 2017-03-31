@@ -11,6 +11,11 @@
         <md-option *ngFor="let position of positions" [value]="position">{{position}}</md-option>
       </md-select>
     </div>
+    <div class="form-group">
+      <md-input-container>
+        <input type="text" mdInput placeholder="Model" id="name" required [(ngModel)]="idol.model" name="model">
+      </md-input-container>
+    </div>
     <p>
       {{diagnostic}}
     </p>

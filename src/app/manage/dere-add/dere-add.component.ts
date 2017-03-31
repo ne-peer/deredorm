@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { Promise } from 'firebase';
 
@@ -16,7 +15,7 @@ export class DereAddComponent implements OnInit {
   idols: FirebaseListObservable<Idol[]>;
 
   // 画面用オブジェクト
-  idol = new Idol(1, 'Kobayakawa Sae', 'cute', '');
+  idol = new Idol(1, null, null, null);
   positions = ['cute', 'cool', 'passion'];
 
   /**
@@ -35,7 +34,7 @@ export class DereAddComponent implements OnInit {
    */
   addIdol(): Promise<void> {
     return this.idols.push({
-      id: 3,
+      id: this.idol.id,
       name: this.idol.name,
       position: this.idol.position,
       model: this.idol.model
