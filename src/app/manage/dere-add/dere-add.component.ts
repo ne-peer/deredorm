@@ -12,29 +12,37 @@ import { Idol } from '../../models/dere/idol';
 })
 export class DereAddComponent implements OnInit {
 
+  // Firebaseと同期したもの
   idols: FirebaseListObservable<Idol[]>;
 
-  idol = new Idol(1, 'Kobayakawa Sae', 'cute', ''); 
+  // 画面用オブジェクト
+  idol = new Idol(1, 'Kobayakawa Sae', 'cute', '');
   positions = ['cute', 'cool', 'passion'];
 
+  /**
+   * コンストラクタ
+   * 
+   * @param af AngularFire
+   */
   constructor(private af: AngularFire) {
     this.idols = this.af.database.list('/idols');
   }
 
-  onSubmit() {
-    // on submit
-  }
-
-  addIdol(newHero: string): Promise<void> {
+  /**
+   * 登録する
+   * 
+   * @param void
+   */
+  addIdol(): Promise<void> {
     return this.idols.push({
-      id: 2,
+      id: 3,
       name: this.idol.name,
       position: this.idol.position,
       model: this.idol.model
     });
   }
 
-  // TODO: Remove this when we're done
+  // かいはつよう
   get diagnostic() { return JSON.stringify(this.idol); }
 
   ngOnInit() {
