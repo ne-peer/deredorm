@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { OauthComponent } from './oauth/oauth.component';
 import { SideNavbarComponent } from './side-navbar/side-navbar.component';
 import { DereAddComponent } from './manage/dere-add/dere-add.component';
+import { DereListComponent } from './manage/dere-list/dere-list.component';
 
 // firebase seittings
 const firebaseConfig = {
@@ -28,6 +29,7 @@ const firebaseConfig = {
 const appRoutes: Routes = [
   { path: 'oauth', component: OauthComponent },
   { path: 'manage/add', component: DereAddComponent },
+  { path: 'list', component: DereListComponent },
 ];
 
 @NgModule({
@@ -35,7 +37,8 @@ const appRoutes: Routes = [
     AppComponent,
     OauthComponent,
     SideNavbarComponent,
-    DereAddComponent
+    DereAddComponent,
+    DereListComponent
   ],
   imports: [
     BrowserModule,

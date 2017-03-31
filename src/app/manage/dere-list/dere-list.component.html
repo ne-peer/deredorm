@@ -1,0 +1,13 @@
+<h3>Belong to the idol lists.</h3>
+<div class="action-area" align="right">
+  <a md-mini-fab routerLink="/manage/add" color="primary"><md-icon>add</md-icon></a>
+</div>
+<div class="grid grid-pad">
+  <div *ngFor="let idol of idols" [routerLink]="['/detail', idol.$key]" class="col-1-4">
+    <md-card>
+      <p>{{idol.name}}</p>
+      <p>{{idol.position}}</p>
+      <p>{{idol.model}}</p>
+    </md-card>
+  </div>
+</div>
