@@ -6,11 +6,14 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 [Node.js](https://nodejs.org/ja/) をインストールして、クローンしたディレクトリのなかで
 
 ```
-npm install　// 必要なパッケージインストール
-ng serve　// 開発サーバ起動
+コマンドプロンプト> npm install　              // アプリに必要なパッケージインストール
+コマンドプロンプト> npm install -g angular-cli // 開発サーバをインストール
+コマンドプロンプト> ng serve　                 // 開発サーバ起動
 ```
 
-と叩いて `localhost:4200` 開けばいけるはず！
+と叩いて `localhost:4200` 開けばいけるはず.
+
+&nbsp;
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
