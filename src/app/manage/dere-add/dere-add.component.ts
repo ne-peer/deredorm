@@ -13,8 +13,7 @@ export class DereAddComponent implements OnInit {
 
   positions = ['cute', 'cool', 'passion'];
 
-  description = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.';
-  model = new Idol(103, 'Kobayakawa Sae', 'cute', this.description);
+  model = new Idol(103, 'Kobayakawa Sae', 'cute', '');
 
   submitted = false;
 

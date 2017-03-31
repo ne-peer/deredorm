@@ -4,7 +4,7 @@ export class Idol {
         public id: number,
         public name: string,
         public position: string,
-        public description: string,
+        public model: string,
     ) { }
 
 }
