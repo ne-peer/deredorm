@@ -1,6 +1,6 @@
 <div>
   <h3>Add the new dere!</h3>
-  <form>
+  <form (ngSubmit)="onSubmit()" #dereForm="ngForm">
     <div class="form-group">
       <md-input-container>
         <input type="text" mdInput placeholder="Name" id="name" required [(ngModel)]="model.name" name="name">
@@ -14,6 +14,6 @@
     <p>
       {{diagnostic}}
     </p>
-    <button type="submit" class="btn btn-success">Registory idol</button>
+    <button type="button" md-button (click)="newIdol(); dereForm.reset();">Registory</button>
   </form>
 </div>

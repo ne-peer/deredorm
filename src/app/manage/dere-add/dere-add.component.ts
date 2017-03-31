@@ -17,7 +17,13 @@ export class DereAddComponent implements OnInit {
 
   submitted = false;
 
-  onSubmit() { this.submitted = true; }
+  onSubmit() {
+    this.submitted = true;
+  }
+
+  newIdol() {
+    // regsiter action
+  }
 
   // TODO: Remove this when we're done
   get diagnostic() { return JSON.stringify(this.model); }
