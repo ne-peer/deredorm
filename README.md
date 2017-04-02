@@ -2,7 +2,7 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
-## とりあえず動かすには？
+## とりあえず動かすには
 [Node.js](https://nodejs.org/ja/) をインストールして、クローンしたディレクトリのなかで
 
 ```
@@ -12,6 +12,7 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 ```
 
 と叩いて `localhost:4200` 開けばいけるはず.
+`Node v6.10.1 (win)` で動作確認済み.
 
 &nbsp;
 
