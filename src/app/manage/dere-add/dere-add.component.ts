@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { Promise } from 'firebase';
+import { FormControl } from '@angular/forms';
+import 'rxjs/add/operator/startWith';
 
 import { Idol } from '../../models/dere/idol';
 
@@ -18,6 +20,11 @@ export class DereAddComponent implements OnInit {
   idol = new Idol(1, null, null, null);
   types = ['cute', 'cool', 'passion'];
 
+  // オートコンプリート用
+  stateCtrl: FormControl;
+  filteredStates: any;
+  states = ['一ノ瀬志希', '鷺沢文香', '城ヶ崎美嘉'];
+
   /**
    * コンストラクタ
    * 
@@ -25,6 +32,15 @@ export class DereAddComponent implements OnInit {
    */
   constructor(private af: AngularFire) {
     this.idols = this.af.database.list('/master/idol');
+
+    this.stateCtrl = new FormControl();
+    this.filteredStates = this.stateCtrl.valueChanges
+      .startWith(null)
+      .map(name => this.filterStates(name));
+  }
+
+  filterStates(val: string) {
+    return val ? this.states.filter((s) => new RegExp(val, 'gi').test(s)) : this.states;
   }
 
   /**
