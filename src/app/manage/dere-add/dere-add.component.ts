@@ -16,7 +16,7 @@ export class DereAddComponent implements OnInit {
 
   // 画面用オブジェクト
   idol = new Idol(1, null, null, null);
-  positions = ['cute', 'cool', 'passion'];
+  types = ['cute', 'cool', 'passion'];
 
   /**
    * コンストラクタ
@@ -34,7 +34,7 @@ export class DereAddComponent implements OnInit {
     return this.idols.push({
       id: this.idol.id,
       name: this.idol.name,
-      position: this.idol.position,
+      position: this.idol.type,
       model: this.idol.model
     });
   }
