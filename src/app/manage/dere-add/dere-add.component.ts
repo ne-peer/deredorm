@@ -24,7 +24,7 @@ export class DereAddComponent implements OnInit {
    * @param af AngularFire
    */
   constructor(private af: AngularFire) {
-    this.idols = this.af.database.list('/idols');
+    this.idols = this.af.database.list('/master/idol');
   }
 
   /**
@@ -34,8 +34,7 @@ export class DereAddComponent implements OnInit {
     return this.idols.push({
       id: this.idol.id,
       name: this.idol.name,
-      position: this.idol.type,
-      model: this.idol.model
+      type: this.idol.type
     });
   }
 
