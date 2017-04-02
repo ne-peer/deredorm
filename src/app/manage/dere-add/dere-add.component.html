@@ -7,13 +7,13 @@
       </md-input-container>
     </div>
     <div class="form-group">
-      <md-select id="type" placeholder="type" [(ngModel)]="idol.type" name="type">
+      <md-select id="type" placeholder="Type" [(ngModel)]="idol.type" name="type">
         <md-option *ngFor="let type of types" [value]="type">{{type}}</md-option>
       </md-select>
     </div>
     <div class="form-group">
       <md-input-container>
-        <input type="text" mdInput placeholder="Model" id="name" required [(ngModel)]="idol.model" name="model">
+        <input type="text" mdInput placeholder="Model" id="name" [(ngModel)]="idol.model" name="model">
       </md-input-container>
     </div>
     <p>
