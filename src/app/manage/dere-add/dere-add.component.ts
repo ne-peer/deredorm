@@ -21,9 +21,9 @@ export class DereAddComponent implements OnInit {
   types = ['cute', 'cool', 'passion'];
 
   // オートコンプリート用
-  stateCtrl: FormControl;
-  filteredStates: any;
-  states = ['一ノ瀬志希', '鷺沢文香', '城ヶ崎美嘉'];
+  nameCtrl: FormControl;
+  filteredNames: any;
+  names = ['一ノ瀬志希', '鷺沢文香', '城ヶ崎美嘉'];
 
   /**
    * コンストラクタ
@@ -33,14 +33,14 @@ export class DereAddComponent implements OnInit {
   constructor(private af: AngularFire) {
     this.idols = this.af.database.list('/master/idol');
 
-    this.stateCtrl = new FormControl();
-    this.filteredStates = this.stateCtrl.valueChanges
+    this.nameCtrl = new FormControl();
+    this.filteredNames = this.nameCtrl.valueChanges
       .startWith(null)
       .map(name => this.filterStates(name));
   }
 
   filterStates(val: string) {
-    return val ? this.states.filter((s) => new RegExp(val, 'gi').test(s)) : this.states;
+    return val ? this.names.filter((s) => new RegExp(val, 'gi').test(s)) : this.names;
   }
 
   /**
