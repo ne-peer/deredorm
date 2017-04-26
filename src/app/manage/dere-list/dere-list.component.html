@@ -6,29 +6,28 @@
 </div>
 <div class="grid grid-pad">
   <div *ngFor="let idol of idols" [routerLink]="['/detail', idol.$key]" class="col-1-4">
-    <md-card>
-      <div>
-        <h4>{{idol.name}}</h4>
-        <h6>{{idol.kana}}</h6>
-      </div>
-      <div>
-        <md-list  class="models">
-          <h3 md-subheader>models</h3>
-          <md-list-item *ngFor="let model of idol.models">
-            <h6>{{model}}</h6>
-          </md-list-item>
-        </md-list>
-      </div>
-      <div>
-        <h6>
-          <md-chip-list class="units mat-chip-list-stacked">
-            <md-chip *ngFor="let unit of idol.units" selected="" color="">{{unit}}</md-chip>
-          </md-chip-list>
-        </h6>
-      </div>
-      <div>
-        <span>{{idol.type}}</span>
-      </div>
+    <md-card class="{{idol.type}}">
+      <md-card-header>
+        <md-card-title><h3><span class="{{idol.type}}">{{idol.name}}</span></h3></md-card-title>
+        <md-card-subtitle><span class="{{idol.type}}">{{idol.kana}}</span></md-card-subtitle>
+      </md-card-header>
+      <md-card-content>
+        <div>
+          <md-list class="models">
+            <p md-subheader>models</p>
+            <md-list-item *ngFor="let model of idol.models">
+              <h6>{{model}}</h6>
+            </md-list-item>
+          </md-list>
+        </div>
+        <div>
+          <h6>
+            <md-chip-list class="units mat-chip-list-stacked">
+              <md-chip *ngFor="let unit of idol.units" selected="" color="">{{unit}}</md-chip>
+            </md-chip-list>
+          </h6>
+        </div>
+      </md-card-content>
     </md-card>
   </div>
 </div>
