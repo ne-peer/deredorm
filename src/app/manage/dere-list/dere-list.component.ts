@@ -23,7 +23,7 @@ export class DereListComponent implements OnInit {
    * @param af AngularFire
    */
   constructor(private af: AngularFire) {
-    this.afIdols = this.af.database.list('/idols');
+    this.afIdols = this.af.database.list('/core/dere_list');
   }
 
   /**

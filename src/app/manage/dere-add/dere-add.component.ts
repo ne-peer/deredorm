@@ -17,7 +17,7 @@ export class DereAddComponent implements OnInit {
   idols: FirebaseListObservable<Idol[]>;
 
   // 画面用オブジェクト
-  idol = new Idol(1, null, null, null);
+  idol = new Idol(null, null, null, null, null);
   types = ['cute', 'cool', 'passion'];
 
   // オートコンプリート用
@@ -48,9 +48,11 @@ export class DereAddComponent implements OnInit {
    */
   addIdol(): Promise<void> {
     return this.idols.push({
-      id: this.idol.id,
       name: this.idol.name,
-      type: this.idol.type
+      kana: this.idol.kana,
+      type: this.idol.type,
+      model: this.idol.models,
+      group: this.idol.groups
     });
   }
 
