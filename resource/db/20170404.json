@@ -9,9 +9,9 @@
                     "ミスティックエリクシル",
                     "インビテーション・ダイブ"
                 ],
-                "groups": {
-                    "lipps": "true"
-                }
+                "groups": [
+                    "lipps"
+                ]
             },
             {
                 "name": "鷺沢文香",
@@ -21,10 +21,10 @@
                     "ブライトメモリーズ",
                     "密やかな饗宴"
                 ],
-                "groups": {
-                    "valkyria": "true",
-                    "jewel": "true"
-                }
+                "groups": [
+                    "ainferia",
+                    "jewel"
+                ]
             },
             {
                 "name": "城ヶ崎美嘉",
@@ -34,10 +34,10 @@
                     "ハート★オーバーフロー",
                     "グロリアス★グロウ"
                 ],
-                "groups": {
-                    "lipps": "true",
-                    "shabon": "true"
-                }
+                "groups": [
+                    "lipps",
+                    "hp"
+                ]
             }
         ],
         "type_list": {
@@ -73,7 +73,7 @@
                     "Tulip"
                 ]
             },
-            "valkyria": {
+            "ainferia": {
                 "name": "アインフェリア",
                 "kana": "あいんふぇりあ",
                 "members": [
@@ -88,7 +88,7 @@
                     "生存本能ヴァルキュリア"
                 ]
             },
-            "shabon": {
+            "hp": {
                 "name": "Happy Princess",
                 "kana": "はっぴーぷりんせす",
                 "members": [
