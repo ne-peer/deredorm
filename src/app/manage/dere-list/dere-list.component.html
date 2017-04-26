@@ -20,9 +20,9 @@
       </div>
       <div>
         <h6>
-          <span *ngFor="let group of idol.groups" class="group">
-            {{group}}
-          </span>
+          <md-chip-list class="groups mat-chip-list-stacked">
+            <md-chip *ngFor="let group of idol.groups" selected="" color="">{{group}}</md-chip>
+          </md-chip-list>
         </h6>
       </div>
       <div>
