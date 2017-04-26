@@ -1,43 +1,43 @@
 {
-  "core:": {
-    "dere_list:": {
-      "一ノ瀬志希:": {
+  "core": {
+    "dere_list": {
+      "一ノ瀬志希": {
         "kana": "いちのせしき",
         "type": "cute",
         "models": [
           "ミスティックエリクシル",
           "インビテーション・ダイブ"
         ],
-        "groups:": {
+        "groups": {
           "lipps": "true"
         }
       },
-      "鷺沢文香:": {
+      "鷺沢文香": {
         "kana": "さぎさわふみか",
         "type": "cool",
         "models": [
           "ブライトメモリーズ",
           "密やかな饗宴"
         ],
-        "groups:": {
+        "groups": {
           "valkyria": "true",
           "jewel": "true"
         }
       },
-      "城ヶ崎美嘉:": {
+      "城ヶ崎美嘉": {
         "kana": "じょうがさきみか",
         "type": "passion",
         "models": [
           "ハート★オーバーフロー",
           "グロリアス★グロウ"
         ],
-        "groups:": {
+        "groups": {
           "lipps": "true",
           "shabon": "true"
         }
       }
     },
-    "type_list:": {
+    "type_list": {
       "cute": [
         "一ノ瀬志希",
         "島村卯月",
@@ -54,8 +54,8 @@
         "城ヶ崎莉嘉"
       ]
     },
-    "group_list:": {
-      "lipps:": {
+    "group_list": {
+      "lipps": {
         "name": "Lipps",
         "kana": "りっぷす",
         "members": [
@@ -70,7 +70,7 @@
           "Tulip"
         ]
       },
-      "valkyria:": {
+      "valkyria": {
         "name": "アインフェリア",
         "kana": "あいんふぇりあ",
         "members": [
@@ -85,7 +85,7 @@
           "生存本能ヴァルキュリア"
         ]
       },
-      "shabon:": {
+      "shabon": {
         "name": "Happy Princess",
         "kana": "はっぴーぷりんせす",
         "members": [
@@ -99,5 +99,5 @@
       }
     }
   },
-  "user:": {}
+  "user": {}
 }
