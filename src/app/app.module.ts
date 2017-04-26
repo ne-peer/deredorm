@@ -32,7 +32,7 @@ const appRoutes: Routes = [
   { path: 'oauth', component: OauthComponent },
   { path: 'manage/add', component: DereAddComponent },
   { path: 'list', component: DereListComponent },
-  { path: 'unit', component: UnitDetailComponent },
+  { path: 'units/:unit', component: UnitDetailComponent },
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-unit-detail',
@@ -8,10 +8,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UnitDetailComponent implements OnInit {
 
-  constructor() {
+  constructor(private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
+    // subscribe to router event
+    this.activatedRoute.params.subscribe((params: Params) => {
+        let unit = params['unit'];
+        console.log(unit);
+      });
   }
 
 }
