@@ -52,7 +52,7 @@ export class DereAddComponent implements OnInit {
       kana: this.idol.kana,
       type: this.idol.type,
       model: this.idol.models,
-      group: this.idol.groups
+      group: this.idol.units
     });
   }
 

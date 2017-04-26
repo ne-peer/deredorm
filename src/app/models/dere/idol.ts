@@ -10,7 +10,7 @@ export class Idol {
         // モデル名
         public models: string[],
         // 所属ユニット
-        public groups: string[],
+        public units: string[],
     ) { }
 
 }
