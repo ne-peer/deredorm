@@ -4,3 +4,25 @@
 .grid .model {
     color: #888;
 }
+.units md-chip {
+    font-size: 8px;
+    margin-right: 4px;
+}
+md-card.cute {
+    background: #FCE4EC;
+}
+span.cute {
+    color: #E91E63;
+}
+md-card.cool {
+    background: #E8EAF6;
+}
+span.cool {
+    color: #3F51B5;
+}
+md-card.passion {
+    background: #FFF3E0;
+}
+span.passion {
+    color: #FF9800;
+}

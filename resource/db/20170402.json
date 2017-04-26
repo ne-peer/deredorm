@@ -1,0 +1,57 @@
+{
+  "master" : {
+    "idol" : {
+      "-KghQS4vmXIGdoVB6XSb" : {
+        "id" : 1,
+        "name" : "一ノ瀬志希",
+        "type" : "cute"
+      },
+      "-KghQYWbx10kPZdBnl1V" : {
+        "id" : 2,
+        "name" : "鷺沢文香",
+        "type" : "cool"
+      },
+      "-KghQaipVzgvnRnSpdxS" : {
+        "id" : 3,
+        "name" : "城ヶ崎美嘉",
+        "type" : "passion"
+      }
+    },
+    "model" : {
+      "-KghRIGGrVsAwqAyTk2F" : {
+        "id" : 1,
+        "name" : "ミスティックエリクシル"
+      },
+      "-KghRQsQDCcZn_Ur5c0Y" : {
+        "id" : 1,
+        "name" : "インビテーション・ダイブ"
+      },
+      "-KghR_6__P6MnmQ-_UVZ" : {
+        "id" : 2,
+        "name" : "ブライトメモリーズ"
+      },
+      "-KghRc51FgDsOvFJEhP7" : {
+        "id" : 2,
+        "name" : "密やかな饗宴"
+      },
+      "-KghRmHDNk1CrwR0-vAH" : {
+        "id" : 3,
+        "name" : "ハート★オーバーフロー"
+      },
+      "-KghRo7pMiCRe8t1Seie" : {
+        "id" : 3,
+        "name" : "グロリアス★グロウ"
+      }
+    },
+    "type" : [ {
+      "id" : "1",
+      "name" : "cute"
+    }, {
+      "id" : "2",
+      "name" : "cool"
+    }, {
+      "id" : "3",
+      "name" : "passion"
+    } ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "master": {
+    "type": [
+      {
+        "id": "1",
+        "name": "cute"
+      },
+      {
+        "id": "2",
+        "name": "cool"
+      },
+      {
+        "id": "3",
+        "name": "passion"
+      }
+    ]
+  }
+}

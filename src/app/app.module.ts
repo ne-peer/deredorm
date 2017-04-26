@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms'; // バグ対応: https://github.com/angular/angular/issues/14288
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes }   from '@angular/router';
 import { 
@@ -49,7 +50,8 @@ const appRoutes: Routes = [
       provider: AuthProviders.Google,
       method: AuthMethods.Popup
     }),
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

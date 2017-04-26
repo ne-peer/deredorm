@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { Promise } from 'firebase';
+import { FormControl } from '@angular/forms';
+import 'rxjs/add/operator/startWith';
 
 import { Idol } from '../../models/dere/idol';
 
@@ -15,8 +17,13 @@ export class DereAddComponent implements OnInit {
   idols: FirebaseListObservable<Idol[]>;
 
   // 画面用オブジェクト
-  idol = new Idol(1, null, null, null);
-  positions = ['cute', 'cool', 'passion'];
+  idol = new Idol(null, null, null, null, null);
+  types = ['cute', 'cool', 'passion'];
+
+  // オートコンプリート用
+  nameCtrl: FormControl;
+  filteredNames: any;
+  names = ['一ノ瀬志希', '鷺沢文香', '城ヶ崎美嘉'];
 
   /**
    * コンストラクタ
@@ -24,7 +31,16 @@ export class DereAddComponent implements OnInit {
    * @param af AngularFire
    */
   constructor(private af: AngularFire) {
-    this.idols = this.af.database.list('/idols');
+    this.idols = this.af.database.list('/master/idol');
+
+    this.nameCtrl = new FormControl();
+    this.filteredNames = this.nameCtrl.valueChanges
+      .startWith(null)
+      .map(name => this.filterStates(name));
+  }
+
+  filterStates(val: string) {
+    return val ? this.names.filter((s) => new RegExp(val, 'gi').test(s)) : this.names;
   }
 
   /**
@@ -32,10 +48,11 @@ export class DereAddComponent implements OnInit {
    */
   addIdol(): Promise<void> {
     return this.idols.push({
-      id: this.idol.id,
       name: this.idol.name,
-      position: this.idol.position,
-      model: this.idol.model
+      kana: this.idol.kana,
+      type: this.idol.type,
+      model: this.idol.models,
+      group: this.idol.units
     });
   }
 

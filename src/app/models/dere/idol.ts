@@ -1,10 +1,16 @@
 export class Idol {
 
     constructor(
-        public id: number,
+        // 名前
         public name: string,
-        public position: string,
-        public model: string,
+        // ふりがな
+        public kana: string,
+        // 属性
+        public type: string,
+        // モデル名
+        public models: string[],
+        // 所属ユニット
+        public units: string[],
     ) { }
 
 }
