@@ -9,10 +9,24 @@
     <md-card>
       <div>
         <h4>{{idol.name}}</h4>
-        <h6><span class="model">{{idol.model}}</span></h6>
+        <h6>{{idol.kama}}</h6>
       </div>
       <div>
-        <span>{{idol.position}}</span>
+        <h6>
+          <span *ngFor="let model of idol.models" class="models">
+            {{model}}
+            </span>
+        </h6>
+      </div>
+      <div>
+        <h6>
+          <span *ngFor="let group of idol.groups" class="group">
+            {{group}}
+          </span>
+        </h6>
+      </div>
+      <div>
+        <span>{{idol.type}}</span>
       </div>
     </md-card>
   </div>
