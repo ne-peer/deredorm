@@ -9,19 +9,20 @@
     <md-card>
       <div>
         <h4>{{idol.name}}</h4>
-        <h6>{{idol.kama}}</h6>
+        <h6>{{idol.kana}}</h6>
+      </div>
+      <div>
+        <md-list  class="models">
+          <h3 md-subheader>models</h3>
+          <md-list-item *ngFor="let model of idol.models">
+            <h6>{{model}}</h6>
+          </md-list-item>
+        </md-list>
       </div>
       <div>
         <h6>
-          <span *ngFor="let model of idol.models" class="models">
-            {{model}}
-            </span>
-        </h6>
-      </div>
-      <div>
-        <h6>
-          <md-chip-list class="groups mat-chip-list-stacked">
-            <md-chip *ngFor="let group of idol.groups" selected="" color="">{{group}}</md-chip>
+          <md-chip-list class="units mat-chip-list-stacked">
+            <md-chip *ngFor="let unit of idol.units" selected="" color="">{{unit}}</md-chip>
           </md-chip-list>
         </h6>
       </div>
