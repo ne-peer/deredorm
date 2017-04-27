@@ -10,7 +10,7 @@
                     "インビテーション・ダイブ"
                 ],
                 "units": [
-                    "Lipps"
+                    "lipps"
                 ]
             },
             {
@@ -22,8 +22,8 @@
                     "密やかな饗宴"
                 ],
                 "units": [
-                    "アインフェリア",
-                    "jewel"
+                    "ainferia",
+                    "caerula"
                 ]
             },
             {
@@ -35,8 +35,8 @@
                     "グロリアス★グロウ"
                 ],
                 "units": [
-                    "Lipps",
-                    "Happy Princess"
+                    "lipps",
+                    "hp"
                 ]
             }
         ],
@@ -57,8 +57,8 @@
                 "城ヶ崎莉嘉"
             ]
         },
-        "unit_list": [
-            {
+        "unit_list": {
+            "lipps": {
                 "name": "Lipps",
                 "kana": "りっぷす",
                 "members": [
@@ -71,9 +71,10 @@
                 "tl": "塩見周子",
                 "songs": [
                     "Tulip"
-                ]
+                ],
+                "type": "tricolore"
             },
-            {
+            "ainferia": {
                 "name": "アインフェリア",
                 "kana": "あいんふぇりあ",
                 "members": [
@@ -86,9 +87,10 @@
                 "tl": "新田美波",
                 "songs": [
                     "生存本能ヴァルキュリア"
-                ]
+                ],
+                "type": "cool"
             },
-            {
+            "hp": {
                 "name": "Happy Princess",
                 "kana": "はっぴーぷりんせす",
                 "members": [
@@ -98,9 +100,10 @@
                 "tl": "小日向美穂",
                 "songs": [
                     "Shabon Song"
-                ]
+                ],
+                "type": "tricolore"
             }
-        ]
+        }
     },
     "user": {}
 }

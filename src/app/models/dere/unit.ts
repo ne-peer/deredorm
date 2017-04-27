@@ -11,6 +11,8 @@ export class Unit {
         public member: string[],
         // 代表曲
         public songs: string[],
+        // 属性
+        public type: string,
     ) { }
 
 }
