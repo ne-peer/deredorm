@@ -31,8 +31,8 @@ const firebaseConfig = {
 const appRoutes: Routes = [
   { path: 'oauth', component: OauthComponent },
   { path: 'manage/add', component: DereAddComponent },
-  { path: 'list', component: DereListComponent },
-  { path: 'units/:unit', component: UnitDetailComponent },
+  { path: 'idol', component: DereListComponent },
+  { path: 'unit/:unit', component: UnitDetailComponent },
 ];
 
 @NgModule({
