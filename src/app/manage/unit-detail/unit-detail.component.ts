@@ -43,8 +43,8 @@ export class UnitDetailComponent implements OnInit {
   ngOnInit() {
     this.afUnits.subscribe(units => this.units = units);
 
-    const unit = this.getUnit(this.query);
-    unit.subscribe(aa => this.unit = aa);
+    const afUnit = this.getUnit(this.query);
+    afUnit.subscribe(unit => this.unit = unit);
   }
 
   // かいはつよう

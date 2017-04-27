@@ -8,7 +8,7 @@ export class Unit {
         // チームリーダ
         public tl: string,
         // メンバ
-        public member: string[],
+        public members: string[],
         // 代表曲
         public songs: string[],
         // 属性

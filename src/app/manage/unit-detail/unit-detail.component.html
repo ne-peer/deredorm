@@ -1,7 +1,26 @@
-<p>
-  unit-detail works!
-</p>
-
-<p>
-  {{diagnostic}}
-</p>
+<h3>Unit</h3>
+<md-card>
+  <md-card-header>
+    <md-card-title>
+      <h3><span class="{{unit?.type}}">{{unit?.name}}</span></h3>
+    </md-card-title>
+    <md-card-subtitle><span class="{{unit?.type}}">{{unit?.kana}}</span></md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+    <div>
+      <md-list class="member">
+        <p md-subheader>member</p>
+        <md-list-item *ngFor="let person of unit?.members">
+          <h6>{{person}} {{person == unit?.tl ? '★' : ''}}</h6>
+        </md-list-item>
+      </md-list>
+    </div>
+    <div>
+      <h6>
+        <md-chip-list class="units mat-chip-list-stacked">
+          <md-chip *ngFor="let song of unit?.songs" selected="" color="">{{song}}</md-chip>
+        </md-chip-list>
+      </h6>
+    </div>
+  </md-card-content>
+</md-card>
