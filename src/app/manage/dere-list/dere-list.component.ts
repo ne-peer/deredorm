@@ -3,6 +3,7 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'a
 import { Promise } from 'firebase';
 
 import { Idol } from '../../models/dere/idol';
+import { Unit } from '../../models/dere/unit';
 
 @Component({
   selector: 'app-dere-list',
@@ -13,9 +14,11 @@ export class DereListComponent implements OnInit {
 
   // Firebaseと同期したもの
   afIdols: FirebaseListObservable<Idol[]>;
+  afUnits: FirebaseListObservable<Unit[]>;
 
-  // 表示用
+  // プロパティ
   idols: Idol[];
+  units: Unit[];
 
   /**
    * コンストラクタ
@@ -24,6 +27,7 @@ export class DereListComponent implements OnInit {
    */
   constructor(private af: AngularFire) {
     this.afIdols = this.af.database.list('/core/dere_list');
+    this.afUnits = this.af.database.list('/core/unit_list');
   }
 
   /**
@@ -31,6 +35,7 @@ export class DereListComponent implements OnInit {
    */
   ngOnInit() {
     this.afIdols.subscribe(idols => this.idols = idols);
+    this.afUnits.subscribe(unit => this.units = unit);
   }
 
 }
