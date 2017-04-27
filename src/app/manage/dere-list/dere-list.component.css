@@ -26,3 +26,9 @@ md-card.passion {
 span.passion {
     color: #FF9800;
 }
+md-chip {
+    cursor: pointer;
+}
+.chips-section {
+    margin-top: 20px;
+}
