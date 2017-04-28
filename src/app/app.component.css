@@ -4,7 +4,6 @@
 
 .sidenav-content {
   height: 100%;
-  padding: 20px;
 }
 
 .sidenav {
@@ -13,9 +12,10 @@
 }
 
 section.header {
-  background-color: #eee;
-  padding: 15px;
   margin-bottom: 20px;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
 }
 
 section.main-content {

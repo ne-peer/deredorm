@@ -4,17 +4,20 @@
       <app-side-navbar></app-side-navbar>
     </section>
   </md-sidenav>
-
   <div class="sidenav-content">
     <section class="header">
-      <h1>
-        {{title}} <small>{{subTitle}}</small>
-      </h1>
-      <div>
-        <button md-button (click)="sidenav.open()">Side Menu</button>
-        <a md-button class="link-button" routerLink="/oauth">Sign in</a>
-      </div>
+      <nav class="navbar navbar-dark bg-inverse">
+        <a class="navbar-brand" routerLink="/">
+        　<i class="material-icons">dehaze</i>
+          <h1>
+            {{title}}<small> {{subTitle}}</small>
+          </h1>
+        </a>
+      </nav>
     </section>
+    <div>
+      <button md-button (click)="sidenav.open()">Side Menu</button>
+    </div>
     <section class="main-content">
       <router-outlet></router-outlet>
     </section>
