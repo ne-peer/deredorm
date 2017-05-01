@@ -11,7 +11,7 @@
       <md-list class="member">
         <p md-subheader>member</p>
         <md-list-item *ngFor="let person of unit?.members">
-          <h6>{{person}} {{person == unit?.tl ? '★' : ''}}</h6>
+          <h6><span [routerLink]="['/idol', person]">{{person}} {{person == unit?.tl ? '★' : ''}}</span></h6>
         </md-list-item>
       </md-list>
     </div>
