@@ -1,5 +1,5 @@
 .container-flux {
-  height: 1100px;
+  min-height: 1100px;
 }
 
 .sidenav-content {

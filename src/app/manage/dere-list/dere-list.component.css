@@ -4,10 +4,6 @@
 .grid .model {
     color: #888;
 }
-.units md-chip {
-    font-size: 8px;
-    margin-right: 4px;
-}
 md-card.cute {
     background: #FCE4EC;
 }
@@ -25,6 +21,10 @@ md-card.passion {
 }
 span.passion {
     color: #FF9800;
+}
+.units md-chip {
+    font-size: 8px;
+    margin-right: 4px;
 }
 md-chip {
     cursor: pointer;
