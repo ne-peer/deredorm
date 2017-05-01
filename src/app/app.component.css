@@ -28,3 +28,7 @@ section.main-content {
 .link-button {
     text-decoration: none;
 }
+
+md-sidenav {
+  background: #eee;
+}
