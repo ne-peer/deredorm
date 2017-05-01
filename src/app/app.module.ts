@@ -10,6 +10,7 @@ import {
   AuthProviders 
 } from "angularfire2";
 import { MaterialModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { OauthComponent } from './oauth/oauth.component';
@@ -54,6 +55,7 @@ const appRoutes: Routes = [
       method: AuthMethods.Popup
     }),
     MaterialModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule 
   ],
   providers: [],
