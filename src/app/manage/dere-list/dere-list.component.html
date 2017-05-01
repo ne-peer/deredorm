@@ -5,7 +5,7 @@
   </a>
 </div>
 <div class="grid grid-pad">
-  <div *ngFor="let idol of idols" [routerLink]="['/detail', idol.$key]" class="col-1-4">
+  <div *ngFor="let idol of idols" [routerLink]="['/idol', idol.$key]" class="col-1-4">
     <md-card class="{{idol.type}}">
       <md-card-header>
         <md-card-title>
