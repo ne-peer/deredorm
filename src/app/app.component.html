@@ -7,17 +7,18 @@
   <div>
     <section class="header">
       <nav class="navbar navbar-dark bg-inverse">
-        <a class="navbar-brand" routerLink="/">
-        　<i class="material-icons">dehaze</i>
-          <h1>
-            {{title}}<small> {{subTitle}}</small>
-          </h1>
-        </a>
+        <md-grid-list cols="8" rowHeight="50px">
+          <md-grid-tile colspan="1">
+            <button md-button class="menu" (click)="sidenav.open()"><md-icon>list</md-icon></button>
+          </md-grid-tile>
+          <md-grid-tile colspan="2">
+            <a class="navbar-brand" routerLink="/">
+              <h1>{{title}}<small> {{subTitle}}</small></h1>
+            </a>
+          </md-grid-tile>
+        </md-grid-list>
       </nav>
     </section>
-    <div>
-      <button md-button (click)="sidenav.open()">Side Menu</button>
-    </div>
     <section class="main-content">
       <router-outlet></router-outlet>
     </section>
