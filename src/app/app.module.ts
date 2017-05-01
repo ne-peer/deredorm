@@ -19,6 +19,7 @@ import { DereAddComponent } from './manage/dere-add/dere-add.component';
 import { DereListComponent } from './manage/dere-list/dere-list.component';
 import { UnitDetailComponent } from './manage/unit-detail/unit-detail.component';
 import { DereDetailComponent } from './manage/dere-detail/dere-detail.component';
+import { DereAutocompleteComponent } from './action/dere-autocomplete/dere-autocomplete.component';
 
 // firebase seittings
 const firebaseConfig = {
@@ -46,7 +47,8 @@ const appRoutes: Routes = [
     DereAddComponent,
     DereListComponent,
     UnitDetailComponent,
-    DereDetailComponent
+    DereDetailComponent,
+    DereAutocompleteComponent
   ],
   imports: [
     BrowserModule,
