@@ -1,3 +1,33 @@
-<p>
-  dere-detail works!
-</p>
+<div class="grid grid-pad">
+  <div class="col-1-4">
+    <md-card class="{{idol?.type}}">
+      <md-card-header>
+        <md-card-title>
+          <h3><span class="{{idol?.type}}">{{idol?.name}}</span></h3>
+        </md-card-title>
+        <md-card-subtitle><span class="{{idol?.type}}">{{idol?.kana}}</span></md-card-subtitle>
+      </md-card-header>
+      <md-card-content>
+        <div>
+          <md-list class="models">
+            <p md-subheader>models</p>
+            <md-list-item *ngFor="let model of idol?.models">
+              <h6>{{model}}</h6>
+            </md-list-item>
+          </md-list>
+        </div>
+        <div class="chips-section">
+          <h6>
+            <md-chip-list class="units mat-chip-list-stacked">
+              <md-chip *ngFor="let idol_unit of idol?.units" selected="" color="" [routerLink]="['/unit', idol_unit]">
+                <span *ngFor="let units_unit of units">
+                  {{idol_unit == units_unit.$key ? units_unit.name : continue}}
+                </span>
+              </md-chip>
+            </md-chip-list>
+          </h6>
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>
