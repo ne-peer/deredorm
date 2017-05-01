@@ -1,6 +1,8 @@
 export class Unit {
 
     constructor(
+        // 識別子
+        public id: string,
         // 名前
         public name: string,
         // ふりがな

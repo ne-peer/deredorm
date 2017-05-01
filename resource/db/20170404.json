@@ -59,6 +59,7 @@
         },
         "unit_list": {
             "lipps": {
+                "id": "lipps",
                 "name": "Lipps",
                 "kana": "りっぷす",
                 "members": [
@@ -75,6 +76,7 @@
                 "type": "tricolore"
             },
             "ainferia": {
+                "id": "ainferia",
                 "name": "アインフェリア",
                 "kana": "あいんふぇりあ",
                 "members": [
@@ -91,6 +93,7 @@
                 "type": "cool"
             },
             "hp": {
+                "id": "hp",
                 "name": "Happy Princess",
                 "kana": "はっぴーぷりんせす",
                 "members": [
