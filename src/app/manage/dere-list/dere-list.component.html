@@ -27,7 +27,7 @@
             <md-chip-list class="units mat-chip-list-stacked">
               <md-chip *ngFor="let idol_unit of idol.units" selected="" color="" [routerLink]="['/unit', idol_unit]">
                 <span *ngFor="let units_unit of units">
-                  {{idol_unit == units_unit.id ? units_unit.name : continue}}
+                  {{idol_unit == units_unit.$key ? units_unit.name : continue}}
                 </span>
               </md-chip>
             </md-chip-list>
