@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
@@ -18,12 +19,13 @@ export class DereAutocompleteComponent implements OnInit {
 
   // プロパティ
   idols: Idol[];
+  searchInput: any;
 
   // オートコンプリート用
   dereSearchCtrl: FormControl;
   filteredIdols: Observable<Idol[]>;
 
-  constructor(private af: AngularFire) {
+  constructor(private af: AngularFire, private router: Router) {
     this.afIdols = this.af.database.list('/core/dere_list');
   }
 
@@ -49,4 +51,11 @@ export class DereAutocompleteComponent implements OnInit {
     return idol ? idol.name : 'ひ';
   }
 
+  onSearch() {
+    let input = typeof this.searchInput === 'object' ? this.searchInput.name : this.searchInput;
+
+    this.router.navigate(['/idol', input]);
+    return false;
+  }
+  
 }
