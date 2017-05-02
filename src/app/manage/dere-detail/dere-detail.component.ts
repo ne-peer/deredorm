@@ -51,15 +51,20 @@ export class DereDetailComponent implements OnInit {
 
     this.afUnits.subscribe(unit => this.units = unit);
   }
-
   
   /**
-   * 指定したユニットを取得
+   * 指定したPersonを取得
    * 
    * @param string 
    */
   getIdol(key: string): FirebaseObjectObservable<Idol> {
     return this.af.database.object(`/core/dere_list/${key}`);
+  }
+
+  doShow() {
+    let idol = JSON.stringify(this.idol);
+
+    return idol !== '{"$value":null}';
   }
 
 }
