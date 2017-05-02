@@ -31,14 +31,9 @@ span.passion {
 }
 
 .units md-chip {
-    font-size: 8px;
     margin-right: 4px;
 }
 
 md-chip {
     cursor: pointer;
-}
-
-.chips-section {
-    margin-top: 20px;
 }

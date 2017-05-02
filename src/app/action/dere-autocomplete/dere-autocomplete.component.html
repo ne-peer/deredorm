@@ -2,7 +2,7 @@
   <md-grid-tile colspan="2">
     <div>
       <md-input-container>
-        <input mdInput placeholder="Search.." [mdAutocomplete]="auto" [formControl]="dereSearchCtrl" [(ngModel)]="searchInput">
+        <input mdInput (blur)="onSearch()" placeholder="Search.." [mdAutocomplete]="auto" [formControl]="dereSearchCtrl" [(ngModel)]="searchInput">
       </md-input-container>
       <md-autocomplete #auto="mdAutocomplete" [displayWith]="displayFn">
         <md-option *ngFor="let idol of filteredIdols | async" [value]="idol">
@@ -18,3 +18,7 @@
     <button md-raised-button (click)="onSearch()">検索</button>
   </md-grid-tile>
 </md-grid-list>
+
+<p>
+  {{diagnostic}}
+</p>

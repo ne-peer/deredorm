@@ -52,7 +52,11 @@ export class DereAutocompleteComponent implements OnInit {
   }
 
   onSearch() {
-    let input = typeof this.searchInput === 'object' ? this.searchInput.name : this.searchInput;
+    let input = this.getInputQuery();
+
+    if (input === '') {
+      return false;
+    }
 
     this.router.navigate(['/idol', input]);
     return false;
@@ -62,5 +66,12 @@ export class DereAutocompleteComponent implements OnInit {
     this.searchInput = '';
     return false;
   }
-  
+
+  getInputQuery() {
+    return typeof this.searchInput === 'object' ? this.searchInput.name : this.searchInput;
+  }
+
+  // かいはつよう
+  get diagnostic() { return JSON.stringify(this.searchInput); }
+
 }
