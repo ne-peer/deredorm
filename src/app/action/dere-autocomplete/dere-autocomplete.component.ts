@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
-import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
@@ -48,13 +48,18 @@ export class DereAutocompleteComponent implements OnInit {
   }
 
   displayFn(idol: Idol): string {
-    return idol ? idol.name : 'ひ';
+    return idol ? idol.name : '';
   }
 
   onSearch() {
     let input = typeof this.searchInput === 'object' ? this.searchInput.name : this.searchInput;
 
     this.router.navigate(['/idol', input]);
+    return false;
+  }
+
+  onClear() {
+    this.searchInput = '';
     return false;
   }
   
