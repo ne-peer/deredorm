@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Promise } from 'firebase';
 
 import { Unit } from '../../models/dere/unit';
@@ -22,8 +22,8 @@ export class UnitDetailComponent implements OnInit {
   // 表示用
   unit: Unit;
 
-  constructor(private activatedRoute: ActivatedRoute, private af: AngularFire) {
-    this.afUnits = this.af.database.list('/core/unit_list');
+  constructor(private activatedRoute: ActivatedRoute, private db: AngularFireDatabase) {
+    this.afUnits = this.db.list('/core/unit_list');
 
     // クエリストリング取得
     this.activatedRoute.params.subscribe((params: Params) => {
@@ -37,7 +37,7 @@ export class UnitDetailComponent implements OnInit {
    * @param string 
    */
   getUnit(key: string): FirebaseObjectObservable<Unit> {
-    return this.af.database.object(`/core/unit_list/${key}`);
+    return this.db.object(`/core/unit_list/${key}`);
   }
 
   ngOnInit() {
