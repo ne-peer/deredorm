@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, AuthProviders } from 'angularfire2';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-oauth',
@@ -9,33 +9,16 @@ import { AngularFire, AuthProviders } from 'angularfire2';
 export class OauthComponent implements OnInit {
 
   user = {};
-  constructor(public af: AngularFire) {
-    this.af.auth.subscribe(user => {
-      if(user) {
-        this.user = user;
-        console.log(this.user);
-      }
-      else {
-        this.user = {};
-      }
-    });
+  constructor(public afAuth: AngularFireAuth) {
+    this.user = afAuth.authState;
   }
 
   login(from: string) {
-    this.af.auth.login({
-      provider: this._getProvider(from)
-    });
+    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
 
   logout() {
-    this.af.auth.logout();
-  }
-
-  private _getProvider(from: string) {
-    switch(from){
-      case 'twitter': return AuthProviders.Twitter;
-      case 'google': return AuthProviders.Google;
-    }
+    this.afAuth.auth.signOut();
   }
 
   ngOnInit() {

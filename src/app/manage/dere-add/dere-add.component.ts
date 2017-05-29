@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Promise } from 'firebase';
 import { FormControl } from '@angular/forms';
 import 'rxjs/add/operator/startWith';
@@ -28,10 +28,10 @@ export class DereAddComponent implements OnInit {
   /**
    * コンストラクタ
    * 
-   * @param af AngularFire
+   * @param db AngularFireDatabase
    */
-  constructor(private af: AngularFire) {
-    this.idols = this.af.database.list('/master/idol');
+  constructor(private db: AngularFireDatabase) {
+    this.idols = this.db.list('/master/idol');
 
     this.nameCtrl = new FormControl();
     this.filteredNames = this.nameCtrl.valueChanges

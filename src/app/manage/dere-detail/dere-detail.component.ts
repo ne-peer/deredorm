@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Promise } from 'firebase';
 
 import { Idol } from '../../models/dere/idol';
@@ -28,11 +28,11 @@ export class DereDetailComponent implements OnInit {
   /**
    * コンストラクタ
    * 
-   * @param af AngularFire
+   * @param db AngularFireDatabase
    */
-  constructor(private activatedRoute: ActivatedRoute, private af: AngularFire) {
-    this.afIdols = this.af.database.list('/core/dere_list');
-    this.afUnits = this.af.database.list('/core/unit_list');
+  constructor(private activatedRoute: ActivatedRoute, private db: AngularFireDatabase) {
+    this.afIdols = this.db.list('/core/dere_list');
+    this.afUnits = this.db.list('/core/unit_list');
     
     // クエリストリング取得
     this.activatedRoute.params.subscribe((params: Params) => {
@@ -58,7 +58,7 @@ export class DereDetailComponent implements OnInit {
    * @param string 
    */
   getIdol(key: string): FirebaseObjectObservable<Idol> {
-    return this.af.database.object(`/core/dere_list/${key}`);
+    return this.db.object(`/core/dere_list/${key}`);
   }
 
   doShow() {

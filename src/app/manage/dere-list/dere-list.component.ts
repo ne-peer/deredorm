@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Promise } from 'firebase';
 
 import { Idol } from '../../models/dere/idol';
@@ -23,11 +23,11 @@ export class DereListComponent implements OnInit {
   /**
    * コンストラクタ
    * 
-   * @param af AngularFire
+   * @param db AngularFireDatabase
    */
-  constructor(private af: AngularFire) {
-    this.afIdols = this.af.database.list('/core/dere_list');
-    this.afUnits = this.af.database.list('/core/unit_list');
+  constructor(private db: AngularFireDatabase) {
+    this.afIdols = this.db.list('/core/dere_list');
+    this.afUnits = this.db.list('/core/unit_list');
   }
 
   /**

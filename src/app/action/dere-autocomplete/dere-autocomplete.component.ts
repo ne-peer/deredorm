@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
@@ -25,8 +25,8 @@ export class DereAutocompleteComponent implements OnInit {
   dereSearchCtrl: FormControl;
   filteredIdols: Observable<Idol[]>;
 
-  constructor(private af: AngularFire, private router: Router) {
-    this.afIdols = this.af.database.list('/core/dere_list');
+  constructor(private db: AngularFireDatabase, private router: Router) {
+    this.afIdols = this.db.list('/core/dere_list');
   }
 
   ngOnInit() {
