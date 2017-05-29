@@ -20,27 +20,13 @@ export class DereAddComponent implements OnInit {
   idol = new Idol(null, null, null, null, null);
   types = ['cute', 'cool', 'passion'];
 
-  // オートコンプリート用
-  nameCtrl: FormControl;
-  filteredNames: any;
-  names = ['一ノ瀬志希', '鷺沢文香', '城ヶ崎美嘉'];
-
   /**
    * コンストラクタ
    * 
    * @param db AngularFireDatabase
    */
   constructor(private db: AngularFireDatabase) {
-    this.idols = this.db.list('/master/idol');
-
-    this.nameCtrl = new FormControl();
-    this.filteredNames = this.nameCtrl.valueChanges
-      .startWith(null)
-      .map(name => this.filterStates(name));
-  }
-
-  filterStates(val: string) {
-    return val ? this.names.filter((s) => new RegExp(val, 'gi').test(s)) : this.names;
+    this.idols = this.db.list('/core/dere_list');
   }
 
   /**
@@ -52,7 +38,7 @@ export class DereAddComponent implements OnInit {
       kana: this.idol.kana,
       type: this.idol.type,
       model: this.idol.models,
-      group: this.idol.units
+      units: this.idol.units
     });
   }
 

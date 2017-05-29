@@ -1,15 +1,10 @@
 <div>
-  <h3>Add the new dere!</h3>
+  <h3>新規登録</h3>
   <form (ngSubmit)="onSubmit()" #dereForm="ngForm">
     <div class="form-group">
       <md-input-container>
-        <input type="text"  mdInput placeholder="Name" id="name" required [mdAutocomplete]="auto" [formControl]="nameCtrl" [(ngModel)]="idol.name" name="name">
+        <input type="text"  mdInput placeholder="Name" id="name" required [(ngModel)]="idol.name" name="name">
       </md-input-container>
-      <md-autocomplete #auto="mdAutocomplete">
-        <md-option *ngFor="let name of filteredNames | async" [value]="name">
-          {{ name }}
-        </md-option>
-      </md-autocomplete>
     </div>
     <div class="form-group">
       <md-select id="type" placeholder="Type" [(ngModel)]="idol.type" name="type">
