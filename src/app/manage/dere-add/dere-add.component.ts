@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Promise } from 'firebase';
-import { FormControl } from '@angular/forms';
-import 'rxjs/add/operator/startWith';
 
 import { Idol } from '../../models/dere/idol';
 
@@ -33,13 +31,15 @@ export class DereAddComponent implements OnInit {
    * 登録する
    */
   addIdol(): Promise<void> {
-    return this.idols.push({
-      name: this.idol.name,
-      kana: this.idol.kana,
-      type: this.idol.type,
-      model: this.idol.models,
-      units: this.idol.units
-    });
+    return this.idols.update(
+      this.idol.name,
+      {
+        name: this.idol.name,
+        kana: this.idol.kana,
+        type: this.idol.type,
+        model: this.idol.models,
+        units: this.idol.units
+      });
   }
 
   // かいはつよう
