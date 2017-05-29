@@ -4,13 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms'; // バグ対応: https://github.com/angular/angular/issues/14288
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes }   from '@angular/router';
-import { 
-  AngularFireModule, 
-  AuthMethods, 
-  AuthProviders 
-} from "angularfire2";
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
 import { OauthComponent } from './oauth/oauth.component';
@@ -55,10 +54,9 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    AngularFireModule.initializeApp(firebaseConfig,{
-      provider: AuthProviders.Google,
-      method: AuthMethods.Popup
-    }),
+    AngularFireModule.initializeApp(firebaseConfig, 'my-app'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     MaterialModule,
     BrowserAnimationsModule,
     ReactiveFormsModule 
