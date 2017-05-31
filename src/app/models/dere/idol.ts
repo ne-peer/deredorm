@@ -8,9 +8,9 @@ export class Idol {
         // 属性
         public type: string,
         // モデル名
-        public models: string[],
+        public models: string,
         // 所属ユニット
-        public units: string[],
+        public units: string,
     ) { }
 
 }

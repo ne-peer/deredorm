@@ -1,6 +1,6 @@
-.ng-valid[required], .ng-valid.required  {
-  /*border-right: 5px solid #42A948;*/
+.long-text {
+  width: 350px;
 }
-.ng-invalid:not(form)  {
-  /*border-right: 5px solid #a94442;*/
+.type {
+  padding-bottom: 6px;
 }

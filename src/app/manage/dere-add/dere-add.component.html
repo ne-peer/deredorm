@@ -3,32 +3,32 @@
   <form (ngSubmit)="onSubmit()" #dereForm="ngForm">
     <div class="form-group">
       <md-input-container>
-        <input type="text"  mdInput placeholder="Name" id="name" required [(ngModel)]="idol.name" name="name">
+        <input type="text"  mdInput placeholder="Name" id="name" [(ngModel)]="idol.name" name="name" required>
       </md-input-container>
     </div>
     <div class="form-group">
       <md-input-container>
-        <input type="text"  mdInput placeholder="Kana" id="kana" required [(ngModel)]="idol.kana" name="kana">
+        <input type="text"  mdInput placeholder="Kana" id="kana" [(ngModel)]="idol.kana" name="kana" required>
       </md-input-container>
     </div>
     <div class="form-group">
-      <md-select id="type" placeholder="Type" [(ngModel)]="idol.type" name="type">
+      <md-select id="type" placeholder="Type" [(ngModel)]="idol.type" name="type" class="type">
         <md-option *ngFor="let type of types" [value]="type">{{type}}</md-option>
       </md-select>
     </div>
     <div class="form-group">
       <md-input-container>
-        <input type="text" mdInput placeholder="Models" id="models" [(ngModel)]="idol.models" name="models">
+        <input type="text" mdInput placeholder="Models - 半角カンマ(,)区切り" id="models" [(ngModel)]="idol.models" name="models" class="long-text">
       </md-input-container>
     </div>
     <div class="form-group">
       <md-input-container>
-        <input type="text" mdInput placeholder="Units" id="units" [(ngModel)]="idol.units" name="units">
+        <input type="text" mdInput placeholder="Units - 半角カンマ(,)区切り" id="units" [(ngModel)]="idol.units" name="units" class="long-text">
       </md-input-container>
     </div>
     <p>
       {{diagnostic}}
     </p>
-    <button type="button" md-button (click)="addIdol(); dereForm.reset();">Registory</button>
+    <button type="button" md-button (click)="addIdol(); dereForm.reset();">登録</button>
   </form>
 </div>
