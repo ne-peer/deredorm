@@ -37,8 +37,8 @@ export class DereAddComponent implements OnInit {
         name: this.idol.name,
         kana: this.idol.kana,
         type: this.idol.type,
-        models: this.idol.models,
-        units: this.idol.units
+        models: this.idol.models.split(','),
+        units: this.idol.units.split(',')
       });
   }
 
