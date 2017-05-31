@@ -1,6 +1,12 @@
 .long-text {
   width: 350px;
 }
+
 .type {
   padding-bottom: 6px;
+}
+
+button.register {
+  background: #e91e63;
+  color: #fff;
 }

@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Deredorm';
-  subTitle = 'subtitle';
+  subTitle = 'imas cgss character manager';
 }

@@ -1,24 +1,25 @@
-<md-grid-list cols="4" rowHeight="2:1">
-  <md-grid-tile colspan="2">
-    <div>
-      <md-input-container>
-        <input mdInput placeholder="Search.." [mdAutocomplete]="auto" [formControl]="dereSearchCtrl" [(ngModel)]="searchInput">
-      </md-input-container>
-      <md-autocomplete #auto="mdAutocomplete" [displayWith]="displayFn">
-        <md-option *ngFor="let idol of filteredIdols | async" [value]="idol">
-          {{idol.name}}
-        </md-option>
-      </md-autocomplete>
-    </div>
-  </md-grid-tile>
-  <md-grid-tile colspan="1">
-    <button md-raised-button (click)="onClear()">クリア</button>
-  </md-grid-tile>
-  <md-grid-tile colspan="1">
-    <button md-raised-button (click)="onSearch()">検索</button>
-  </md-grid-tile>
-</md-grid-list>
-
 <p>
   {{diagnostic}}
 </p>
+<div class="search-section">
+  <md-grid-list cols="4" rowHeight="2:1">
+    <md-grid-tile colspan="2">
+      <div>
+        <md-input-container>
+          <input mdInput placeholder="Search.." [mdAutocomplete]="auto" [formControl]="dereSearchCtrl" [(ngModel)]="searchInput">
+        </md-input-container>
+        <md-autocomplete #auto="mdAutocomplete" [displayWith]="displayFn">
+          <md-option *ngFor="let idol of filteredIdols | async" [value]="idol">
+            {{idol.name}}
+          </md-option>
+        </md-autocomplete>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile colspan="1">
+      <button md-raised-button (click)="onClear()">クリア</button>
+    </md-grid-tile>
+    <md-grid-tile colspan="1">
+      <button md-raised-button (click)="onSearch()">検索</button>
+    </md-grid-tile>
+  </md-grid-list>
+</div>
