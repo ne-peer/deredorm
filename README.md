@@ -7,7 +7,7 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 ```
 cmd> npm install　                        // アプリに必要なパッケージインストール
-cmd> npm install --g @angular/cli@latest" // 開発ツールをインストール
+cmd> npm install --g @angular/cli@latest // 開発ツールをインストール
 cmd> ng serve　                           // 開発サーバ起動
 ```
 
