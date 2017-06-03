@@ -10,9 +10,9 @@ export class Unit {
         // チームリーダ
         public tl: string,
         // メンバ
-        public members: string[],
+        public members: string,
         // 代表曲
-        public songs: string[],
+        public songs: string,
         // 属性
         public type: string,
     ) { }
