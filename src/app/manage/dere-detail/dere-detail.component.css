@@ -21,11 +21,3 @@ md-card.passion {
 span.passion {
     color: #FF9800;
 }
-
-.units md-chip {
-    margin-right: 4px;
-}
-
-md-chip {
-    cursor: pointer;
-}

@@ -10,23 +10,23 @@
         </md-card-header>
         <md-card-content>
           <div>
-            <md-list class="models">
-              <p md-subheader>models</p>
-              <md-list-item *ngFor="let model of idol?.models">
-                <h6>{{model}}</h6>
+            <md-list dense class="models">
+              <p md-subheader>カードモデル</p>
+              <md-list-item *ngFor="let model of idol?.models" class="list-content">
+                <md-icon md-list-icon>local_offer</md-icon>
+                <h2 md-line>{{model}}</h2>
               </md-list-item>
             </md-list>
           </div>
+          <md-divider style="margin-top:16px;"></md-divider>
           <div class="chips-section">
-            <h6>
-              <md-chip-list class="units mat-chip-list-stacked">
-                <md-chip *ngFor="let idol_unit of idol?.units" selected="" color="" [routerLink]="['/unit', idol_unit]">
-                  <span *ngFor="let units_unit of units">
-                  {{idol_unit == units_unit.$key ? units_unit.name : continue}}
-                </span>
-                </md-chip>
-              </md-chip-list>
-            </h6>
+            <md-list dense class="models">
+              <p md-subheader>所属</p>
+              <md-list-item *ngFor="let unit_id of idol?.units" class="list-content">
+                <md-icon md-list-icon>group</md-icon>
+                <h2 md-line [routerLink]="['/unit', 'hoge']">{{getUnitName(unit_id)}}</h2>
+              </md-list-item>
+            </md-list>
           </div>
         </md-card-content>
       </md-card>

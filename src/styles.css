@@ -8,3 +8,16 @@
 .main-background {
     background: #e91e63;
 }
+
+.display-none {
+    display: none;
+}
+
+/* md-list style */
+md-list-item {
+    cursor: pointer;
+}
+
+.list-content {
+    margin-left: 16px;
+}

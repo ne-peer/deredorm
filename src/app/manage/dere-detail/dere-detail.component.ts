@@ -33,7 +33,7 @@ export class DereDetailComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private db: AngularFireDatabase) {
     this.afIdols = this.db.list('/core/dere_list');
     this.afUnits = this.db.list('/core/unit_list');
-    
+
     // クエリストリング取得
     this.activatedRoute.params.subscribe((params: Params) => {
       this.query = params['idol'];
@@ -51,7 +51,7 @@ export class DereDetailComponent implements OnInit {
 
     this.afUnits.subscribe(unit => this.units = unit);
   }
-  
+
   /**
    * 指定したPersonを取得
    * 
@@ -65,6 +65,19 @@ export class DereDetailComponent implements OnInit {
     let idol = JSON.stringify(this.idol);
 
     return idol !== '{"$value":null}';
+  }
+
+  getUnitName(unitId: string) {
+    let matchedUnit = null;
+
+    for (let unit of this.units) {
+      if (unit.id === unitId) {
+        matchedUnit = unit;
+        break;
+      }
+    }
+
+    return matchedUnit.name;
   }
 
 }
