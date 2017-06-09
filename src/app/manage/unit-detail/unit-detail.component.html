@@ -1,4 +1,4 @@
-<h3>Unit</h3>
+<h3 class="title">ユニット詳細</h3>
 <md-card>
   <md-card-header>
     <md-card-title>
@@ -8,18 +8,28 @@
   </md-card-header>
   <md-card-content>
     <div>
-      <md-list class="member">
-        <p md-subheader>member</p>
-        <md-list-item *ngFor="let person of unit?.members">
-          <h6><span [routerLink]="['/idol', person]">{{person}} {{person == unit?.tl ? '★' : ''}}</span></h6>
+      <md-list dense class="member">
+        <p md-subheader>メンバー</p>
+        <md-list-item *ngFor="let person of unit?.members" class="list-content" [routerLink]="['/idol', person]">
+          <ng-template [ngIf]="person == unit?.tl">
+            <h6>{{person}} <small class="main-color">リーダー</small></h6>
+          </ng-template>
+          <ng-template [ngIf]="person != unit?.tl">
+            <h6>{{person}}</h6>
+          </ng-template>
         </md-list-item>
       </md-list>
     </div>
+    <md-divider></md-divider>
     <div>
       <h6>
-        <md-chip-list class="units mat-chip-list-stacked">
-          <md-chip *ngFor="let song of unit?.songs" selected="" color="">{{song}}</md-chip>
-        </md-chip-list>
+        <md-list dense class="songs">
+          <p md-subheader>楽曲</p>
+          <md-list-item *ngFor="let song of unit?.songs" class="list-content">
+            <md-icon md-list-icon>audiotrack</md-icon>
+            <h2 md-line>{{song}}</h2>
+          </md-list-item>
+        </md-list>
       </h6>
     </div>
   </md-card-content>
