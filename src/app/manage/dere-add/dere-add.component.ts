@@ -17,6 +17,9 @@ export class DereAddComponent implements OnInit {
   // 画面用オブジェクト
   idol = new Idol(null, null, null, null, null);
   types = ['cute', 'cool', 'passion'];
+  
+  // form
+  submitted = false;
 
   /**
    * コンストラクタ
@@ -45,7 +48,8 @@ export class DereAddComponent implements OnInit {
   // かいはつよう
   get diagnostic() { return JSON.stringify(this.idol); }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+  
+  onSubmit() { this.submitted = true; }
 
 }

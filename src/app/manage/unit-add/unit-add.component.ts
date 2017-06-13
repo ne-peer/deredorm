@@ -18,6 +18,9 @@ export class UnitAddComponent implements OnInit {
   unit = new Unit(null, null, null, null, null, null, null);
   types = ['cute', 'cool', 'passion'];
 
+  // form
+  submitted = false;
+
   /**
    * コンストラクタ
    * 
@@ -47,7 +50,8 @@ export class UnitAddComponent implements OnInit {
   // かいはつよう
   get diagnostic() { return JSON.stringify(this.unit); }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
+  onSubmit() { this.submitted = true; }
 
 }
