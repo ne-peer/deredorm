@@ -79,6 +79,10 @@ export class DereDetailComponent implements OnInit {
         break;
       }
     }
+    
+    if (matchedUnit === null) {
+      return '';
+    }
 
     return matchedUnit.name;
   }

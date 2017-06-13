@@ -38,4 +38,24 @@ export class DereListComponent implements OnInit {
     this.afUnits.subscribe(unit => this.units = unit);
   }
 
+  getUnitName(unitId: string) {
+    let matchedUnit = null;
+    if (this.units instanceof Array === false || this.units.length < 1) {
+      return '';
+    }
+
+    for (let unit of this.units) {
+      if (unit.id === unitId) {
+        matchedUnit = unit;
+        break;
+      }
+    }
+    
+    if (matchedUnit === null) {
+      return '';
+    }
+
+    return matchedUnit.name;
+  }
+
 }
