@@ -69,6 +69,9 @@ export class DereDetailComponent implements OnInit {
 
   getUnitName(unitId: string) {
     let matchedUnit = null;
+    if (this.units.length < 1) {
+      return '';
+    }
 
     for (let unit of this.units) {
       if (unit.id === unitId) {
