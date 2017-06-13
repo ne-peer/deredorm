@@ -30,7 +30,7 @@ export class UnitAddComponent implements OnInit {
   /**
    * 登録する
    */
-  addUdol(): Promise<void> {
+  addUnit(): Promise<void> {
     return this.units.update(
       this.unit.id,
       {
