@@ -5,11 +5,13 @@ import { Promise } from 'firebase';
 
 import { Idol } from '../../models/dere/idol';
 import { Unit } from '../../models/dere/unit';
+import { UnitUtilService } from '../../services/manage/unit-util.service';
 
 @Component({
   selector: 'app-dere-detail',
   templateUrl: './dere-detail.component.html',
-  styleUrls: ['./dere-detail.component.css']
+  styleUrls: ['./dere-detail.component.css'],
+  providers: [UnitUtilService]
 })
 export class DereDetailComponent implements OnInit {
 
@@ -30,7 +32,7 @@ export class DereDetailComponent implements OnInit {
    * 
    * @param db AngularFireDatabase
    */
-  constructor(private activatedRoute: ActivatedRoute, private db: AngularFireDatabase) {
+  constructor(private activatedRoute: ActivatedRoute, private db: AngularFireDatabase, private unitUtil: UnitUtilService) {
     this.afIdols = this.db.list('/core/dere_list');
     this.afUnits = this.db.list('/core/unit_list');
 
@@ -65,26 +67,6 @@ export class DereDetailComponent implements OnInit {
     let idol = JSON.stringify(this.idol);
 
     return idol !== '{"$value":null}';
-  }
-
-  getUnitName(unitId: string) {
-    let matchedUnit = null;
-    if (this.units.length < 1) {
-      return '';
-    }
-
-    for (let unit of this.units) {
-      if (unit.id === unitId) {
-        matchedUnit = unit;
-        break;
-      }
-    }
-    
-    if (matchedUnit === null) {
-      return '';
-    }
-
-    return matchedUnit.name;
   }
 
 }

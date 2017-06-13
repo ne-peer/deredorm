@@ -24,7 +24,7 @@
             <p md-subheader>所属</p>
             <md-list-item *ngFor="let unit_id of idol.units" class="list-content">
               <md-icon md-list-icon>group</md-icon>
-              <h2 md-line [routerLink]="['/unit', unit_id]">{{getUnitName(unit_id)}}</h2>
+              <h2 md-line [routerLink]="['/unit', unit_id]">{{unitUtil.getUnitName(units, unit_id)}}</h2>
             </md-list-item>
           </md-list>
         </div>
