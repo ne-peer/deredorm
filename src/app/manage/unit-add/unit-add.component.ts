@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Promise } from 'firebase';
 
-import { Unit } from '../../models/dere/Unit';
+import { Unit } from '../../models/dere/unit';
 
 @Component({
   selector: 'app-unit-add',
