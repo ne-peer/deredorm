@@ -22,7 +22,6 @@ export class DereDetailComponent implements OnInit {
   // プロパティ
   idols: Idol[];
   units: Unit[];
-  query: string;
 
   // 表示用
   idol: Idol;
@@ -35,23 +34,17 @@ export class DereDetailComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private db: AngularFireDatabase, private unitUtil: UnitUtilService) {
     this.afIdols = this.db.list('/core/dere_list');
     this.afUnits = this.db.list('/core/unit_list');
+    this.afIdols.subscribe(idols => this.idols = idols);
+    this.afUnits.subscribe(unit => this.units = unit);
 
-    // クエリストリング取得
+    // Sulg取得＆DBアクセスと画面の更新
     this.activatedRoute.params.subscribe((params: Params) => {
-      this.query = params['idol'];
+      let afIdol = this.getIdol(params['idol']);
+      afIdol.subscribe(idol => this.idol = idol);
     });
   }
 
-  /**
-   * 初期表示
-   */
   ngOnInit() {
-    this.afIdols.subscribe(idols => this.idols = idols);
-
-    const afIdol = this.getIdol(this.query);
-    afIdol.subscribe(idol => this.idol = idol);
-
-    this.afUnits.subscribe(unit => this.units = unit);
   }
 
   /**
