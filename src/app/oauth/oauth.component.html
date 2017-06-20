@@ -1,12 +1,15 @@
 <div>
   <h1>OAuth</h1>
-    <button class="btn btn-success" type="submit" (click)="login('google')">
+    <button class="btn btn-success" (click)="signInWithGoogle()">
       Google Login
     </button>
-    <button class="btn btn-success" type="submit" (click)="login('twitter')">
+    <button class="btn btn-success" (click)="signInWithTwitter()">
       Twitter Login
     </button>
-    <button class="btn btn-default" type="submit" (click)="logout()">
+    <button class="btn btn-default" (click)="signOut()">
       Logout
     </button>
 </div>
+<p style="font-size:9px;color:#888;padding:12px;">
+  {{diagnostic}}
+</p>

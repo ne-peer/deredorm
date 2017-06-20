@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-oauth',
@@ -8,20 +10,38 @@ import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 })
 export class OauthComponent implements OnInit {
 
-  user = {};
-  constructor(public afAuth: AngularFireAuth) {
-    this.user = afAuth.authState;
+  // ログインユーザ情報
+  user;
+
+  constructor(private afAuth: AngularFireAuth) {
+    afAuth.authState.subscribe(user => {
+      if (!user) {
+        this.user = null;        
+        return;
+      }
+      this.user = user;
+    });
   }
 
-  login(from: string) {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  signInWithGoogle() {
+    this.afAuth.auth
+      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .then(res => console.log(res));
   }
 
-  logout() {
+  signInWithTwitter() {
+    this.afAuth.auth
+      .signInWithPopup(new firebase.auth.TwitterAuthProvider())
+      .then(res => console.log(res));
+  }
+
+  signOut() {
     this.afAuth.auth.signOut();
   }
 
   ngOnInit() {
   };
+
+  get diagnostic() { return JSON.stringify(this.user); }
 
 }
