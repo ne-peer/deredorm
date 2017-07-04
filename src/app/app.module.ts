@@ -36,7 +36,7 @@ const appRoutes: Routes = [
   { path: 'manage/add/idol', component: DereAddComponent },
   { path: 'manage/add/unit', component: UnitAddComponent },
   { path: 'idol', component: DereListComponent },
-  { path: 'idol/:idol', component: DereDetailComponent },
+  { path: 'idol/:name', component: DereDetailComponent },
   { path: 'unit/:unit', component: UnitDetailComponent },
 ];
 
