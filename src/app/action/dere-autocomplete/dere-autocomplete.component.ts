@@ -5,7 +5,7 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 
-import { Idol } from '../../models/dere/idol';
+import { Overview } from '../../models/dere/overview';
 
 @Component({
   selector: 'app-dere-autocomplete',
@@ -15,40 +15,40 @@ import { Idol } from '../../models/dere/idol';
 export class DereAutocompleteComponent implements OnInit {
 
   // Firebaseと同期したもの
-  afIdols: FirebaseListObservable<Idol[]>;
+  afOverviews: FirebaseListObservable<Overview[]>;
 
   // プロパティ
-  idols: Idol[];
+  overviews: Overview[];
   searchInput: any;
 
   // オートコンプリート用
   dereSearchCtrl: FormControl;
-  filteredIdols: Observable<Idol[]>;
+  filteredOverviews: Observable<Overview[]>;
 
   constructor(private db: AngularFireDatabase, private router: Router) {
-    this.afIdols = this.db.list('/core/dere_list');
+    this.afOverviews = this.db.list('/core/dere_overview');
   }
 
   ngOnInit() {
-    this.idols = [];
+    this.overviews = [];
 
-    this.afIdols.subscribe(snapshot => {
-      this.idols = snapshot;
+    this.afOverviews.subscribe(snapshot => {
+      this.overviews = snapshot;
     });
 
     this.dereSearchCtrl = new FormControl();
-    this.filteredIdols = this.dereSearchCtrl.valueChanges
+    this.filteredOverviews = this.dereSearchCtrl.valueChanges
       .startWith(null)
-      .map(idol => idol && typeof idol === 'object' ? idol.name : idol)
-      .map(name => name ? this.filterIdols(name) : this.idols.slice());
+      .map(overview => overview && typeof overview === 'object' ? overview.name : overview)
+      .map(name => name ? this.filterOverviews(name) : this.overviews.slice());
   }
 
-  filterIdols(query: string): Idol[] {
-    return this.idols.filter(idol => new RegExp(`${query}`, 'gi').test(idol.kana));
+  filterOverviews(query: string): Overview[] {
+    return this.overviews.filter(overview => new RegExp(`${query}`, 'gi').test(overview.kana));
   }
 
-  displayFn(idol: Idol): string {
-    return idol ? idol.name : '';
+  displayFn(overview: Overview): string {
+    return overview ? overview.name : '';
   }
 
   onSearch() {
@@ -58,7 +58,7 @@ export class DereAutocompleteComponent implements OnInit {
       return false;
     }
 
-    this.router.navigate(['/idol', input]);
+    this.router.navigate(['/overview', input]);
     return false;
   }
 
