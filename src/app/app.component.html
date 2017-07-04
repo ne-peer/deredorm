@@ -12,9 +12,11 @@
             <button md-button class="menu" (click)="sidenav.open()"><md-icon>list</md-icon></button>
           </md-grid-tile>
           <md-grid-tile colspan="7">
-            <a class="navbar-brand title" routerLink="/">
-              <h1>{{title}} <span class="subtitle">{{subTitle}}</span></h1>
-            </a>
+            <div class="title-section">
+              <a class="navbar-brand title" routerLink="/">
+                <h2><i class="material-icons">local_library</i> {{title}} <span class="subtitle">{{subTitle}}</span></h2>
+              </a>
+            </div>
           </md-grid-tile>
         </md-grid-list>
       </nav>
