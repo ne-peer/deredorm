@@ -58,7 +58,7 @@ export class DereAutocompleteComponent implements OnInit {
       return false;
     }
 
-    this.router.navigate(['/overview', input]);
+    this.router.navigate(['/idol', input]);
     return false;
   }
 
