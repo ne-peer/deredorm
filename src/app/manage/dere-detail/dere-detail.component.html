@@ -14,7 +14,9 @@
               <p md-subheader>カードモデル</p>
               <md-list-item *ngFor="let alias of idol?.aliases" class="list-content">
                 <md-icon md-list-icon>local_offer</md-icon>
-                <h2 md-line>{{alias.alias_name === undefined ? "ノーマル" : alias.alias_name}} <a class="anchor-text" href="">#{{alias.id}}</a></h2>
+                <h2 md-line>
+                  {{alias.alias_name === undefined ? "ノーマル" : alias.alias_name}} <span class="anchor-text" (click)="goAnchor(alias.id)">#{{alias.id}}</span>
+                </h2>
               </md-list-item>
             </md-list>
           </div>

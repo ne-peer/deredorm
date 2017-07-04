@@ -78,4 +78,8 @@ export class DereDetailComponent implements OnInit {
     return array.indexOf(haystack) > 0;
   }
 
+  goAnchor(anchor: string): void {
+    window.location.hash = anchor;
+  }
+
 }
