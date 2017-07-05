@@ -3,13 +3,11 @@ import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable 
 import { Promise } from 'firebase';
 
 import { Unit } from '../../models/unit/unit';
-import { UnitUtilService } from '../../services/manage/unit-util.service';
 
 @Component({
   selector: 'app-unit-list',
   templateUrl: './unit-list.component.html',
-  styleUrls: ['./unit-list.component.css'], 
-  providers: [UnitUtilService] 
+  styleUrls: ['./unit-list.component.css']
 })
 export class UnitListComponent implements OnInit {
 
@@ -24,7 +22,7 @@ export class UnitListComponent implements OnInit {
    * 
    * @param db AngularFireDatabase
    */
-  constructor(private db: AngularFireDatabase, private unitUtil: UnitUtilService) {
+  constructor(private db: AngularFireDatabase) {
     this.afUnits = this.db.list('/core/unit_list');
   }
 

@@ -47,6 +47,12 @@ export class UnitDetailComponent implements OnInit {
     afUnit.subscribe(unit => this.unit = unit);
   }
 
+  doShow() {
+    let idol = JSON.stringify(this.unit);
+
+    return idol !== '{"$value":null}';
+  }
+
   // かいはつよう
   get diagnostic() { return JSON.stringify(this.unit); }
 
