@@ -1,34 +1,15 @@
-<h3 class="title">Idols list</h3>
+<h3 class="title">Idols overview</h3>
 <div class="grid grid-pad">
-  <div *ngFor="let idol of idols" [routerLink]="['/idol', idol.$key]" class="col-1-4">
-    <md-card class="{{idol.type}}">
+  <div *ngFor="let overview of overviews" [routerLink]="['/idol', overview.$key]" class="col-1-4">
+    <md-card>
       <md-card-header>
         <md-card-title>
-          <h3><span class="{{idol.type}}">{{idol.name}}</span></h3>
+          <h4><span class="{{overview.type}}">{{overview.name}}</span></h4>
         </md-card-title>
-        <md-card-subtitle><span class="{{idol.type}}">{{idol.kana}}</span></md-card-subtitle>
+        <md-card-subtitle>
+          <span class="{{overview.type}}">{{overview.kana}}</span>
+        </md-card-subtitle>
       </md-card-header>
-      <md-card-content>
-        <div>
-          <md-list dense class="models">
-            <p md-subheader>カードモデル</p>
-            <md-list-item *ngFor="let model of idol.models" class="list-content">
-              <md-icon md-list-icon>local_offer</md-icon>
-              <h2 md-line>{{model}}</h2>
-            </md-list-item>
-          </md-list>
-        </div>
-        <md-divider style="margin-top:16px;"></md-divider>
-        <div class="chips-section">
-          <md-list dense class="models">
-            <p md-subheader>所属</p>
-            <md-list-item *ngFor="let unit_id of idol.units" class="list-content">
-              <md-icon md-list-icon>group</md-icon>
-              <h2 md-line [routerLink]="['/unit', unit_id]">{{unitUtil.getUnitName(units, unit_id)}}</h2>
-            </md-list-item>
-          </md-list>
-        </div>
-      </md-card-content>
     </md-card>
   </div>
 </div>

@@ -14,12 +14,11 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppComponent } from './app.component';
 import { OauthComponent } from './oauth/oauth.component';
 import { SideNavbarComponent } from './side-navbar/side-navbar.component';
-import { DereAddComponent } from './manage/dere-add/dere-add.component';
 import { DereListComponent } from './manage/dere-list/dere-list.component';
 import { UnitDetailComponent } from './manage/unit-detail/unit-detail.component';
 import { DereDetailComponent } from './manage/dere-detail/dere-detail.component';
 import { DereAutocompleteComponent } from './action/dere-autocomplete/dere-autocomplete.component';
-import { UnitAddComponent } from './manage/unit-add/unit-add.component';
+import { UnitListComponent } from './manage/unit-list/unit-list.component';
 
 // firebase seittings
 const firebaseConfig = {
@@ -33,10 +32,9 @@ const firebaseConfig = {
 // routing
 const appRoutes: Routes = [
   { path: 'oauth', component: OauthComponent },
-  { path: 'manage/add/idol', component: DereAddComponent },
-  { path: 'manage/add/unit', component: UnitAddComponent },
   { path: 'idol', component: DereListComponent },
-  { path: 'idol/:idol', component: DereDetailComponent },
+  { path: 'unit', component: UnitListComponent },
+  { path: 'idol/:name', component: DereDetailComponent },
   { path: 'unit/:unit', component: UnitDetailComponent },
 ];
 
@@ -45,12 +43,11 @@ const appRoutes: Routes = [
     AppComponent,
     OauthComponent,
     SideNavbarComponent,
-    DereAddComponent,
     DereListComponent,
     UnitDetailComponent,
     DereDetailComponent,
     DereAutocompleteComponent,
-    UnitAddComponent
+    UnitListComponent,
   ],
   imports: [
     BrowserModule,

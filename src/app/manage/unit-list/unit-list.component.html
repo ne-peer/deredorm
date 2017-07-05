@@ -1,0 +1,15 @@
+<h3 class="title">Units units</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let units of units" [routerLink]="['/unit', units.id]" class="col-1-4">
+    <md-card>
+      <md-card-header>
+        <md-card-title>
+          <h4><span>{{units.name}}</span></h4>
+        </md-card-title>
+        <md-card-subtitle>
+          <span>{{units.kana}}</span>
+        </md-card-subtitle>
+      </md-card-header>
+    </md-card>
+  </div>
+</div>

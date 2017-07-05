@@ -19,10 +19,10 @@ section.header {
 }
 
 section.main-content {
-  width: 600px;
+  max-width: 600px;
   border: 1px solid #ccc;  
   margin: 0 auto;
-  padding: 30px;
+  padding: 10px;
 }
 
 .link-button {
@@ -46,7 +46,12 @@ nav.navbar {
   background: #e91e63;
 }
 
+.title-section {
+  padding-top: 5px;
+}
+
 a.title {
+  font-family: Helvetica;
   color: #fff;
 }
 

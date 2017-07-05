@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Promise } from 'firebase';
 
-import { Unit } from '../../models/dere/unit';
+import { Unit } from '../../models/unit/unit';
 
 @Component({
   selector: 'app-unit-detail',
@@ -45,6 +45,12 @@ export class UnitDetailComponent implements OnInit {
 
     const afUnit = this.getUnit(this.query);
     afUnit.subscribe(unit => this.unit = unit);
+  }
+
+  doShow() {
+    let idol = JSON.stringify(this.unit);
+
+    return idol !== '{"$value":null}';
   }
 
   // かいはつよう

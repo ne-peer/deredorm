@@ -13,6 +13,10 @@
     display: none;
 }
 
+.anchor-color {
+    color: #0275d8;
+}
+
 /* md-list style */
 md-list-item {
     cursor: pointer;

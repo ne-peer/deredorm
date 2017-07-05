@@ -1,20 +1,22 @@
 <div class="grid grid-pad">
   <div *ngIf="doShow()">
-    <div class="col-1-4">
-      <md-card class="{{idol?.type}}">
+    <div>
+      <md-card>
         <md-card-header>
           <md-card-title>
-            <h3><span class="{{idol?.type}}">{{idol?.name}}</span></h3>
+            <h3><span>{{overview?.name}}</span></h3>
           </md-card-title>
-          <md-card-subtitle><span class="{{idol?.type}}">{{idol?.kana}}</span></md-card-subtitle>
+          <md-card-subtitle><span>{{overview?.kana}}</span></md-card-subtitle>
         </md-card-header>
         <md-card-content>
           <div>
             <md-list dense class="models">
               <p md-subheader>カードモデル</p>
-              <md-list-item *ngFor="let model of idol?.models" class="list-content">
+              <md-list-item *ngFor="let alias of idol?.aliases" class="list-content">
                 <md-icon md-list-icon>local_offer</md-icon>
-                <h2 md-line>{{model}}</h2>
+                <h2 md-line>
+                  {{alias.alias_name === undefined ? "ノーマル" : alias.alias_name}} <span class="anchor-text main-color" (click)="goAnchor(alias.id)">#{{alias.id}}</span>
+                </h2>
               </md-list-item>
             </md-list>
           </div>
@@ -27,6 +29,23 @@
                 <h2 md-line [routerLink]="['/unit', unit_id]">{{unitUtil.getUnitName(units, unit_id)}}</h2>
               </md-list-item>
             </md-list>
+          </div>
+        </md-card-content>
+      </md-card>
+
+      <md-card *ngFor="let alias of idol?.aliases" id="{{alias.id}}">
+        <md-card-header>
+          <md-card-title>
+            <h4><span>{{alias.alias_name === undefined ? "ノーマル" : alias.alias_name}}</span></h4>
+          </md-card-title>
+          <md-card-subtitle>
+            <span><a href="http://imas.cg.db.n-hokke.com/cards/{{alias.id}}">http://imas.cg.db.n-hokke.com/cards/{{alias.id}}</a></span>
+          </md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="http://125.6.169.35/idolmaster/image_sp/card/l/{{alias.hash}}.jpg">
+        <md-card-content>
+          <div>
+            <!-- contents -->
           </div>
         </md-card-content>
       </md-card>
