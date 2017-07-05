@@ -5,7 +5,6 @@ import { Promise } from 'firebase';
 
 import { Overview } from '../../models/dere/overview';
 import { Idol } from '../../models/dere/idol';
-import { Unit } from '../../models/dere/unit';
 import { UnitUtilService } from '../../services/manage/unit-util.service';
 
 @Component({
@@ -19,12 +18,10 @@ export class DereDetailComponent implements OnInit {
   // Firebaseと同期したもの
   afOverviews: FirebaseListObservable<Overview[]>;
   afIdols: FirebaseListObservable<Idol[]>;
-  afUnits: FirebaseListObservable<Unit[]>;
 
   // プロパティ
   overviews: Overview[];
   idols: Idol[];
-  units: Unit[];
 
   // 表示用
   overview: Overview;
@@ -40,8 +37,6 @@ export class DereDetailComponent implements OnInit {
     this.afOverviews.subscribe(overviews => this.overviews = overviews);
     this.afIdols = this.db.list('/core/dere_list');
     this.afIdols.subscribe(idols => this.idols = idols);
-    this.afUnits = this.db.list('/core/unit_list');
-    this.afUnits.subscribe(unit => this.units = unit);
 
     // Sulg取得＆DBアクセスと画面の更新
     this.activatedRoute.params.subscribe((params: Params) => {

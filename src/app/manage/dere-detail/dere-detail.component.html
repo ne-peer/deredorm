@@ -15,7 +15,7 @@
               <md-list-item *ngFor="let alias of idol?.aliases" class="list-content">
                 <md-icon md-list-icon>local_offer</md-icon>
                 <h2 md-line>
-                  {{alias.alias_name === undefined ? "ノーマル" : alias.alias_name}} <span class="anchor-text" (click)="goAnchor(alias.id)">#{{alias.id}}</span>
+                  {{alias.alias_name === undefined ? "ノーマル" : alias.alias_name}} <span class="anchor-text main-color" (click)="goAnchor(alias.id)">#{{alias.id}}</span>
                 </h2>
               </md-list-item>
             </md-list>

@@ -2,21 +2,19 @@
 <md-card>
   <md-card-header>
     <md-card-title>
-      <h3><span class="{{unit?.type}}">{{unit?.name}}</span></h3>
+      <h3><span>{{unit?.name}}</span></h3>
     </md-card-title>
-    <md-card-subtitle><span class="{{unit?.type}}">{{unit?.kana}}</span></md-card-subtitle>
+    <md-card-subtitle><span>{{unit?.kana}}</span></md-card-subtitle>
   </md-card-header>
   <md-card-content>
     <div>
       <md-list dense class="member">
         <p md-subheader>メンバー</p>
-        <md-list-item *ngFor="let person of unit?.members" class="list-content" [routerLink]="['/idol', person]">
-          <ng-template [ngIf]="person == unit?.tl">
-            <h6>{{person}} <small class="main-color">リーダー</small></h6>
-          </ng-template>
-          <ng-template [ngIf]="person != unit?.tl">
-            <h6>{{person}}</h6>
-          </ng-template>
+        <md-list-item *ngFor="let person of unit?.member" class="list-content" [routerLink]="['/idol', person]">
+          <md-icon md-list-icon>favorite</md-icon>
+          <h6 md-line>
+            <span class="main-color">{{person}}</span>
+          </h6>
         </md-list-item>
       </md-list>
     </div>
