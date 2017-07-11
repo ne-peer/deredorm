@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
+import 'rxjs/add/operator/map';
 
 import { Overview } from '../../models/dere/overview';
 
