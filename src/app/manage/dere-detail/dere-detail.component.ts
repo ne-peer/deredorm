@@ -29,7 +29,7 @@ export class DereDetailComponent implements OnInit {
 
   /**
    * コンストラクタ
-   * 
+   *
    * @param db AngularFireDatabase
    */
   constructor(private activatedRoute: ActivatedRoute, private db: AngularFireDatabase, private unitUtil: UnitUtilService) {
@@ -42,11 +42,11 @@ export class DereDetailComponent implements OnInit {
     this.activatedRoute.params.subscribe((params: Params) => {
       console.log(params['name']);
 
-      let afOverview = this.getOverview(params['name']);
+      const afOverview = this.getOverview(params['name']);
       afOverview.subscribe(overview => {
         this.overview = overview;
 
-        let afIdol = this.getIdol(overview.id);
+        const afIdol = this.getIdol(overview.id);
         afIdol.subscribe(idol => this.idol = idol);
       });
     });
@@ -64,7 +64,7 @@ export class DereDetailComponent implements OnInit {
   }
 
   doShow() {
-    let idol = JSON.stringify(this.idol);
+    const idol = JSON.stringify(this.idol);
 
     return idol !== '{"$value":null}';
   }

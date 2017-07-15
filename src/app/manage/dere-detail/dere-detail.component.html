@@ -1,5 +1,8 @@
 <div class="grid grid-pad">
-  <div *ngIf="doShow()">
+  <div *ngIf="idol?.aliases === null;">
+    <md-progress-bar mode="indeterminate"></md-progress-bar>
+  </div>
+  <div *ngIf="doShow();">
     <div>
       <md-card>
         <md-card-header>
