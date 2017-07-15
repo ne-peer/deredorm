@@ -53,7 +53,7 @@ export class DereAutocompleteComponent implements OnInit {
   }
 
   onSearch() {
-    let input = this.getInputQuery();
+    const input = this.getInputQuery();
 
     if (input === '') {
       return false;
