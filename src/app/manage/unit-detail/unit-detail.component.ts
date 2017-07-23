@@ -16,9 +16,6 @@ export class UnitDetailComponent implements OnInit {
   afUnits: FirebaseListObservable<Unit[]>;
   units: Unit[];
 
-  // プロパティ
-  query: string;
-
   // 表示用
   unit: Unit;
 
@@ -27,28 +24,27 @@ export class UnitDetailComponent implements OnInit {
 
     // クエリストリング取得
     this.activatedRoute.params.subscribe((params: Params) => {
-      this.query = params['unit'];
+      const query: string = params['unit'];
+
+      const afUnit = this.getUnit(query);
+      afUnit.subscribe(unit => this.unit = unit);
     });
   }
 
   /**
    * 指定したユニットを取得
-   * 
-   * @param string 
+   *
+   * @param string
    */
   getUnit(key: string): FirebaseObjectObservable<Unit> {
     return this.db.object(`/core/unit_list/${key}`);
   }
 
   ngOnInit() {
-    this.afUnits.subscribe(units => this.units = units);
-
-    const afUnit = this.getUnit(this.query);
-    afUnit.subscribe(unit => this.unit = unit);
   }
 
   doShow() {
-    let idol = JSON.stringify(this.unit);
+    const idol = JSON.stringify(this.unit);
 
     return idol !== '{"$value":null}';
   }
