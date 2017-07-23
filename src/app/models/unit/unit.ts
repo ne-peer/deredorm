@@ -1,10 +1,10 @@
 export class Unit {
 
     constructor(
-        id: string,
-        name: string,
-        kana: string,
-        member: string[]
+        public id: string,
+        public name: string,
+        public kana: string,
+        public member: string[]
     ) { }
 
 }

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms'; // バグ対応: https://github.com/angular/angular/issues/14288
 import { HttpModule } from '@angular/http';
-import { RouterModule, Routes }   from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -19,6 +19,7 @@ import { UnitDetailComponent } from './manage/unit-detail/unit-detail.component'
 import { DereDetailComponent } from './manage/dere-detail/dere-detail.component';
 import { DereAutocompleteComponent } from './action/dere-autocomplete/dere-autocomplete.component';
 import { UnitListComponent } from './manage/unit-list/unit-list.component';
+import { UnitAutocompleteComponent } from './action/unit-autocomplete/unit-autocomplete.component';
 
 // firebase seittings
 const firebaseConfig = {
@@ -48,6 +49,7 @@ const appRoutes: Routes = [
     DereDetailComponent,
     DereAutocompleteComponent,
     UnitListComponent,
+    UnitAutocompleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,7 @@ const appRoutes: Routes = [
     AngularFireAuthModule,
     MaterialModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

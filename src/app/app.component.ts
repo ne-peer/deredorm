@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,19 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Deredorm';
   subTitle = 'imas libraries';
+
+  constructor( @Inject(DOCUMENT) private document: any) { }
+
+  atUnitList() {
+    let isOnUnit = false;
+
+    const currentUrl: string = this.document.location.href;
+
+    if (currentUrl.indexOf('unit') !== -1) {
+      isOnUnit = true;
+    }
+
+    return isOnUnit;
+  }
+
 }
