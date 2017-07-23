@@ -23,11 +23,11 @@ import { UnitAutocompleteComponent } from './action/unit-autocomplete/unit-autoc
 
 // firebase seittings
 const firebaseConfig = {
-    apiKey: "AIzaSyBU2kqeQV9OdwOsuu_Cwa_IedVxMkRnk_E",
-    authDomain: "deredorm.firebaseapp.com",
-    databaseURL: "https://deredorm.firebaseio.com",
-    storageBucket: "deredorm.appspot.com",
-    messagingSenderId: "577838942819"
+    apiKey: 'AIzaSyBU2kqeQV9OdwOsuu_Cwa_IedVxMkRnk_E',
+    authDomain: 'deredorm.firebaseapp.com',
+    databaseURL: 'https://deredorm.firebaseio.com',
+    storageBucket: 'deredorm.appspot.com',
+    messagingSenderId: '577838942819'
 };
 
 // routing
