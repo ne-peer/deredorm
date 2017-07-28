@@ -50,8 +50,7 @@ export class DereDetailComponent implements OnInit {
         afIdol.subscribe(idol => this.idol = idol);
       });
 
-      const dev = this.imasdb.finCharInfo(params['name'], true);
-      console.log(dev);
+      this.imasdb.findCharInfo(params['name'], true);
     });
   }
 
@@ -79,5 +78,8 @@ export class DereDetailComponent implements OnInit {
   goAnchor(anchor: string): void {
     window.location.hash = anchor;
   }
+
+  // かいはつよう
+  get diagnostic() { return JSON.stringify(this.imasdb.char); }
 
 }

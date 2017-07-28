@@ -9,11 +9,17 @@ import { Profile } from '../../models/api/imasdb/profile';
 @Injectable()
 export class ImasdbService {
 
-  private char: Character;
+  public char: Character;
 
   constructor(private http: HttpClient) { }
 
-  public finCharInfo(name: string, incProfile: boolean) {
+  /**
+   * キャラクター単体情報取得APIを呼び出し
+   *
+   * @param name
+   * @param incProfile
+   */
+  public findCharInfo(name: string, incProfile: boolean) {
     const baseUrl = Hosts.API_HOST_IMASDB + '/character/lookup';
 
     if (name.length < 1) {
@@ -45,14 +51,24 @@ export class ImasdbService {
       );
 
       this.char = char;
+
+      console.log(this.char);
     });
   }
 
-  private createRequestOption(): RequestOptions {
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded;application/json;charset=utf-8');
+  /**
+   * リクエストオプションを生成
+   *
+   * @see https://medium.com/@amcdnl/the-new-http-client-in-angular-4-3-754bd3ff83a8
+   */
+  private createRequestOption() {
+    const reqOpts = {
+      headers: new HttpHeaders()
+    };
 
-    return new RequestOptions({ headers: headers });
+    reqOpts.headers.set('Content-Type', 'application/x-www-form-urlencoded;application/json;charset=utf-8');
+
+    return reqOpts;
   }
 
 }
