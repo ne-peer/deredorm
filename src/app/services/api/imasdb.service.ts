@@ -21,41 +21,47 @@ export class ImasdbService {
   public findCharInfo(name: string, incProfile: boolean) {
     const baseUrl = Hosts.API_HOST_IMASDB + '/character/lookup';
 
+    // validate
     if (name.length < 1) {
       return null;
     }
 
+    // request url
     const requestUrl = baseUrl + '?' + encodeURI(`name=${name}&include_profile=${incProfile}&callback=JSONP_CALLBACK`);
 
+    // connection
     this.jsonp.get(requestUrl).subscribe(data => {
-      console.log(data);
+      const response = data.json();
+
+      if (data.status !== 200) {
+        console.log(`Web api connection failure. url=[${requestUrl}]`);
+        return '';
+      }
+
+      const charInfo = data.json()['character_list'][0];
+
+      const char = new Character(
+        charInfo['id'],
+        charInfo['name'],
+        charInfo['name_ruby'],
+        charInfo['family_name'],
+        charInfo['first_name'],
+        charInfo['family_name_ruby'],
+        charInfo['first_name_ruby'],
+        charInfo['is_foreigner_name'],
+        charInfo['birth_month'],
+        charInfo['birth_day'],
+        charInfo['gender'],
+        charInfo['is_idol'],
+        charInfo['character_type'],
+        charInfo['arrival_date'],
+        charInfo['origin_media'],
+        charInfo['cv'],
+        charInfo['class_name'],
+      );
+
+      this.char = char;
     });
-
-    // this.http.get(requestUrl, options).subscribe(json => {
-    //   const char = new Character(
-    //     json['id'],
-    //     json['name'],
-    //     json['name_ruby'],
-    //     json['family_name'],
-    //     json['first_name'],
-    //     json['family_name_ruby'],
-    //     json['first_name_ruby'],
-    //     json['is_foreigner_name'],
-    //     json['birth_month'],
-    //     json['birth_day'],
-    //     json['gender'],
-    //     json['is_idol'],
-    //     json['character_type'],
-    //     json['arrival_date'],
-    //     json['origin_media'],
-    //     json['cv'],
-    //     json['class_name'],
-    //   );
-
-    //   this.char = char;
-
-    //   console.log(this.char);
-    // });
   }
 
 }
