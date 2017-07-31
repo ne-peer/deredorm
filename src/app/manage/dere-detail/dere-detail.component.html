@@ -1,7 +1,7 @@
 <div class="grid grid-pad">
-  <div>
+  <!-- <div>
     <h2>Api Response: </h2>{{diagnostic}}
-  </div>
+  </div> -->
   <div *ngIf="idol?.aliases === null;">
     <md-progress-bar mode="indeterminate"></md-progress-bar>
   </div>
@@ -17,22 +17,67 @@
         <md-card-content>
           <div>
             <md-list dense class="models">
+              <p md-subheader>ポジション</p>
+              <md-list-item class="list-content">
+                <md-icon md-list-icon>star</md-icon>
+                <h2 md-line>
+                  {{imasdb.char?.className}}
+                </h2>
+              </md-list-item>
+            </md-list>
+          </div>
+          <div>
+            <md-list dense class="models">
+              <p md-subheader>誕生日</p>
+              <md-list-item class="list-content">
+                <md-icon md-list-icon>cake</md-icon>
+                <h2 md-line>
+                  {{imasdb.char?.birthMonth}}月 {{imasdb.char?.birthDay}}日
+                </h2>
+              </md-list-item>
+            </md-list>
+          </div>
+          <div>
+            <md-list dense class="models">
+              <p md-subheader>CV (キャラクターボイス)</p>
+              <md-list-item class="list-content">
+                <md-icon md-list-icon>person_pin</md-icon>
+                <h2 md-line>
+                  <a href="https://ja.wikipedia.org/wiki/{{imasdb.char?.cv}}">{{imasdb.char?.cv}}</a>
+                </h2>
+              </md-list-item>
+            </md-list>
+          </div>
+          <div class="chips-section">
+            <md-list dense class="models">
+              <p md-subheader>所属ユニット</p>
+              <md-list-item *ngFor="let unit_id of idol?.units" class="list-content">
+                <md-icon md-list-icon>group</md-icon>
+                <h2 md-line [routerLink]="['/unit', unit_id]">{{unitUtil.getUnitName(units, unit_id)}}</h2>
+              </md-list-item>
+            </md-list>
+          </div>
+          <div>
+            <md-list dense class="models">
+              <p md-subheader>シリーズ</p>
+              <md-list-item class="list-content">
+                <md-icon md-list-icon>live_tv</md-icon>
+                <h2 md-line>
+                  {{imasdb.char?.originMedia}}
+                </h2>
+              </md-list-item>
+            </md-list>
+          </div>
+
+          <md-divider style="margin-top:16px;"></md-divider>
+          <div>
+            <md-list dense class="models">
               <p md-subheader>カードモデル</p>
               <md-list-item *ngFor="let alias of idol?.aliases" class="list-content">
                 <md-icon md-list-icon>local_offer</md-icon>
                 <h2 md-line>
                   {{alias.alias_name === undefined ? "ノーマル" : alias.alias_name}} <span class="anchor-text main-color" (click)="goAnchor(alias.id)">#{{alias.id}}</span>
                 </h2>
-              </md-list-item>
-            </md-list>
-          </div>
-          <md-divider style="margin-top:16px;"></md-divider>
-          <div class="chips-section">
-            <md-list dense class="models">
-              <p md-subheader>所属</p>
-              <md-list-item *ngFor="let unit_id of idol?.units" class="list-content">
-                <md-icon md-list-icon>group</md-icon>
-                <h2 md-line [routerLink]="['/unit', unit_id]">{{unitUtil.getUnitName(units, unit_id)}}</h2>
               </md-list-item>
             </md-list>
           </div>
@@ -48,7 +93,7 @@
             <span><a href="http://imas.cg.db.n-hokke.com/cards/{{alias.id}}">http://imas.cg.db.n-hokke.com/cards/{{alias.id}}</a></span>
           </md-card-subtitle>
         </md-card-header>
-        <img md-card-image src="http://125.6.169.35/idolmaster/image_sp/card/l/{{alias.hash}}.jpg">
+         <img md-card-image src="http://125.6.169.35/idolmaster/image_sp/card/l/{{alias.hash}}.jpg"> 
         <md-card-content>
           <div>
             <!-- contents -->
