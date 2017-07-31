@@ -2,10 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms'; // バグ対応: https://github.com/angular/angular/issues/14288
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -23,11 +24,11 @@ import { UnitAutocompleteComponent } from './action/unit-autocomplete/unit-autoc
 
 // firebase seittings
 const firebaseConfig = {
-    apiKey: "AIzaSyBU2kqeQV9OdwOsuu_Cwa_IedVxMkRnk_E",
-    authDomain: "deredorm.firebaseapp.com",
-    databaseURL: "https://deredorm.firebaseio.com",
-    storageBucket: "deredorm.appspot.com",
-    messagingSenderId: "577838942819"
+    apiKey: 'AIzaSyBU2kqeQV9OdwOsuu_Cwa_IedVxMkRnk_E',
+    authDomain: 'deredorm.firebaseapp.com',
+    databaseURL: 'https://deredorm.firebaseio.com',
+    storageBucket: 'deredorm.appspot.com',
+    messagingSenderId: '577838942819'
 };
 
 // routing
@@ -61,7 +62,9 @@ const appRoutes: Routes = [
     AngularFireAuthModule,
     MaterialModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    JsonpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

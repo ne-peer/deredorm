@@ -6,12 +6,13 @@ import { Promise } from 'firebase';
 import { Overview } from '../../models/dere/overview';
 import { Idol } from '../../models/dere/idol';
 import { UnitUtilService } from '../../services/manage/unit-util.service';
+import { ImasdbService } from '../../services/api/imasdb.service';
 
 @Component({
   selector: 'app-dere-detail',
   templateUrl: './dere-detail.component.html',
   styleUrls: ['./dere-detail.component.css'],
-  providers: [UnitUtilService]
+  providers: [UnitUtilService, ImasdbService]
 })
 export class DereDetailComponent implements OnInit {
 
@@ -32,7 +33,8 @@ export class DereDetailComponent implements OnInit {
    *
    * @param db AngularFireDatabase
    */
-  constructor(private activatedRoute: ActivatedRoute, private db: AngularFireDatabase, private unitUtil: UnitUtilService) {
+  constructor(private activatedRoute: ActivatedRoute, private db: AngularFireDatabase,
+    private unitUtil: UnitUtilService, private imasdb: ImasdbService) {
     this.afOverviews = this.db.list('/core/dere_overview');
     this.afOverviews.subscribe(overviews => this.overviews = overviews);
     this.afIdols = this.db.list('/core/dere_list');
@@ -40,8 +42,6 @@ export class DereDetailComponent implements OnInit {
 
     // Sulg取得＆DBアクセスと画面の更新
     this.activatedRoute.params.subscribe((params: Params) => {
-      console.log(params['name']);
-
       const afOverview = this.getOverview(params['name']);
       afOverview.subscribe(overview => {
         this.overview = overview;
@@ -49,6 +49,8 @@ export class DereDetailComponent implements OnInit {
         const afIdol = this.getIdol(overview.id);
         afIdol.subscribe(idol => this.idol = idol);
       });
+
+      this.imasdb.findCharInfo(params['name'], true);
     });
   }
 
@@ -76,5 +78,8 @@ export class DereDetailComponent implements OnInit {
   goAnchor(anchor: string): void {
     window.location.hash = anchor;
   }
+
+  // かいはつよう
+  get diagnostic() { return JSON.stringify(this.imasdb.char); }
 
 }
