@@ -40,7 +40,7 @@ export class ImasdbService {
       const charInfo = data.json()['character_list'][0];
 
       const char = new Character();
-      char.fillFromJSON(charInfo, true);
+      char.fillFromJSON(charInfo, true, ['profile_list']);
 
       this.char = char;
     });
