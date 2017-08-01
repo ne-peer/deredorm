@@ -37,17 +37,20 @@ export class ImasdbService {
         return '';
       }
 
-      const charInfo = data.json()['character_list'][0];
+      const charInfoJson = data.json()['character_list'][0];
 
       /**
        * キャラクター情報をシリアライズ
        */
       const char = new Character();
-      char.fillFromJSON(charInfo, true, ['profile_list']);
+      char.fillFromJSON(charInfoJson, true, ['profile_list']);
       this.char = char;
 
-      const profileJson = charInfo['profile_list'][0];
+      const profileJson = charInfoJson['profile_list'][0];
       if (profileJson !== undefined) {
+        /**
+         * プロファイル情報をシリアライズ
+         */
         const prof = new Profile();
         prof.fillFromJSON(profileJson, true);
         this.prof = prof;
