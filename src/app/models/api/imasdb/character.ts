@@ -1,23 +1,28 @@
-export class Character {
+import { Serializable } from '../../base/serializable';
+
+export class Character extends Serializable {
 
     constructor(
-        public id: string,
-        public name: string,
-        public nameRuby: string,
-        public familyName: string,
-        public firstName: string,
-        public familyNameRuby: string,
-        public firstNameRuby: string,
-        public isForeignerName: string,
-        public birthMonth: string,
-        public birthDay: string,
-        public gender: string,
-        public isIdol: string,
-        public characterType: string,
-        public arrivalDate: string,
-        public originMedia: string,
-        public cv: string,
-        public className: string,
-    ) { }
+        public id              = '',
+        public name            = '',
+        public nameRuby        = '',
+        public familyName      = '',
+        public firstName       = '',
+        public familyNameRuby  = '',
+        public firstNameRuby   = '',
+        public isForeignerName = '',
+        public birthMonth      = '',
+        public birthDay        = '',
+        public gender          = '',
+        public isIdol          = '',
+        public characterType   = '',
+        public arrivalDate     = '',
+        public originMedia     = '',
+        public cv              = '',
+        public className       = ''
+    ) {
+        // 親コンストラクタの呼び出し
+        super();
+    }
 
 }

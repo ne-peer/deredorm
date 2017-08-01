@@ -9,6 +9,7 @@ import { Profile } from '../../models/api/imasdb/profile';
 export class ImasdbService {
 
   public char: Character;
+  public prof: Profile;
 
   constructor(private jsonp: Jsonp) { }
 
@@ -31,8 +32,6 @@ export class ImasdbService {
 
     // connection
     this.jsonp.get(requestUrl).subscribe(data => {
-      const response = data.json();
-
       if (data.status !== 200) {
         console.log(`Web api connection failure. url=[${requestUrl}]`);
         return '';
@@ -40,25 +39,8 @@ export class ImasdbService {
 
       const charInfo = data.json()['character_list'][0];
 
-      const char = new Character(
-        charInfo['id'],
-        charInfo['name'],
-        charInfo['name_ruby'],
-        charInfo['family_name'],
-        charInfo['first_name'],
-        charInfo['family_name_ruby'],
-        charInfo['first_name_ruby'],
-        charInfo['is_foreigner_name'],
-        charInfo['birth_month'],
-        charInfo['birth_day'],
-        charInfo['gender'],
-        charInfo['is_idol'],
-        charInfo['character_type'],
-        charInfo['arrival_date'],
-        charInfo['origin_media'],
-        charInfo['cv'],
-        charInfo['class_name'],
-      );
+      const char = new Character();
+      char.fillFromJSON(charInfo, true);
 
       this.char = char;
     });
