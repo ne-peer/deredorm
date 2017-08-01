@@ -16,10 +16,11 @@ export class ImasdbService {
   /**
    * キャラクター単体情報取得APIを呼び出し
    *
-   * @param name
-   * @param incProfile
+   * @param string name
+   * @param string incProfile
+   * @return void
    */
-  public findCharInfo(name: string, incProfile: boolean) {
+  public findCharInfo(name: string, incProfile: boolean): void {
     const baseUrl = Hosts.API_HOST_IMASDB + '/character/lookup';
 
     // validate
