@@ -39,10 +39,19 @@ export class ImasdbService {
 
       const charInfo = data.json()['character_list'][0];
 
+      /**
+       * キャラクター情報をシリアライズ
+       */
       const char = new Character();
       char.fillFromJSON(charInfo, true, ['profile_list']);
-
       this.char = char;
+
+      const profileJson = charInfo['profile_list'][0];
+      if (profileJson !== undefined) {
+        const prof = new Profile();
+        prof.fillFromJSON(profileJson, true);
+        this.prof = prof;
+      }
     });
   }
 
