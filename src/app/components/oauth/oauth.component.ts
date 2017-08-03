@@ -16,7 +16,7 @@ export class OauthComponent implements OnInit {
   constructor(private afAuth: AngularFireAuth) {
     afAuth.authState.subscribe(user => {
       if (!user) {
-        this.user = null;        
+        this.user = null;
         return;
       }
       this.user = user;

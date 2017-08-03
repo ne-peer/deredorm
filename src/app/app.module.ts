@@ -13,14 +13,14 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
-import { OauthComponent } from './oauth/oauth.component';
-import { SideNavbarComponent } from './side-navbar/side-navbar.component';
-import { DereListComponent } from './manage/dere-list/dere-list.component';
-import { UnitDetailComponent } from './manage/unit-detail/unit-detail.component';
-import { DereDetailComponent } from './manage/dere-detail/dere-detail.component';
-import { DereAutocompleteComponent } from './action/dere-autocomplete/dere-autocomplete.component';
-import { UnitListComponent } from './manage/unit-list/unit-list.component';
-import { UnitAutocompleteComponent } from './action/unit-autocomplete/unit-autocomplete.component';
+import { OauthComponent } from './components/oauth/oauth.component';
+import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
+import { DereListComponent } from './components/manage/dere-list/dere-list.component';
+import { UnitDetailComponent } from './components/manage/unit-detail/unit-detail.component';
+import { DereDetailComponent } from './components/manage/dere-detail/dere-detail.component';
+import { DereAutocompleteComponent } from './components/action/dere-autocomplete/dere-autocomplete.component';
+import { UnitListComponent } from './components/manage/unit-list/unit-list.component';
+import { UnitAutocompleteComponent } from './components/action/unit-autocomplete/unit-autocomplete.component';
 
 // firebase seittings
 const firebaseConfig = {

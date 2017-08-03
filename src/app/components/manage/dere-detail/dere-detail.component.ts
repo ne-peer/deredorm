@@ -3,10 +3,10 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Promise } from 'firebase';
 
-import { Overview } from '../../models/dere/overview';
-import { Idol } from '../../models/dere/idol';
-import { UnitUtilService } from '../../services/manage/unit-util.service';
-import { ImasdbService } from '../../services/api/imasdb.service';
+import { Overview } from '../../../models/dere/overview';
+import { Idol } from '../../../models/dere/idol';
+import { UnitUtilService } from '../../../services/manage/unit-util.service';
+import { ImasdbService } from '../../../services/api/imasdb.service';
 
 @Component({
   selector: 'app-dere-detail',

@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Promise } from 'firebase';
 
-import { Unit } from '../../models/unit/unit';
+import { Unit } from '../../../models/unit/unit';
 
 @Component({
   selector: 'app-unit-detail',

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
 
-import { Unit } from '../../models/unit/unit';
+import { Unit } from '../../../models/unit/unit';
 
 @Component({
   selector: 'app-unit-autocomplete',

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
 
-import { Overview } from '../../models/dere/overview';
+import { Overview } from '../../../models/dere/overview';
 
 @Component({
   selector: 'app-dere-autocomplete',

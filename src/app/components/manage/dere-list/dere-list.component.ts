@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Promise } from 'firebase';
 
-import { Overview } from '../../models/dere/overview';
-import { Idol } from '../../models/dere/idol';
+import { Overview } from '../../../models/dere/overview';
+import { Idol } from '../../../models/dere/idol';
 
 @Component({
   selector: 'app-dere-list',
