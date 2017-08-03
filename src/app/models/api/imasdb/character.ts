@@ -25,4 +25,29 @@ export class Character extends Serializable {
         super();
     }
 
+    public getClassNameDisp() {
+        const resolver = v => {
+            let dispName = '';
+
+            switch (v) {
+                case 'cool':
+                    dispName = 'クール';
+                    break;
+                case 'cute':
+                    dispName = 'キュート';
+                    break;
+                case 'passion':
+                    dispName = 'パッション';
+                    break;
+                default:
+                    dispName = '';
+                    break;
+            }
+
+            return dispName;
+        }
+
+        return resolver(this.className);
+    }
+
 }
