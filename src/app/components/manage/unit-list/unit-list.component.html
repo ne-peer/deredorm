@@ -4,8 +4,8 @@
     <md-grid-tile *ngFor="let units of units" [routerLink]="['/unit', units.id]">
       <md-card style="width:98%;">
         <md-card-content>
-          <p class="title">{{units.name}}</p>
-          <p class="subtitle">{{units.kana}}</p>
+          <p><span class="title">{{units.name}}</span><br />
+            <span class="subtitle">{{units.kana}}</span></p>
         </md-card-content>
       </md-card>
     </md-grid-tile>
