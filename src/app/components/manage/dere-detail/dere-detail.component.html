@@ -19,7 +19,7 @@
             <md-list dense class="models">
               <p md-subheader>ポジション</p>
               <md-list-item class="list-content">
-                <md-icon md-list-icon>star</md-icon>
+                <md-icon md-list-icon>star_harf</md-icon>
                 <h2 md-line>
                   {{imasdb.char?.getClassNameDisp()}}
                 </h2>
@@ -28,13 +28,16 @@
           </div>
           <div>
             <md-list dense class="models">
-              <p md-subheader>誕生日</p>
-              <md-list-item class="list-content">
-                <md-icon md-list-icon>cake</md-icon>
-                <h2 md-line>
-                  {{imasdb.char?.birthMonth}}月 {{imasdb.char?.birthDay}}日
-                </h2>
-              </md-list-item>
+              <p md-subheader>プロフィール</p>
+                <md-grid-list cols="3" rowHeight="4:1">
+                  <md-grid-tile><div>年齢</div></md-grid-tile><md-grid-tile [colspan]="2"><div>{{imasdb.prof?.age}}</div></md-grid-tile>
+                  <md-grid-tile><div>身長</div></md-grid-tile><md-grid-tile [colspan]="2"><div>{{imasdb.prof?.height}}</div></md-grid-tile>
+                  <md-grid-tile><div>体重</div></md-grid-tile><md-grid-tile [colspan]="2"><div>{{imasdb.prof?.weight}}</div></md-grid-tile>
+                  <md-grid-tile><div>スリーサイズ</div></md-grid-tile><md-grid-tile [colspan]="2"><div>{{imasdb.prof?.bust}} / {{imasdb.prof?.waist}} / {{imasdb.prof?.hip}}</div></md-grid-tile>
+                  <md-grid-tile><div>血液型</div></md-grid-tile><md-grid-tile [colspan]="2"><div>{{imasdb.prof?.bloodType}}</div></md-grid-tile>
+                  <md-grid-tile><div>趣味</div></md-grid-tile><md-grid-tile [colspan]="2"><div>{{imasdb.prof?.hobby}}</div></md-grid-tile>
+                  <md-grid-tile><div>誕生日</div></md-grid-tile><md-grid-tile [colspan]="2"><div>{{imasdb.char?.birthMonth}}月 {{imasdb.char?.birthDay}}日</div></md-grid-tile>
+                </md-grid-list>
             </md-list>
           </div>
           <div>
@@ -47,6 +50,8 @@
                 </h2>
               </md-list-item>
             </md-list>
+          </div>
+          <div>
           </div>
           <div class="chips-section">
             <md-list dense class="models">
@@ -93,7 +98,7 @@
             <span><a href="http://imas.cg.db.n-hokke.com/cards/{{alias.id}}">http://imas.cg.db.n-hokke.com/cards/{{alias.id}}</a></span>
           </md-card-subtitle>
         </md-card-header>
-         <img md-card-image src="http://125.6.169.35/idolmaster/image_sp/card/l/{{alias.hash}}.jpg"> 
+        <img md-card-image src="http://125.6.169.35/idolmaster/image_sp/card/l/{{alias.hash}}.jpg">
         <md-card-content>
           <div>
             <!-- contents -->
