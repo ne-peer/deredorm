@@ -24,13 +24,11 @@
     <section class="main-content">
       <div *ngIf="atUnitList() === false;">
         <div>
-          <h4>アイドル検索</h4>
           <app-dere-autocomplete></app-dere-autocomplete>
         </div>
       </div>
       <div *ngIf="atUnitList() === true;">
         <div>
-          <h4>ユニット検索</h4>
           <app-unit-autocomplete></app-unit-autocomplete>
         </div>
       </div>
