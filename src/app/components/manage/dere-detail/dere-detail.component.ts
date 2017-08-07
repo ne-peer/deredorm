@@ -79,6 +79,18 @@ export class DereDetailComponent implements OnInit {
     window.location.hash = anchor;
   }
 
+  /**
+   * @see https://stackoverflow.com/questions/43381692/how-to-dynamically-set-complex-css-of-an-angular-2-component
+   * @see https://angular.io/api/common/NgStyle
+   */
+  get dynamicStyles(): any {
+    if (this.imasdb.char === undefined) {
+      return { 'background': '#fff' };
+    } else {
+      return { 'background': `'${this.imasdb.char.getClassExtraInfo().bgcolor}'` };
+    }
+  }
+
   // かいはつよう
   get diagnostic() { return JSON.stringify(this.imasdb.char); }
 

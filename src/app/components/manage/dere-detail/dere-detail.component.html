@@ -7,7 +7,7 @@
   </div>
   <div *ngIf="doShow();">
     <div>
-      <md-card>
+      <md-card [ngStyle]="styles">
         <md-card-header>
           <md-card-title>
             <h3><span>{{overview?.name}}</span></h3>
@@ -21,7 +21,7 @@
               <md-list-item class="list-content">
                 <md-icon md-list-icon>star_harf</md-icon>
                 <h2 md-line>
-                  {{imasdb.char?.getClassNameDisp()}}
+                  {{imasdb.char?.getClassExtraInfo().dispName}}
                 </h2>
               </md-list-item>
             </md-list>

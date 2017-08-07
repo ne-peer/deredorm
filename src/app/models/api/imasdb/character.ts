@@ -25,26 +25,35 @@ export class Character extends Serializable {
         super();
     }
 
-    public getClassNameDisp() {
+    public getClassExtraInfo() {
         const resolver = v => {
-            let dispName = '';
+            const extra = {
+                dispName: '',
+                bgcolor: '#fff',
+                color: '#000'
+            };
 
             switch (v) {
                 case 'cool':
-                    dispName = 'クール';
+                    extra.dispName = 'クール';
+                    extra.bgcolor = '#E8EAF6';
+                    extra.color = '#E91E63';
                     break;
                 case 'cute':
-                    dispName = 'キュート';
+                    extra.dispName = 'キュート';
+                    extra.bgcolor = '#FCE4EC';
+                    extra.color = '#3F51B5';
                     break;
                 case 'passion':
-                    dispName = 'パッション';
+                    extra.dispName = 'パッション';
+                    extra.bgcolor = '#FFF3E0';
+                    extra.color = '#FF9800';
                     break;
                 default:
-                    dispName = '';
                     break;
             }
 
-            return dispName;
+            return extra;
         }
 
         return resolver(this.className);
