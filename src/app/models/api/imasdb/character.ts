@@ -37,12 +37,12 @@ export class Character extends Serializable {
                 case 'cool':
                     extra.dispName = 'クール';
                     extra.bgcolor = '#E8EAF6';
-                    extra.color = '#E91E63';
+                    extra.color = '#3F51B5';
                     break;
                 case 'cute':
                     extra.dispName = 'キュート';
                     extra.bgcolor = '#FCE4EC';
-                    extra.color = '#3F51B5';
+                    extra.color = '#E91E63';
                     break;
                 case 'passion':
                     extra.dispName = 'パッション';

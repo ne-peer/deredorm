@@ -7,10 +7,10 @@
   </div>
   <div *ngIf="doShow();">
     <div>
-      <md-card [ngStyle]="styles">
+      <md-card [style.background-color]="getCharExtraStyle().bgcolor">
         <md-card-header>
           <md-card-title>
-            <h3><span>{{overview?.name}}</span></h3>
+            <h3><span [style.color]="getCharExtraStyle().color">{{overview?.name}}</span></h3>
           </md-card-title>
           <md-card-subtitle><span>{{overview?.kana}}</span></md-card-subtitle>
         </md-card-header>

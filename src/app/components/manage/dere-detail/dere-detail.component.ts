@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Promise } from 'firebase';
@@ -80,14 +80,17 @@ export class DereDetailComponent implements OnInit {
   }
 
   /**
-   * @see https://stackoverflow.com/questions/43381692/how-to-dynamically-set-complex-css-of-an-angular-2-component
-   * @see https://angular.io/api/common/NgStyle
+   * @see https://juristr.com/blog/2016/01/learning-ng2-dynamic-styles/
    */
-  get dynamicStyles(): any {
+  getCharExtraStyle(): any {
     if (this.imasdb.char === undefined) {
-      return { 'background': '#fff' };
+      return {
+        dispName: '',
+        bgcolor: '#fff',
+        color: '#000'
+      };
     } else {
-      return { 'background': `'${this.imasdb.char.getClassExtraInfo().bgcolor}'` };
+      return this.imasdb.char.getClassExtraInfo();
     }
   }
 
