@@ -22,6 +22,7 @@ import { DereAutocompleteComponent } from './components/action/dere-autocomplete
 import { UnitListComponent } from './components/manage/unit-list/unit-list.component';
 import { UnitAutocompleteComponent } from './components/action/unit-autocomplete/unit-autocomplete.component';
 import { TrendTopComponent } from './components/trend/trend-top/trend-top.component';
+import { TrendAddReportComponent } from './components/trend/trend-add-report/trend-add-report.component';
 
 // firebase seittings
 const firebaseConfig = {
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
   { path: 'unit', component: UnitListComponent },
   { path: 'unit/:unit', component: UnitDetailComponent },
   { path: 'trend', component: TrendTopComponent },
+  { path: 'trend/new', component: TrendAddReportComponent },
 ];
 
 @NgModule({
@@ -54,6 +56,7 @@ const appRoutes: Routes = [
     UnitListComponent,
     UnitAutocompleteComponent,
     TrendTopComponent,
+    TrendAddReportComponent,
   ],
   imports: [
     BrowserModule,
