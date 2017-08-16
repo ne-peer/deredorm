@@ -1,0 +1,36 @@
+{
+    "report_template": [
+        {
+            "id": 0,
+            "report_type": "person",
+            "report_name": "テスト1のレポート",
+            "create_user": "user_id-1",
+            "eval": [
+                {
+                    "name": "visual",
+                    "type": "rate"
+                },
+                {
+                    "name": "identity",
+                    "type": "rate"
+                },
+                {
+                    "name": "backstory",
+                    "type": "rate"
+                },
+                {
+                    "name": "3D-modeling",
+                    "type": "rate"
+                },
+                {
+                    "name": "skill-as-a-singer",
+                    "type": "rate"
+                },
+                {
+                    "name": "note",
+                    "type": "text"
+                }
+            ]
+        }
+    ]
+}
