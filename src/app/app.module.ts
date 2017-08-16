@@ -21,6 +21,7 @@ import { DereDetailComponent } from './components/manage/dere-detail/dere-detail
 import { DereAutocompleteComponent } from './components/action/dere-autocomplete/dere-autocomplete.component';
 import { UnitListComponent } from './components/manage/unit-list/unit-list.component';
 import { UnitAutocompleteComponent } from './components/action/unit-autocomplete/unit-autocomplete.component';
+import { TrendTopComponent } from './components/trend/trend-top/trend-top.component';
 
 // firebase seittings
 const firebaseConfig = {
@@ -35,9 +36,10 @@ const firebaseConfig = {
 const appRoutes: Routes = [
   { path: 'oauth', component: OauthComponent },
   { path: 'idol', component: DereListComponent },
-  { path: 'unit', component: UnitListComponent },
   { path: 'idol/:name', component: DereDetailComponent },
+  { path: 'unit', component: UnitListComponent },
   { path: 'unit/:unit', component: UnitDetailComponent },
+  { path: 'trend', component: TrendTopComponent },
 ];
 
 @NgModule({
@@ -51,6 +53,7 @@ const appRoutes: Routes = [
     DereAutocompleteComponent,
     UnitListComponent,
     UnitAutocompleteComponent,
+    TrendTopComponent,
   ],
   imports: [
     BrowserModule,
