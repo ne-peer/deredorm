@@ -47,12 +47,15 @@ export class ReportAddDetailComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.submitted = true;
   }
 
-  doShow() {
-    return JSON.stringify(this.templateRepos.template) !== '{"$value":null}';
+  add(): void {
+    this.afReport.update(
+      {
+        detail: this.evals
+      });
   }
 
   get diagnostic() { return JSON.stringify(this.report); }
