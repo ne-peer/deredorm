@@ -5,7 +5,7 @@
             "report_type": "person",
             "report_name": "テスト1のレポート",
             "create_user": "user_id-1",
-            "eval": [
+            "evals": [
                 {
                     "name": "visual",
                     "type": "rate"
