@@ -1,7 +1,7 @@
 {
-    "report_template": [
-        {
-            "id": 0,
+    "report_template": {
+        "100":{
+            "id": 100,
             "report_type": "person",
             "report_name": "テスト1のレポート",
             "create_user": "user_id-1",
@@ -32,5 +32,5 @@
                 }
             ]
         }
-    ]
+    }
 }
