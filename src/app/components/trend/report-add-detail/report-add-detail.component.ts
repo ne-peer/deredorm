@@ -52,6 +52,7 @@ export class ReportAddDetailComponent implements OnInit {
   }
 
   add(): void {
+    // wip:ここで入力された評価とテンプレート評価項を突き合わせてセットで登録する
     this.afReport.update(
       {
         detail: this.evals
