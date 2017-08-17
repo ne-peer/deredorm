@@ -1,27 +1,20 @@
-<div>
-  <h2>Template: </h2>
-  <p>{{diagnosticTemp}}</p>
-  <h2>Evals: </h2>
-  <p>{{diagnosticEval}}</p>
-</div>
+<p>
+  レポート作成 works!
+</p>
 
 <div>
   <div>
     <h3>{{template?.reportName}}</h3>
     <form (ngSubmit)="onSubmit()" #dereForm="ngForm">
-      <div class="form-group">
-        <md-select placeholder="ここはPerson選択にする">
-          <md-option *ngFor="let food of foods" [value]="food.value">
-            {{ food.viewValue }}
+      <div class="form-group" style="margin:50px 0px 50px 0px;">
+        <md-select placeholder="レポート形式の選択.." [(ngModel)]="report.templateId" name="templateId" required>
+          <md-option *ngFor="let template of templateList" [value]="template.id">
+            {{ template.report_name }}
           </md-option>
         </md-select>
       </div>
-      <div class="form-group" *ngFor="let eval of template?.evals">
-        <md-input-container>
-          <input type="text" mdInput placeholder="{{eval.name}}" [(ngModel)]="report.detail" name="{{eval.name}}" required>
-        </md-input-container>
-      </div>
-      <button type="button" class="add" md-raised-button (click)="add(); dereForm.reset();">つづけて追加</button>
+      <button type="button" md-raised-button (click)="update(); dereForm.reset();">レポート作成</button>
+      <p>This report hash is {{ hash }}</p>
     </form>
   </div>
 </div>

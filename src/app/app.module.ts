@@ -23,6 +23,7 @@ import { UnitListComponent } from './components/manage/unit-list/unit-list.compo
 import { UnitAutocompleteComponent } from './components/action/unit-autocomplete/unit-autocomplete.component';
 import { TrendTopComponent } from './components/trend/trend-top/trend-top.component';
 import { TrendAddReportComponent } from './components/trend/trend-add-report/trend-add-report.component';
+import { ReportAddDetailComponent } from './components/trend/report-add-detail/report-add-detail.component';
 
 // firebase seittings
 const firebaseConfig = {
@@ -57,6 +58,7 @@ const appRoutes: Routes = [
     UnitAutocompleteComponent,
     TrendTopComponent,
     TrendAddReportComponent,
+    ReportAddDetailComponent,
   ],
   imports: [
     BrowserModule,

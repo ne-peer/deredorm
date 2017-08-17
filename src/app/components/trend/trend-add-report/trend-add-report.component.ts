@@ -2,54 +2,53 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Promise } from 'firebase';
 
-import { ReportTemplateService } from '../../../services/firebase/report-template.service';
 import { Report } from '../../../models/trend/report';
 import { ReportTemplate } from '../../../models/trend/report-template';
-import { ReportTemplateEval } from '../../../models/trend/report-template-eval';
 
 @Component({
   selector: 'app-trend-add-report',
   templateUrl: './trend-add-report.component.html',
   styleUrls: ['./trend-add-report.component.css'],
-  providers: [ReportTemplateService]
 })
 export class TrendAddReportComponent implements OnInit {
 
   afReports: FirebaseListObservable<Report[]>;
+  afTemplates: FirebaseListObservable<ReportTemplate[]>;
+
   report = new Report('', '', '', []);
-  templateId: string;
+  templateList: ReportTemplate[];
   submitted = false
-  template: ReportTemplate;
-  evals: ReportTemplateEval[];
-  foods = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
+  hash: string;
 
-  constructor(private templateRepos: ReportTemplateService, private db: AngularFireDatabase) {
-    // テンプレート読み込み
-    this.templateId = '100';
-    this.templateRepos.fetch(this.templateId);
-    this.template = this.templateRepos.template;
-    this.evals = this.templateRepos.evals;
-
+  constructor(private db: AngularFireDatabase) {
     // レポートリポジトリの同期
     this.afReports = this.db.list('/user/report');
+    this.afTemplates = this.db.list('/core/report_template');
+    this.afTemplates.subscribe(template => this.templateList = template);
   }
 
   ngOnInit() {
+    const hash = this.generateHash();
+
+    this.afReports.update(
+      hash,
+      {
+        id: '0',
+        hash: hash,
+        templateId: this.report.templateId,
+        detail: []
+      });
+
+    this.hash = hash;
   }
 
-  add(): Promise<void> {
-    const wip = '0';
-
-    return this.afReports.update(
-      '0',
+  update(): void {
+    this.afReports.update(
+      this.hash,
       {
-        id: wip,
-        hash: wip,
-        templateId: this.templateId,
+        id: '0',
+        hash: this.hash,
+        templateId: this.report.templateId,
         detail: []
       });
   }
@@ -58,12 +57,11 @@ export class TrendAddReportComponent implements OnInit {
     this.submitted = true;
   }
 
-  doShow() {
-    return JSON.stringify(this.templateRepos.template) !== '{"$value":null}';
+  generateHash(): string {
+    // wip
+    return 'a1b2c3d4';
   }
 
-  get diagnostic() { return JSON.stringify(this.report); }
-  get diagnosticTemp() { return JSON.stringify(this.template); }
-  get diagnosticEval() { return JSON.stringify(this.evals); }
+  get diagnostic() { return JSON.stringify(this.templateList); }
 
 }
