@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Promise } from 'firebase';
 
@@ -10,11 +11,12 @@ import { ReportTemplateEval } from '../../../models/trend/report-template-eval';
 @Component({
   selector: 'app-report-add-detail',
   templateUrl: './report-add-detail.component.html',
-  styleUrls: ['./report-add-detail.component.css']
+  styleUrls: ['./report-add-detail.component.css'],
+  providers: [ReportTemplateService]
 })
 export class ReportAddDetailComponent implements OnInit {
 
-  afReports: FirebaseListObservable<Report[]>;
+  afReport: FirebaseObjectObservable<Report>;
   report = new Report('', '', '', []);
   templateId: string;
   submitted = false
@@ -26,31 +28,23 @@ export class ReportAddDetailComponent implements OnInit {
     { value: 'tacos-2', viewValue: 'Tacos' }
   ];
 
-  constructor(private templateRepos: ReportTemplateService, private db: AngularFireDatabase) {
-    // テンプレート読み込み
-    this.templateId = '100';
-    this.templateRepos.fetch(this.templateId);
-    this.template = this.templateRepos.template;
-    this.evals = this.templateRepos.evals;
+  constructor(private activatedRoute: ActivatedRoute, private templateRepos: ReportTemplateService, private db: AngularFireDatabase) {
+    this.activatedRoute.params.subscribe((params: Params) => {
+      const hash: string = params['hash'];
 
-    // レポートリポジトリの同期
-    this.afReports = this.db.list('/user/report');
+      // レポート読み込み
+      this.afReport = this.db.object(`/user/report/${hash}`);
+      this.afReport.subscribe(report => this.report = report);
+      this.templateId = this.report.templateId;
+
+      // テンプレート読み込み
+      this.templateRepos.fetch(this.templateId);
+      this.template = this.templateRepos.template;
+      this.evals = this.templateRepos.evals;
+    });
   }
 
   ngOnInit() {
-  }
-
-  add(): Promise<void> {
-    const wip = '0';
-
-    return this.afReports.update(
-      '0',
-      {
-        id: wip,
-        hash: wip,
-        templateId: this.templateId,
-        detail: []
-      });
   }
 
   onSubmit() {

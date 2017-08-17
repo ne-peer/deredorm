@@ -43,6 +43,7 @@ const appRoutes: Routes = [
   { path: 'unit/:unit', component: UnitDetailComponent },
   { path: 'trend', component: TrendTopComponent },
   { path: 'trend/new', component: TrendAddReportComponent },
+  { path: 'trend/:hash', component: ReportAddDetailComponent },
 ];
 
 @NgModule({

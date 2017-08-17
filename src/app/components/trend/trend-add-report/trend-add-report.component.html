@@ -12,6 +12,7 @@
             {{ template.report_name }}
           </md-option>
         </md-select>
+        <div><a md-raised-button class="link-button" [routerLink]="['/trend', hash]">Personを追加..</a></div>
       </div>
       <button type="button" md-raised-button (click)="update(); dereForm.reset();">レポート作成</button>
       <p>This report hash is {{ hash }}</p>

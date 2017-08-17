@@ -1,11 +1,4 @@
 <div>
-  <h2>Template: </h2>
-  <p>{{diagnosticTemp}}</p>
-  <h2>Evals: </h2>
-  <p>{{diagnosticEval}}</p>
-</div>
-
-<div>
   <div>
     <h3>{{template?.reportName}}</h3>
     <form (ngSubmit)="onSubmit()" #dereForm="ngForm">
@@ -29,3 +22,10 @@
 <p>
   {{diagnostic}}
 </p>
+
+<div style="margin-top:50px;">
+  <h2>Template: </h2>
+  <p>{{diagnosticTemp}}</p>
+  <h2>Evals: </h2>
+  <p>{{diagnosticEval}}</p>
+</div>

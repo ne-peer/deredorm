@@ -62,6 +62,6 @@ export class TrendAddReportComponent implements OnInit {
     return 'a1b2c3d4';
   }
 
-  get diagnostic() { return JSON.stringify(this.templateList); }
+  get diagnostic() { return JSON.stringify(this.report); }
 
 }
