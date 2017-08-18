@@ -9,7 +9,7 @@ It's working on [deredorm.ne-peer.com](http://deredorm.ne-peer.com/)
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
 ## Special thanks
-To develop this projeft, we used resource below. Thank you.
+To develop this project, we used resource below. Thank you.
 
 - [mryp/imascggallery-data](https://github.com/mryp/imascggallery-data) (@mryp)
 - [api.imas-db.jp](http://api.imas-db.jp/) (@imas_DB)
