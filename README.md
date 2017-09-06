@@ -1,6 +1,7 @@
 # Deredorm
 
-**Deredorm** is website (japanese only) of idols profile archive from IDOLM@STER series. This site made with [angular](https://angular.io/) and [firebase](https://firebase.google.com) platform.
+**Deredorm** is website (japanese only) of idols profile archive from IDOLM@STER series.
+This site made with [Angular](https://angular.io/), [Material2](https://material.angular.io/) and [Firebase](https://firebase.google.com) platform.
 
 It's working on [deredorm.ne-peer.com](http://deredorm.ne-peer.com/)
 
