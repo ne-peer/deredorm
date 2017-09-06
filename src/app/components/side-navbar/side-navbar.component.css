@@ -1,7 +1,27 @@
-section.sidenav-content div {
-    margin-bottom: 25px;
-}
-
 .link-button {
     text-decoration: none;
+}
+
+.description {
+    margin-top: 10px;
+}
+
+.fa-github {
+    font-size: 36px;
+}
+
+.deredorm {
+    padding-top: 3px;
+    margin-left: 4px;
+}
+
+.deredorm a {
+    color: #292b2c;
+    text-decoration: none;
+    overflow : hidden;
+    outline : none;
+}
+
+.login {
+    margin-top: 40px;
 }
