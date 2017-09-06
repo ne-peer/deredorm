@@ -22,16 +22,24 @@
       </nav>
     </section>
     <section class="main-content">
-      <div *ngIf="atUnitList() === false;">
+      <section class="tab">
         <div>
-          <app-dere-autocomplete></app-dere-autocomplete>
+          <md-tab-group>
+            <md-tab label="アイドル">
+              <div class="search-area">
+                  <app-dere-autocomplete></app-dere-autocomplete>
+              </div>
+              <app-dere-list></app-dere-list>
+            </md-tab>
+            <md-tab label="ユニット">
+                <div class="search-area">
+                    <app-unit-autocomplete></app-unit-autocomplete>
+                </div>
+              <app-unit-list></app-unit-list>
+            </md-tab>
+          </md-tab-group>
         </div>
-      </div>
-      <div *ngIf="atUnitList() === true;">
-        <div>
-          <app-unit-autocomplete></app-unit-autocomplete>
-        </div>
-      </div>
+      </section>
       <div>
         <router-outlet></router-outlet>
       </div>
