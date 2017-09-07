@@ -21,6 +21,7 @@ import { DereDetailComponent } from './components/manage/dere-detail/dere-detail
 import { DereAutocompleteComponent } from './components/action/dere-autocomplete/dere-autocomplete.component';
 import { UnitListComponent } from './components/manage/unit-list/unit-list.component';
 import { UnitAutocompleteComponent } from './components/action/unit-autocomplete/unit-autocomplete.component';
+import { ListComponent } from './components/layer/list/list.component';
 
 // firebase seittings
 const firebaseConfig = {
@@ -33,6 +34,7 @@ const firebaseConfig = {
 
 // routing
 const appRoutes: Routes = [
+  { path: '', component: ListComponent },
   { path: 'oauth', component: OauthComponent },
   { path: 'idol', component: DereListComponent },
   { path: 'unit', component: UnitListComponent },
@@ -51,6 +53,7 @@ const appRoutes: Routes = [
     DereAutocompleteComponent,
     UnitListComponent,
     UnitAutocompleteComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,
