@@ -1,16 +1,30 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Deredorm';
   subTitle = 'imas libraries';
 
-  constructor( @Inject(DOCUMENT) private document: any) { }
+  constructor( @Inject(DOCUMENT) private document: any, private router: Router) { }
+
+  ngOnInit() {
+    /**
+     * routerを使った画面描画時に、トップにスクロールするイベントを仕込む
+     * @see https://stackoverflow.com/questions/39601026/angular-2-scroll-to-top-on-route-change
+     */
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0)
+    });
+  }
 
   atUnitList() {
     let isOnUnit = false;
