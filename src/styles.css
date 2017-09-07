@@ -25,3 +25,7 @@ md-list-item {
 .list-content {
     margin-left: 16px;
 }
+
+.link-button {
+    text-decoration: none;
+}

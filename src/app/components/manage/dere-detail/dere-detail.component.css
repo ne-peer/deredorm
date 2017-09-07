@@ -29,3 +29,15 @@ span.passion {
 md-grid-tile div {
     width: 65%;
 }
+
+.back-nav {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.link-button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 80px;
+}
