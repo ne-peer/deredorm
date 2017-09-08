@@ -2,12 +2,6 @@
   <md-grid-list cols="2" rowHeight="1:1">
     <md-grid-tile *ngFor="let overview of overviews" [routerLink]="['/idol', overview.$key]">
       <md-card style="width:98%;height:100%;">
-        <!-- <md-card-title>
-          <h4><span class="name {{overview.type}}">{{overview.name}}</span></h4>
-        </md-card-title>
-        <md-card-subtitle>
-          <span class="kana {{overview.type}}">{{overview.kana}}</span>
-        </md-card-subtitle> -->
         <img md-card-image src="http://125.6.169.35/idolmaster/image_sp/card/l/{{overview.latest_hash}}.jpg" alt="{{overview.name}}'s latest card img.'">
       </md-card>
       <md-grid-tile-footer style="margin-bottom:48px;">
