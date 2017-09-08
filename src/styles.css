@@ -29,3 +29,9 @@ md-list-item {
 .link-button {
     text-decoration: none;
 }
+
+/* content width size */
+section.width-min {
+    margin: auto;
+    max-width: 640px;
+}
