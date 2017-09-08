@@ -25,3 +25,16 @@ md-card.passion {
 span.passion {
     color: #FF9800;
 }
+
+.name {
+    height: 100%;
+    padding-top: 18px;
+    font-size: 24px;
+    /* font-weight: bold; */
+}
+
+.kana {
+    height: 100%;
+    padding-top: 2px;
+    font-size: 14px;
+}
