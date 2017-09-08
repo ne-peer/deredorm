@@ -19,10 +19,12 @@ export class AppComponent implements OnInit {
      * @see https://stackoverflow.com/questions/39601026/angular-2-scroll-to-top-on-route-change
      */
     this.router.events.subscribe((evt) => {
-      if (!(evt instanceof NavigationEnd)) {
+      // urlに'#'を含む場合(anchor jump)には実行しない
+      const currentUrl = this.router.url;
+      if (!(evt instanceof NavigationEnd) || currentUrl.indexOf('#') !== -1) {
         return;
       }
-      window.scrollTo(0, 0)
+      window.scrollTo(0, 0);
     });
   }
 
