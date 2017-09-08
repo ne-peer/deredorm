@@ -22,7 +22,7 @@ export class DereListComponent implements OnInit {
 
   /**
    * コンストラクタ
-   * 
+   *
    * @param db AngularFireDatabase
    */
   constructor(private db: AngularFireDatabase) {
@@ -34,8 +34,21 @@ export class DereListComponent implements OnInit {
    * 初期表示
    */
   ngOnInit() {
-    this.afOverviews.subscribe(overviews => this.overviews = overviews);
+    this.afOverviews.subscribe(overviews => this.overviews = this.shuffle(overviews));
     this.afIdols.subscribe(idols => this.idols = idols);
+  }
+
+  private shuffle(array: any) {
+    let n = array.length, t, i;
+
+    while (n) {
+      i = Math.floor(Math.random() * n--);
+      t = array[n];
+      array[n] = array[i];
+      array[i] = t;
+    }
+
+    return array;
   }
 
 }
