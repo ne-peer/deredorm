@@ -26,10 +26,14 @@ span.passion {
     color: #FF9800;
 }
 
-.units md-chip {
-    margin-right: 4px;
+.name {
+    height: 100%;
+    padding-top: 18px;
+    font-size: 24px;
 }
 
-md-chip {
-    cursor: pointer;
+.kana {
+    height: 100%;
+    padding-top: 2px;
+    font-size: 14px;
 }

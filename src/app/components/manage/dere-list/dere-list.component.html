@@ -1,14 +1,15 @@
 <div class="grid grid-pad">
-  <div *ngFor="let overview of overviews" [routerLink]="['/idol', overview.$key]" class="col-1-4">
-    <md-card>
-      <md-card-header>
-        <md-card-title>
-          <h4><span class="{{overview.type}}">{{overview.name}}</span></h4>
-        </md-card-title>
-        <md-card-subtitle>
-          <span class="{{overview.type}}">{{overview.kana}}</span>
-        </md-card-subtitle>
-      </md-card-header>
-    </md-card>
-  </div>
+  <md-grid-list cols="2" rowHeight="1:1">
+    <md-grid-tile *ngFor="let overview of overviews" [routerLink]="['/idol', overview.$key]">
+      <md-card style="width:98%;height:100%;">
+        <img md-card-image src="http://125.6.169.35/idolmaster/image_sp/card/l/{{overview.latest_hash}}.jpg" alt="{{overview.name}}'s latest card img.'">
+      </md-card>
+      <md-grid-tile-footer style="margin-bottom:48px;">
+        <div class="name">{{overview.name}}</div>
+      </md-grid-tile-footer>
+      <md-grid-tile-footer>
+        <div class="kana">{{overview.kana}}</div>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+  </md-grid-list>
 </div>
