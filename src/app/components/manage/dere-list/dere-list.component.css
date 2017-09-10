@@ -37,3 +37,7 @@ span.passion {
     padding-top: 2px;
     font-size: 14px;
 }
+
+.card {
+    cursor: pointer;
+}
