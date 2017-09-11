@@ -45,7 +45,7 @@ export class UnitAutocompleteComponent implements OnInit {
   }
 
   filterUnits(query: string): Unit[] {
-    return this.units.filter(unit => new RegExp(`${query}`, 'gi').test(unit.kana));
+    return this.units.filter(unit => new RegExp(`${query}`, 'gi').test(unit.name));
   }
 
   displayFn(unit: Unit): string {
