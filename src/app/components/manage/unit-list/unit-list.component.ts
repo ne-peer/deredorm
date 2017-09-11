@@ -30,7 +30,20 @@ export class UnitListComponent implements OnInit {
    * 初期表示
    */
   ngOnInit() {
-    this.afUnits.subscribe(units => this.units = units);
+    this.afUnits.subscribe(units => this.units = this.shuffle(units));
+  }
+
+  private shuffle(array: any) {
+    let n = array.length, t, i;
+
+    while (n) {
+      i = Math.floor(Math.random() * n--);
+      t = array[n];
+      array[n] = array[i];
+      array[i] = t;
+    }
+
+    return array;
   }
 
 }
