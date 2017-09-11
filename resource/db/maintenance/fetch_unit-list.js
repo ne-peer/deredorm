@@ -14,19 +14,19 @@ request({ url }, (err, res, body) => {
 
             $('th a').each((i, elem) => {
                 const unitName = elem.children[0]['data'];
-                unitList[i] = unitName;
+                unitList.push(unitName);
 
                 if (unitName === 'ニュージェネレーション' || unitName === '蒼ノ楽団' || unitName === 'シンデレラドリーム'
                  || unitName === 'P.C.S') {
-                    unitList.splice(i, 1);
+                    unitList.pop();
                 }
             });
 
             resolve(unitList);
         });
 
-        const nameFinder = new Promise((resolve, reject) => {
-            let nameList = [];
+        const memberFinder = new Promise((resolve, reject) => {
+            let memberList = [];
 
             try {
                 $('td').each((i, elem) => {
@@ -41,11 +41,11 @@ request({ url }, (err, res, body) => {
                             childList[ci] = text;
                         });
                         if (childList.length > 0) {
-                            nameList.push(childList);
+                            memberList.push(childList);
                         }
                     }
                 });
-                resolve(nameList);
+                resolve(memberList);
             } catch (e) {
                 console.log(e);
             }
@@ -53,29 +53,24 @@ request({ url }, (err, res, body) => {
 
         Promise.all([
             unitFinder,
-            nameFinder
+            memberFinder
         ]).then((data) => {
             const units = data[0];
-            const names = data[1];
+            const members = data[1];
             const length = units.length;
 
-            let urlList = [];
-            for (let key = 0; key < length + 1; key++) {
-                const name = names.shift();
+            let unitMemberList = [];
+            for (let key = 0; key < length; key++) {
+                const member = members.shift();
                 const unit = units.shift();
                 
-                // "new generations"の次にnull haitgtteru
-                if (name == undefined || unit == undefined) {
-                    continue;
-                }
-
-                urlList[key] = {
-                    name: name,
+                unitMemberList.push({
+                    member: member,
                     unit: unit
-                };
+                });
             }
 
-            fs.writeFile('out.json', JSON.stringify(urlList));
+            fs.writeFile('out.json', JSON.stringify(unitMemberList));
         });
     } else {
         console.log(err);
