@@ -19,7 +19,7 @@ export class UnitListComponent implements OnInit {
 
   /**
    * コンストラクタ
-   * 
+   *
    * @param db AngularFireDatabase
    */
   constructor(private db: AngularFireDatabase) {
@@ -44,6 +44,10 @@ export class UnitListComponent implements OnInit {
     }
 
     return array;
+  }
+
+  private isShowMember(index: number): boolean {
+    return index < 5;
   }
 
 }

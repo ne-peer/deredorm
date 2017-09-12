@@ -2,3 +2,9 @@
     font-size: 8px;
     color: #999999;
 }
+
+.list-elem {
+    margin-top: 3px;
+    margin-left: 30px;
+    font-size: 8px;
+}
