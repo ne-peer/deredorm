@@ -94,6 +94,13 @@ export class DereDetailComponent implements OnInit {
     }
   }
 
+  isExistUnit(idol?: Idol): boolean {
+    if (typeof idol === 'object' && Array.isArray(idol.units)) {
+      return idol.units.length > 0;
+    }
+    return false;
+  }
+
   // かいはつよう
   get diagnostic() { return JSON.stringify(this.imasdb.char); }
 
