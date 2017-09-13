@@ -1,6 +1,6 @@
 <div class="grid grid-pad">
   <md-grid-list cols="2" rowHeight="1:1">
-    <md-grid-tile class="card" *ngFor="let overview of overviews" [routerLink]="['/idol', overview.$key]">
+    <md-grid-tile class="cursor-pointer" *ngFor="let overview of overviews" [routerLink]="['/idol', overview.$key]">
       <md-card style="width:100%;height:100%;">
         <img md-card-image src="http://125.6.169.35/idolmaster/image_sp/card/l/{{overview.latest_hash}}.jpg" alt="{{overview.name}}'s latest card img.'">
       </md-card>
