@@ -2,17 +2,20 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Promise } from 'firebase';
+import { MdSnackBar } from '@angular/material';
 
 import { Overview } from '../../../models/dere/overview';
 import { Idol } from '../../../models/dere/idol';
 import { UnitUtilService } from '../../../services/manage/unit-util.service';
 import { ImasdbService } from '../../../services/api/imasdb.service';
+import { GoToComponent } from '../../action/snack/go-to/go-to.component';
 
 @Component({
   selector: 'app-dere-detail',
   templateUrl: './dere-detail.component.html',
   styleUrls: ['./dere-detail.component.css'],
-  providers: [UnitUtilService, ImasdbService]
+  providers: [UnitUtilService, ImasdbService],
+  entryComponents: [GoToComponent]
 })
 export class DereDetailComponent implements OnInit {
 
@@ -34,7 +37,7 @@ export class DereDetailComponent implements OnInit {
    * @param db AngularFireDatabase
    */
   constructor(private activatedRoute: ActivatedRoute, private db: AngularFireDatabase,
-    private unitUtil: UnitUtilService, private imasdb: ImasdbService) {
+    private unitUtil: UnitUtilService, private imasdb: ImasdbService, public snackBar: MdSnackBar) {
     this.afOverviews = this.db.list('/core/dere_overview');
     this.afOverviews.subscribe(overviews => this.overviews = overviews);
     this.afIdols = this.db.list('/core/dere_list');
@@ -99,6 +102,12 @@ export class DereDetailComponent implements OnInit {
       return idol.units.length > 0;
     }
     return false;
+  }
+
+  openSnackBar() {
+    this.snackBar.openFromComponent(GoToComponent, {
+      duration: 500,
+    });
   }
 
   // かいはつよう

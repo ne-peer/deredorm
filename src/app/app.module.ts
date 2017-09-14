@@ -22,6 +22,7 @@ import { DereAutocompleteComponent } from './components/action/dere-autocomplete
 import { UnitListComponent } from './components/manage/unit-list/unit-list.component';
 import { UnitAutocompleteComponent } from './components/action/unit-autocomplete/unit-autocomplete.component';
 import { ListComponent } from './components/layer/list/list.component';
+import { GoToComponent } from './components/action/snack/go-to/go-to.component';
 
 // firebase seittings
 const firebaseConfig = {
@@ -54,6 +55,7 @@ const appRoutes: Routes = [
     UnitListComponent,
     UnitAutocompleteComponent,
     ListComponent,
+    GoToComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +72,9 @@ const appRoutes: Routes = [
     JsonpModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    GoToComponent
+  ]
 })
 export class AppModule { }
