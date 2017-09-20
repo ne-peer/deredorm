@@ -104,12 +104,6 @@ export class DereDetailComponent implements OnInit {
     return false;
   }
 
-  openSnackBar() {
-    this.snackBar.openFromComponent(GoToComponent, {
-      duration: 500,
-    });
-  }
-
   // かいはつよう
   get diagnostic() { return JSON.stringify(this.imasdb.char); }
 
