@@ -1,3 +1,4 @@
+// Core Components
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -8,10 +9,12 @@ import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
+// AngularFire Components
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+// Original Componetns
 import { AppComponent } from './app.component';
 import { OauthComponent } from './components/oauth/oauth.component';
 import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
@@ -24,7 +27,7 @@ import { UnitAutocompleteComponent } from './components/action/unit-autocomplete
 import { ListComponent } from './components/layer/list/list.component';
 import { GoToComponent } from './components/action/snack/go-to/go-to.component';
 
-// firebase seittings
+// Firebase seittings
 const firebaseConfig = {
     apiKey: 'AIzaSyBU2kqeQV9OdwOsuu_Cwa_IedVxMkRnk_E',
     authDomain: 'deredorm.firebaseapp.com',
@@ -33,7 +36,7 @@ const firebaseConfig = {
     messagingSenderId: '577838942819'
 };
 
-// routing
+// Routes
 const appRoutes: Routes = [
   { path: '', component: ListComponent },
   { path: 'oauth', component: OauthComponent },
