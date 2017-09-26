@@ -2,24 +2,24 @@
   {{diagnostic}}
 </p> -->
 <div class="search-section">
-  <md-grid-list cols="4" rowHeight="1.5:1">
-    <md-grid-tile colspan="2">
+  <mat-grid-list cols="4" rowHeight="1.5:1">
+    <mat-grid-tile colspan="2">
       <div style="width:90%;">
-        <md-input-container style="width:100%;">
-          <input mdInput placeholder=" アイドルを検索.." [mdAutocomplete]="auto" [formControl]="dereSearchCtrl" [(ngModel)]="searchInput"  mdTooltip="ひらがな入力でサジェストを表示します。">
-        </md-input-container>
-        <md-autocomplete #auto="mdAutocomplete" [displayWith]="displayFn">
-          <md-option *ngFor="let overview of filteredOverviews | async" [value]="overview">
+        <mat-form-field style="width:100%;">
+          <input matInput placeholder=" アイドルを検索.." [matAutocomplete]="auto" [formControl]="dereSearchCtrl" [(ngModel)]="searchInput"  matTooltip="ひらがな入力でサジェストを表示します。">
+        </mat-form-field>
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let overview of filteredOverviews | async" [value]="overview">
             {{overview.name}}
-          </md-option>
-        </md-autocomplete>
+          </mat-option>
+        </mat-autocomplete>
       </div>
-    </md-grid-tile>
-    <md-grid-tile colspan="1">
-      <button md-raised-button (click)="onClear()">クリア</button>
-    </md-grid-tile>
-    <md-grid-tile colspan="1">
-      <button md-raised-button class="main-background white-text" (click)="onSearch()">表示</button>
-    </md-grid-tile>
-  </md-grid-list>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <button mat-raised-button (click)="onClear()">クリア</button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <button mat-raised-button class="main-background white-text" (click)="onSearch()">表示</button>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>

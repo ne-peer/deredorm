@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Promise } from 'firebase';
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 import { Overview } from '../../../models/dere/overview';
 import { Idol } from '../../../models/dere/idol';
@@ -37,7 +37,7 @@ export class DereDetailComponent implements OnInit {
    * @param db AngularFireDatabase
    */
   constructor(private activatedRoute: ActivatedRoute, private db: AngularFireDatabase,
-    private unitUtil: UnitUtilService, private imasdb: ImasdbService, public snackBar: MdSnackBar) {
+    private unitUtil: UnitUtilService, private imasdb: ImasdbService, public snackBar: MatSnackBar) {
     this.afOverviews = this.db.list('/core/dere_overview');
     this.afOverviews.subscribe(overviews => this.overviews = overviews);
     this.afIdols = this.db.list('/core/dere_list');

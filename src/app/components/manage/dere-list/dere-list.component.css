@@ -2,7 +2,7 @@
     color: #888;
 }
 
-md-card.cute {
+mat-card.cute {
     background: #FCE4EC;
 }
 
@@ -10,7 +10,7 @@ span.cute {
     color: #E91E63;
 }
 
-md-card.cool {
+mat-card.cool {
     background: #E8EAF6;
 }
 
@@ -18,7 +18,7 @@ span.cool {
     color: #3F51B5;
 }
 
-md-card.passion {
+mat-card.passion {
     background: #FFF3E0;
 }
 
