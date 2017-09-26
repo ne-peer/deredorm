@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms'; // バグ対応: https://github.com/angular/angular/issues/14288
 import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -68,7 +67,6 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(firebaseConfig, 'my-app'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    MaterialModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
