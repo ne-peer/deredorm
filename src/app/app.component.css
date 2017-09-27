@@ -28,7 +28,7 @@ section.main-content {
     text-decoration: none;
 }
 
-md-sidenav {
+mat-sidenav {
   background-color: #eee;
 }
 
@@ -40,7 +40,7 @@ button.menu {
   border-radius: 0.3em;	
 }
 
-md-icon { 
+mat-icon { 
   font-size: 24px;
 }
 

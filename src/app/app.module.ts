@@ -8,6 +8,23 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
+// Used material2 (for UI) Components
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatInputModule,
+  MatIconModule,
+  MatListModule,
+  MatSidenavModule,
+  MatSnackBarModule,
+  MatTabsModule,
+  MatGridListModule,
+  MatAutocompleteModule
+} from '@angular/material';
+
+// 2.0.0-beta.11で対応: This will enforce that only the "mat" prefix is used for all selectors.
+import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
+
 // AngularFire Components
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -70,9 +87,22 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    JsonpModule
+    JsonpModule,
+    // Material2 components for UI.
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    MatIconModule,
+    MatListModule,
+    MatSidenavModule,
+    MatSnackBarModule,
+    MatTabsModule,
+    MatGridListModule,
+    MatAutocompleteModule
   ],
-  providers: [],
+  providers: [
+    { provide: MATERIAL_COMPATIBILITY_MODE, useValue: true }
+  ],
   bootstrap: [AppComponent],
   entryComponents: [
     GoToComponent

@@ -1,28 +1,28 @@
-<md-sidenav-container class="container-flux">
-  <md-sidenav #sidenav class="sidenav">
+<mat-sidenav-container class="container-flux">
+  <mat-sidenav #sidenav class="sidenav">
     <app-side-navbar></app-side-navbar>
-  </md-sidenav>
+  </mat-sidenav>
   <div>
     <section class="header">
       <nav class="navbar">
-        <md-grid-list cols="8" rowHeight="50px">
-          <md-grid-tile colspan="1">
-            <button md-button class="menu" (click)="sidenav.open()">
-              <md-icon>menu</md-icon>
+        <mat-grid-list cols="8" rowHeight="50px">
+          <mat-grid-tile colspan="1">
+            <button mat-button class="menu" (click)="sidenav.open()">
+              <mat-icon>menu</mat-icon>
             </button>
-          </md-grid-tile>
-          <md-grid-tile colspan="7">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="7">
             <div class="title-section">
               <a class="navbar-brand title" routerLink="/">
                 <h2><i class="material-icons">local_library</i> {{title}} <span class="subtitle">{{subTitle}}</span></h2>
               </a>
             </div>
-          </md-grid-tile>
-        </md-grid-list>
+          </mat-grid-tile>
+        </mat-grid-list>
       </nav>
     </section>
     <section class="main-content">
       <router-outlet></router-outlet>
     </section>
   </div>
-</md-sidenav-container>
+</mat-sidenav-container>

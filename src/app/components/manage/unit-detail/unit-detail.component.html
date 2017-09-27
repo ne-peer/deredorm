@@ -1,40 +1,40 @@
 <section class="width-min">
   <div class="back-nav">
-    <a md-button class="link-button" routerLink="">
-      <md-icon md-list-icon>chevron_left</md-icon>
+    <a mat-button class="link-button" routerLink="">
+      <mat-icon mat-list-icon>chevron_left</mat-icon>
     </a>
   </div>
   <div *ngIf="doShow()">
-    <md-card>
-      <md-card-header>
-        <md-card-title>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
           <h3><span>{{unit?.name}}</span></h3>
-        </md-card-title>
-        <md-card-subtitle><span>{{unit?.kana}}</span></md-card-subtitle>
-      </md-card-header>
-      <md-card-content>
+        </mat-card-title>
+        <mat-card-subtitle><span>{{unit?.kana}}</span></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
         <div style="margin-bottom: 16px;">
-          <md-list dense class="member">
-            <p md-subheader>メンバー</p>
-            <md-list-item *ngFor="let person of unit?.member" class="list-content" [routerLink]="['/idol', person]">
-              <md-icon md-list-icon>favorite</md-icon>
-              <h6 md-line>
+          <mat-list dense class="member">
+            <p matSubheader>メンバー</p>
+            <mat-list-item *ngFor="let person of unit?.member" class="list-content" [routerLink]="['/idol', person]">
+              <mat-icon mat-list-icon>favorite</mat-icon>
+              <h6 matLine>
                 <span class="main-color">{{person}}</span>
               </h6>
-            </md-list-item>
-          </md-list>
+            </mat-list-item>
+          </mat-list>
         </div>
-        <md-divider></md-divider>
+        <mat-divider></mat-divider>
         <div>
-          <md-list dense class="songs">
-            <p md-subheader>楽曲</p>
-            <!-- <md-list-item *ngFor="let song of unit?.songs" class="list-content">
-              <md-icon md-list-icon>audiotrack</md-icon>
-              <h2 md-line>{{song}}</h2>
-            </md-list-item> -->
-          </md-list>
+          <mat-list dense class="songs">
+            <p matSubheader>楽曲</p>
+            <!-- <mat-list-item *ngFor="let song of unit?.songs" class="list-content">
+              <mat-icon mat-list-icon>audiotrack</mat-icon>
+              <h2 matLine>{{song}}</h2>
+            </mat-list-item> -->
+          </mat-list>
         </div>
-      </md-card-content>
-    </md-card>
+      </mat-card-content>
+    </mat-card>
   </div>
 </section>

@@ -1,7 +1,7 @@
 <section class="width-min">
   <div class="back-nav">
-    <a md-button class="link-button" routerLink="">
-      <md-icon md-list-icon>chevron_left</md-icon>
+    <a mat-button class="link-button" routerLink="">
+      <mat-icon mat-list-icon>chevron_left</mat-icon>
     </a>
   </div>
   <div class="grid grid-pad">
@@ -9,84 +9,84 @@
     <h2>Api Response: </h2>{{diagnostic}}
   </div> -->
     <div *ngIf="idol?.aliases === null;">
-      <md-progress-bar mode="indeterminate"></md-progress-bar>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     </div>
     <div *ngIf="doShow();">
       <div>
-        <md-card [style.background-color]="getCharExtraStyle().bgcolor">
-          <md-card-header>
-            <md-card-title>
+        <mat-card [style.background-color]="getCharExtraStyle().bgcolor">
+          <mat-card-header>
+            <mat-card-title>
               <h3><span [style.color]="getCharExtraStyle().color">{{overview?.name}}</span></h3>
-            </md-card-title>
-            <md-card-subtitle><span>{{overview?.kana}}</span></md-card-subtitle>
-          </md-card-header>
-          <md-card-content>
+            </mat-card-title>
+            <mat-card-subtitle><span>{{overview?.kana}}</span></mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
             <div>
-              <md-list dense class="models">
-                <p md-subheader>ポジション</p>
-                <md-list-item class="list-content">
-                  <md-icon md-list-icon>star_harf</md-icon>
-                  <h2 md-line>
+              <mat-list dense class="models">
+                <p matSubheader>ポジション</p>
+                <mat-list-item class="list-content">
+                  <mat-icon mat-list-icon>star_harf</mat-icon>
+                  <h2 matLine>
                     {{imasdb.char?.getClassExtraInfo().dispName}}
                   </h2>
-                </md-list-item>
-              </md-list>
+                </mat-list-item>
+              </mat-list>
             </div>
             <div>
-              <md-list dense class="models">
-                <p md-subheader>プロフィール</p>
-                <md-grid-list cols="4" rowHeight="2:1">
-                  <md-grid-tile>
+              <mat-list dense class="models">
+                <p matSubheader>プロフィール</p>
+                <mat-grid-list cols="4" rowHeight="2:1">
+                  <mat-grid-tile>
                     <div>年齢</div>
-                  </md-grid-tile>
-                  <md-grid-tile [colspan]="3">
+                  </mat-grid-tile>
+                  <mat-grid-tile [colspan]="3">
                     <div>{{imasdb.prof?.age}} 歳</div>
-                  </md-grid-tile>
-                  <md-grid-tile>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
                     <div>身長</div>
-                  </md-grid-tile>
-                  <md-grid-tile [colspan]="3">
+                  </mat-grid-tile>
+                  <mat-grid-tile [colspan]="3">
                     <div>{{imasdb.prof?.height}} cm</div>
-                  </md-grid-tile>
-                  <md-grid-tile>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
                     <div>体重</div>
-                  </md-grid-tile>
-                  <md-grid-tile [colspan]="3">
+                  </mat-grid-tile>
+                  <mat-grid-tile [colspan]="3">
                     <div>{{imasdb.prof?.weight}} kg</div>
-                  </md-grid-tile>
-                  <md-grid-tile>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
                     <div>スリーサイズ</div>
-                  </md-grid-tile>
-                  <md-grid-tile [colspan]="3">
+                  </mat-grid-tile>
+                  <mat-grid-tile [colspan]="3">
                     <div>{{imasdb.prof?.bust}} / {{imasdb.prof?.waist}} / {{imasdb.prof?.hip}}</div>
-                  </md-grid-tile>
-                  <md-grid-tile>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
                     <div>血液型</div>
-                  </md-grid-tile>
-                  <md-grid-tile [colspan]="3">
+                  </mat-grid-tile>
+                  <mat-grid-tile [colspan]="3">
                     <div>{{imasdb.prof?.bloodType}}</div>
-                  </md-grid-tile>
-                  <md-grid-tile>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
                     <div>趣味</div>
-                  </md-grid-tile>
-                  <md-grid-tile [colspan]="3">
+                  </mat-grid-tile>
+                  <mat-grid-tile [colspan]="3">
                     <div>{{imasdb.prof?.hobby}}</div>
-                  </md-grid-tile>
-                  <md-grid-tile>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
                     <div>誕生日</div>
-                  </md-grid-tile>
-                  <md-grid-tile [colspan]="3">
+                  </mat-grid-tile>
+                  <mat-grid-tile [colspan]="3">
                     <div>{{imasdb.char?.birthMonth}}月 {{imasdb.char?.birthDay}}日</div>
-                  </md-grid-tile>
-                </md-grid-list>
-              </md-list>
+                  </mat-grid-tile>
+                </mat-grid-list>
+              </mat-list>
             </div>
             <div>
-              <md-list dense class="models">
-                <p md-subheader>CV (キャラクターボイス)</p>
-                <md-list-item class="list-content">
-                  <md-icon md-list-icon>person_pin</md-icon>
-                  <h2 md-line>
+              <mat-list dense class="models">
+                <p matSubheader>CV (キャラクターボイス)</p>
+                <mat-list-item class="list-content">
+                  <mat-icon mat-list-icon>person_pin</mat-icon>
+                  <h2 matLine>
                     <ng-template [ngIf]="imasdb.char?.cv == ''">
                       -
                     </ng-template>
@@ -94,74 +94,74 @@
                       <a href="https://ja.wikipedia.org/wiki/{{imasdb.char?.cv}}">{{imasdb.char?.cv}}</a>
                     </ng-template>
                   </h2>
-                </md-list-item>
-              </md-list>
+                </mat-list-item>
+              </mat-list>
             </div>
             <div>
             </div>
             <div class="chips-section">
-              <md-list dense class="models">
-                <p md-subheader>所属ユニット</p>
+              <mat-list dense class="models">
+                <p matSubheader>所属ユニット</p>
                 <div *ngIf="isExistUnit(idol); then thenBlock; else elseBlock;"></div>
                 <ng-template #elseBlock>
-                  <md-list-item class="list-content">
-                    <md-icon md-list-icon>group</md-icon>
-                    <h2 md-line>なし</h2>
-                  </md-list-item>
+                  <mat-list-item class="list-content">
+                    <mat-icon mat-list-icon>group</mat-icon>
+                    <h2 matLine>なし</h2>
+                  </mat-list-item>
                 </ng-template>
                 <ng-template #thenBlock>
-                  <md-list-item *ngFor="let unit of idol?.units" class="list-content">
-                    <md-icon md-list-icon>group</md-icon>
-                    <h2 md-line [routerLink]="['/unit', unit.id]">
+                  <mat-list-item *ngFor="let unit of idol?.units" class="list-content">
+                    <mat-icon mat-list-icon>group</mat-icon>
+                    <h2 matLine [routerLink]="['/unit', unit.id]">
                       {{ unit.name }}
                     </h2>
-                  </md-list-item>
+                  </mat-list-item>
                 </ng-template>
-              </md-list>
+              </mat-list>
             </div>
             <div>
-              <md-list dense class="models">
-                <p md-subheader>シリーズ</p>
-                <md-list-item class="list-content">
-                  <md-icon md-list-icon>live_tv</md-icon>
-                  <h2 md-line>
+              <mat-list dense class="models">
+                <p matSubheader>シリーズ</p>
+                <mat-list-item class="list-content">
+                  <mat-icon mat-list-icon>live_tv</mat-icon>
+                  <h2 matLine>
                     {{imasdb.char?.originMedia}}
                   </h2>
-                </md-list-item>
-              </md-list>
+                </mat-list-item>
+              </mat-list>
             </div>
 
-            <md-divider style="margin-top:16px;"></md-divider>
+            <mat-divider style="margin-top:16px;"></mat-divider>
             <div>
-              <md-list dense class="models">
-                <p md-subheader>カードモデル</p>
-                <md-list-item *ngFor="let alias of idol?.aliases" class="list-content">
-                  <md-icon md-list-icon>local_offer</md-icon>
-                  <h2 md-line>
+              <mat-list dense class="models">
+                <p matSubheader>カードモデル</p>
+                <mat-list-item *ngFor="let alias of idol?.aliases" class="list-content">
+                  <mat-icon mat-list-icon>local_offer</mat-icon>
+                  <h2 matLine>
                     {{alias.alias_name === undefined ? "ノーマル" : alias.alias_name}} <span class="anchor-text main-color" (click)="goAnchor(alias.id)">#{{alias.id}}</span>
                   </h2>
-                </md-list-item>
-              </md-list>
+                </mat-list-item>
+              </mat-list>
             </div>
-          </md-card-content>
-        </md-card>
+          </mat-card-content>
+        </mat-card>
 
-        <md-card *ngFor="let alias of idol?.aliases" id="{{alias.id}}">
-          <md-card-header>
-            <md-card-title>
+        <mat-card *ngFor="let alias of idol?.aliases" id="{{alias.id}}">
+          <mat-card-header>
+            <mat-card-title>
               <h4><span>{{alias.alias_name === undefined ? "ノーマル" : alias.alias_name}}</span></h4>
-            </md-card-title>
-            <md-card-subtitle>
+            </mat-card-title>
+            <mat-card-subtitle>
               <span><a href="http://imas.cg.db.n-hokke.com/cards/{{alias.id}}">http://imas.cg.db.n-hokke.com/cards/{{alias.id}}</a></span>
-            </md-card-subtitle>
-          </md-card-header>
-          <img md-card-image src="http://125.6.169.35/idolmaster/image_sp/card/l/{{alias.hash}}.jpg">
-          <md-card-content>
+            </mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="http://125.6.169.35/idolmaster/image_sp/card/l/{{alias.hash}}.jpg">
+          <mat-card-content>
             <div>
               <!-- contents -->
             </div>
-          </md-card-content>
-        </md-card>
+          </mat-card-content>
+        </mat-card>
       </div>
     </div>
   </div>

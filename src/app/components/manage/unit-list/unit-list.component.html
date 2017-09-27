@@ -1,12 +1,12 @@
 <div class="grid grid-pad">
-  <md-grid-list cols="2" rowHeight="210px;">
-    <md-grid-tile *ngFor="let unit of units" [routerLink]="['/unit', unit.id]">
-      <md-card style="width:98%;height:98%;">
-        <md-card-header>
+  <mat-grid-list cols="2" rowHeight="210px;">
+    <mat-grid-tile *ngFor="let unit of units" [routerLink]="['/unit', unit.id]">
+      <mat-card style="width:98%;height:98%;">
+        <mat-card-header>
           {{unit?.name}}
-        </md-card-header>
-        <md-card-content>
-          <md-list dense>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list dense>
             <div *ngFor="let person of unit?.member; let i = index;" [routerLink]="['/idol', person]">
               <!-- memberが5名を超える場合は省略する -->
               <div *ngIf="isShowMember(i); then showBlock;"></div>
@@ -17,9 +17,9 @@
                 and more..
               </span>
             </div>
-          </md-list>
-        </md-card-content>
-      </md-card>
-    </md-grid-tile>
-  </md-grid-list>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
