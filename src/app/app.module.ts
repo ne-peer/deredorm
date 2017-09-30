@@ -7,6 +7,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout'
 
 // Used material2 (for UI) Components
 import {
@@ -45,11 +46,11 @@ import { GoToComponent } from './components/action/snack/go-to/go-to.component';
 
 // Firebase seittings
 const firebaseConfig = {
-    apiKey: 'AIzaSyBU2kqeQV9OdwOsuu_Cwa_IedVxMkRnk_E',
-    authDomain: 'deredorm.firebaseapp.com',
-    databaseURL: 'https://deredorm.firebaseio.com',
-    storageBucket: 'deredorm.appspot.com',
-    messagingSenderId: '577838942819'
+  apiKey: 'AIzaSyBU2kqeQV9OdwOsuu_Cwa_IedVxMkRnk_E',
+  authDomain: 'deredorm.firebaseapp.com',
+  databaseURL: 'https://deredorm.firebaseio.com',
+  storageBucket: 'deredorm.appspot.com',
+  messagingSenderId: '577838942819'
 };
 
 // Routes
@@ -88,6 +89,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     JsonpModule,
+    FlexLayoutModule,
     // Material2 components for UI.
     MatButtonModule,
     MatCardModule,
