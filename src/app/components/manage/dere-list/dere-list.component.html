@@ -1,11 +1,17 @@
 <div fxLayoutWrap>
-  <div fxFlex.gt-md="24" fxFlex.gt-sm="32" fxFlex="49" class="cursor-pointer" *ngFor="let overview of overviews" [routerLink]="['/idol', overview.$key]">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>{{overview.name}}</mat-card-title>
-        <mat-card-subtitle>{{overview.kana}}</mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image src="http://125.6.169.35/idolmaster/image_sp/card/l/{{overview.latest_hash}}.jpg" alt="{{overview.name}}'s latest card img.'">
-    </mat-card>
+  <div fxFlex.gt-md="24" fxFlex.gt-sm="32" fxFlex="49" *ngFor="let overview of overviews" [routerLink]="['/idol', overview.$key]">
+    <mat-grid-list cols="1" rowHeight="1:1">
+      <mat-grid-tile class="cursor-pointer">
+        <mat-card style="width:100%; height:100%;">
+          <img mat-card-image src="http://125.6.169.35/idolmaster/image_sp/card/l/{{overview.latest_hash}}.jpg" alt="{{overview.name}}'s latest card img.'">
+        </mat-card>
+        <mat-grid-tile-footer style="margin-bottom:48px;">
+          <div class="name">{{overview.name}}</div>
+        </mat-grid-tile-footer>
+        <mat-grid-tile-footer>
+          <div class="kana">{{overview.kana}}</div>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
   </div>
 </div>

@@ -1,5 +1,11 @@
 mat-card {
-    margin: 5px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+mat-grid-tile-footer {
+    margin-left: 1px;
+    margin-right: 1px;
 }
 
 .name {
@@ -16,22 +22,4 @@ mat-card {
 
 .cursor-pointer {
     cursor: pointer;
-}
-
-.image {
-    background: red;
-    height: 500px;
-    width: 500px;
-
-    position: relative;
-  }
-
-.child {
-    position: absolute;
-    bottom: 0px;
-  background: black;
-  height: 150px;
-  width: 100%;
-  opacity: 0.5;
-  
 }
