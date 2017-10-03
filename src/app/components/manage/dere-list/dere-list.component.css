@@ -1,29 +1,11 @@
-.grid .model {
-    color: #888;
+mat-card {
+    margin-left: 1px;
+    margin-right: 1px;
 }
 
-mat-card.cute {
-    background: #FCE4EC;
-}
-
-span.cute {
-    color: #E91E63;
-}
-
-mat-card.cool {
-    background: #E8EAF6;
-}
-
-span.cool {
-    color: #3F51B5;
-}
-
-mat-card.passion {
-    background: #FFF3E0;
-}
-
-span.passion {
-    color: #FF9800;
+mat-grid-tile-footer {
+    margin-left: 1px;
+    margin-right: 1px;
 }
 
 .name {
