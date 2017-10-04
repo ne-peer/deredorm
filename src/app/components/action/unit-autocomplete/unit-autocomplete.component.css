@@ -1,3 +1,24 @@
+.search-section {
+    margin: 25px 5px;
+}
+
 .white-text {
     color: #ffffff;
+}
+
+button {
+    height: 90%;
+    width: 90%;
+}
+
+.input-section {
+    margin-top: 5px;
+    padding-right: 10px;
+    width: 100%;
+}
+
+mat-form-field {
+    width: 98%;
+    margin-left: auto;
+    display: block;
 }

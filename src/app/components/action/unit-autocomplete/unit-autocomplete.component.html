@@ -2,11 +2,12 @@
   {{diagnostic}}
 </p> -->
 <div class="search-section">
-  <mat-grid-list cols="4" rowHeight="1.5:1">
-    <mat-grid-tile colspan="2">
-      <div style="width:90%;">
-        <mat-form-field style="width:100%;">
-          <input matInput placeholder=" ユニットを検索.." [matAutocomplete]="auto" [formControl]="unitSearchCtrl" [(ngModel)]="searchInput" matTooltip="sorry: まだひらがな検索はできません...。">
+  <div fxLayout="row">
+    <div fxFlex="70" fxFlex.xs="50">
+      <div class="input-section">
+        <mat-form-field>
+          <input matInput placeholder=" ユニットを検索.." [matAutocomplete]="auto" [formControl]="unitSearchCtrl" [(ngModel)]="searchInput"
+            matTooltip="sorry! まだひらがな検索はできません...。">
         </mat-form-field>
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
           <mat-option *ngFor="let unit of filteredUnits | async" [value]="unit">
@@ -14,12 +15,20 @@
           </mat-option>
         </mat-autocomplete>
       </div>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="1">
-      <button mat-raised-button (click)="onClear()">クリア</button>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="1">
-      <button mat-raised-button class="main-background white-text" (click)="onSearch()">表示</button>
-    </mat-grid-tile>
-  </mat-grid-list>
+    </div>
+    <div fxFlex="15" fxFlex.xs="25">
+      <mat-grid-list cols="1" rowHeight="1.8:1">
+        <mat-grid-tile colspan="1">
+          <button mat-raised-button class="main-background white-text" (click)="onSearch()">表示</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <div fxFlex="15" fxFlex.xs="25">
+      <mat-grid-list cols="1" rowHeight="1.8:1">
+        <mat-grid-tile colspan="1">
+          <button mat-raised-button (click)="onClear()">クリア</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
 </div>
