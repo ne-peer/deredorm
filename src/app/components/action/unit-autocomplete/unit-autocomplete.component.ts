@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
@@ -15,9 +15,6 @@ import { Unit } from '../../../models/unit/unit';
 })
 export class UnitAutocompleteComponent implements OnInit {
 
-  // Firebaseと同期したもの
-  afUnits: FirebaseListObservable<Unit[]>;
-
   // プロパティ
   units: Unit[];
   searchInput: any;
@@ -26,17 +23,14 @@ export class UnitAutocompleteComponent implements OnInit {
   unitSearchCtrl: FormControl;
   filteredUnits: Observable<Unit[]>;
 
+  /**
+   * コンストラクタ
+   */
   constructor(private db: AngularFireDatabase, private router: Router) {
-    this.afUnits = this.db.list('/core/unit_list');
+    this.db.list<Unit>('/core/unit_list').valueChanges<Unit>().subscribe(units => this.units = units);
   }
 
   ngOnInit() {
-    this.units = [];
-
-    this.afUnits.subscribe(snapshot => {
-      this.units = snapshot;
-    });
-
     this.unitSearchCtrl = new FormControl();
     this.filteredUnits = this.unitSearchCtrl.valueChanges
       .startWith(null)
