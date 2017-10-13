@@ -16,6 +16,7 @@ import { Unit } from '../../../models/unit/unit';
 export class UnitAutocompleteComponent implements OnInit {
 
   // プロパティ
+  afUnits: Observable<Unit[]>;
   units: Unit[];
   searchInput: any;
 
@@ -27,10 +28,13 @@ export class UnitAutocompleteComponent implements OnInit {
    * コンストラクタ
    */
   constructor(private db: AngularFireDatabase, private router: Router) {
-    this.db.list<Unit>('/core/unit_list').valueChanges<Unit>().subscribe(units => this.units = units);
+    this.afUnits = this.db.list<Unit>('/core/unit_list').valueChanges<Unit>();
   }
 
   ngOnInit() {
+    this.units = [];
+    this.afUnits.subscribe(units => this.units = units);
+
     this.unitSearchCtrl = new FormControl();
     this.filteredUnits = this.unitSearchCtrl.valueChanges
       .startWith(null)

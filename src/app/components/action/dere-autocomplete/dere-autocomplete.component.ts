@@ -16,6 +16,7 @@ import { Overview } from '../../../models/dere/overview';
 export class DereAutocompleteComponent implements OnInit {
 
   // プロパティ
+  afOverviews: Observable<Overview[]>;
   overviews: Overview[];
   searchInput: any;
 
@@ -27,10 +28,13 @@ export class DereAutocompleteComponent implements OnInit {
    * コンストラクタ
    */
   constructor(private db: AngularFireDatabase, private router: Router) {
-    this.db.list<Overview>('/core/dere_overview').valueChanges<Overview>().subscribe(ovs => this.overviews = ovs);
+    this.afOverviews = this.db.list<Overview>('/core/dere_overview').valueChanges<Overview>();
   }
 
   ngOnInit() {
+    this.overviews = [];
+    this.afOverviews.subscribe(ovs => this.overviews = ovs);
+
     this.dereSearchCtrl = new FormControl();
     this.filteredOverviews = this.dereSearchCtrl.valueChanges
       .startWith(null)
