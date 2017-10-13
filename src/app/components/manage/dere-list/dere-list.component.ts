@@ -9,7 +9,7 @@ import { Idol } from '../../../models/dere/idol';
   templateUrl: './dere-list.component.html',
   styleUrls: ['./dere-list.component.css'],
 })
-export class DereListComponent implements OnInit {
+export class DereListComponent {
 
   // プロパティ
   overviews: Overview[];
@@ -21,12 +21,8 @@ export class DereListComponent implements OnInit {
    * @param db AngularFireDatabase
    */
   constructor(private db: AngularFireDatabase) {
-    this.db.list<Overview>('/core/dere_overview').valueChanges<Overview>().subscribe(ovs => this.overviews = ovs);
+    this.db.list<Overview>('/core/dere_overview').valueChanges<Overview>().subscribe(ovs => this.overviews = this.shuffle(ovs));
     this.db.list<Idol>('/core/dere_list').valueChanges<Idol>().subscribe(idols => this.idols = idols);
-  }
-
-  ngOnInit() {
-    this.overviews = this.shuffle(this.overviews);
   }
 
   private shuffle(array: any) {
