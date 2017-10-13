@@ -41,7 +41,7 @@ export class DereDetailComponent {
 
       this.db.object<Overview>(`/core/dere_overview/${requestName}`).valueChanges<Overview>().subscribe(ov => {
         this.overview = ov;
-        this.db.object<Idol>(`/core/dere_list/${requestName}`).valueChanges<Idol>().subscribe(idol => this.idol = idol);
+        this.db.object<Idol>(`/core/dere_list/${ov.id}`).valueChanges<Idol>().subscribe(idol => this.idol = idol);
       });
 
       this.imasdb.findCharInfo(requestName, true);
