@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { Promise } from 'firebase';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 
 import { Unit } from '../../../models/unit/unit';
 
@@ -9,10 +8,7 @@ import { Unit } from '../../../models/unit/unit';
   templateUrl: './unit-list.component.html',
   styleUrls: ['./unit-list.component.css']
 })
-export class UnitListComponent implements OnInit {
-
-  // Firebaseと同期したもの
-  afUnits: FirebaseListObservable<Unit[]>;
+export class UnitListComponent {
 
   // プロパティ
   units: Unit[];
@@ -23,14 +19,7 @@ export class UnitListComponent implements OnInit {
    * @param db AngularFireDatabase
    */
   constructor(private db: AngularFireDatabase) {
-    this.afUnits = this.db.list('/core/unit_list');
-  }
-
-  /**
-   * 初期表示
-   */
-  ngOnInit() {
-    this.afUnits.subscribe(units => this.units = this.shuffle(units));
+    this.db.list<Unit>('/core/unit_list').valueChanges<Unit>().subscribe(units => this.units = this.shuffle(units));
   }
 
   private shuffle(array: any) {

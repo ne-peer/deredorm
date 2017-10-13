@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
@@ -15,10 +15,8 @@ import { Overview } from '../../../models/dere/overview';
 })
 export class DereAutocompleteComponent implements OnInit {
 
-  // Firebaseと同期したもの
-  afOverviews: FirebaseListObservable<Overview[]>;
-
   // プロパティ
+  afOverviews: Observable<Overview[]>;
   overviews: Overview[];
   searchInput: any;
 
@@ -26,16 +24,16 @@ export class DereAutocompleteComponent implements OnInit {
   dereSearchCtrl: FormControl;
   filteredOverviews: Observable<Overview[]>;
 
+  /**
+   * コンストラクタ
+   */
   constructor(private db: AngularFireDatabase, private router: Router) {
-    this.afOverviews = this.db.list('/core/dere_overview');
+    this.afOverviews = this.db.list<Overview>('/core/dere_overview').valueChanges<Overview>();
   }
 
   ngOnInit() {
     this.overviews = [];
-
-    this.afOverviews.subscribe(snapshot => {
-      this.overviews = snapshot;
-    });
+    this.afOverviews.subscribe(ovs => this.overviews = ovs);
 
     this.dereSearchCtrl = new FormControl();
     this.filteredOverviews = this.dereSearchCtrl.valueChanges

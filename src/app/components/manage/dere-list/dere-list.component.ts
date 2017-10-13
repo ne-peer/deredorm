@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { Promise } from 'firebase';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 
 import { Overview } from '../../../models/dere/overview';
 import { Idol } from '../../../models/dere/idol';
@@ -10,11 +9,7 @@ import { Idol } from '../../../models/dere/idol';
   templateUrl: './dere-list.component.html',
   styleUrls: ['./dere-list.component.css'],
 })
-export class DereListComponent implements OnInit {
-
-  // Firebaseと同期したもの
-  afOverviews: FirebaseListObservable<Overview[]>;
-  afIdols: FirebaseListObservable<Idol[]>;
+export class DereListComponent {
 
   // プロパティ
   overviews: Overview[];
@@ -26,16 +21,8 @@ export class DereListComponent implements OnInit {
    * @param db AngularFireDatabase
    */
   constructor(private db: AngularFireDatabase) {
-    this.afOverviews = this.db.list('/core/dere_overview');
-    this.afIdols = this.db.list('/core/dere_list');
-  }
-
-  /**
-   * 初期表示
-   */
-  ngOnInit() {
-    this.afOverviews.subscribe(overviews => this.overviews = this.shuffle(overviews));
-    this.afIdols.subscribe(idols => this.idols = idols);
+    this.db.list<Overview>('/core/dere_overview').valueChanges<Overview>().subscribe(ovs => this.overviews = this.shuffle(ovs));
+    this.db.list<Idol>('/core/dere_list').valueChanges<Idol>().subscribe(idols => this.idols = idols);
   }
 
   private shuffle(array: any) {

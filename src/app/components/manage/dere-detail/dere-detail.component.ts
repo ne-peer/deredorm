@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
-import { Promise } from 'firebase';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { MatSnackBar } from '@angular/material';
 
 import { Overview } from '../../../models/dere/overview';
@@ -17,11 +16,7 @@ import { GoToComponent } from '../../action/snack/go-to/go-to.component';
   providers: [UnitUtilService, ImasdbService],
   entryComponents: [GoToComponent]
 })
-export class DereDetailComponent implements OnInit {
-
-  // Firebaseと同期したもの
-  afOverviews: FirebaseListObservable<Overview[]>;
-  afIdols: FirebaseListObservable<Idol[]>;
+export class DereDetailComponent {
 
   // プロパティ
   overviews: Overview[];
@@ -33,39 +28,24 @@ export class DereDetailComponent implements OnInit {
 
   /**
    * コンストラクタ
-   *
-   * @param db AngularFireDatabase
    */
   constructor(private activatedRoute: ActivatedRoute, private db: AngularFireDatabase,
     private unitUtil: UnitUtilService, private imasdb: ImasdbService, public snackBar: MatSnackBar) {
-    this.afOverviews = this.db.list('/core/dere_overview');
-    this.afOverviews.subscribe(overviews => this.overviews = overviews);
-    this.afIdols = this.db.list('/core/dere_list');
-    this.afIdols.subscribe(idols => this.idols = idols);
 
-    // Sulg取得＆DBアクセスと画面の更新
+    this.db.list<Overview>('/core/dere_overview').valueChanges<Overview>().subscribe(ov => this.overviews = ov);
+    this.db.list<Idol>('/core/dere_list').valueChanges<Idol>().subscribe(idols => this.idols = idols);
+
+    // Sulg取得＆idolのdetail取得
     this.activatedRoute.params.subscribe((params: Params) => {
-      const afOverview = this.getOverview(params['name']);
-      afOverview.subscribe(overview => {
-        this.overview = overview;
+      const requestName: string = params['name'];
 
-        const afIdol = this.getIdol(overview.id);
-        afIdol.subscribe(idol => this.idol = idol);
+      this.db.object<Overview>(`/core/dere_overview/${requestName}`).valueChanges<Overview>().subscribe(ov => {
+        this.overview = ov;
+        this.db.object<Idol>(`/core/dere_list/${ov.id}`).valueChanges<Idol>().subscribe(idol => this.idol = idol);
       });
 
-      this.imasdb.findCharInfo(params['name'], true);
+      this.imasdb.findCharInfo(requestName, true);
     });
-  }
-
-  ngOnInit() {
-  }
-
-  getOverview(key: string): FirebaseObjectObservable<Overview> {
-    return this.db.object(`/core/dere_overview/${key}`);
-  }
-
-  getIdol(key: string): FirebaseObjectObservable<Idol> {
-    return this.db.object(`/core/dere_list/${key}`);
   }
 
   doShow() {
@@ -98,7 +78,7 @@ export class DereDetailComponent implements OnInit {
   }
 
   isExistUnit(idol?: Idol): boolean {
-    if (typeof idol === 'object' && Array.isArray(idol.units)) {
+    if (idol !== null && typeof idol === 'object' && Array.isArray(idol.units)) {
       return idol.units.length > 0;
     }
     return false;
