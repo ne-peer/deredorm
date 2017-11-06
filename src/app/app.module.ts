@@ -20,7 +20,8 @@ import {
   MatSnackBarModule,
   MatTabsModule,
   MatGridListModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  MatToolbarModule
 } from '@angular/material';
 
 // 2.0.0-beta.11で対応: This will enforce that only the "mat" prefix is used for all selectors.
@@ -101,7 +102,8 @@ const appRoutes: Routes = [
     MatSnackBarModule,
     MatTabsModule,
     MatGridListModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatToolbarModule
   ],
   providers: [
     { provide: MATERIAL_COMPATIBILITY_MODE, useValue: true }
