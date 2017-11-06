@@ -1,25 +1,25 @@
-<mat-sidenav-container class="container-flux">
+<mat-sidenav-container class="container-flux mat-typography">
   <mat-sidenav #sidenav class="sidenav">
     <app-side-navbar></app-side-navbar>
   </mat-sidenav>
   <div>
     <section class="header">
-      <nav class="navbar">
-        <mat-grid-list cols="8" rowHeight="50px">
-          <mat-grid-tile colspan="1">
-            <button mat-button class="menu" (click)="sidenav.open()">
-              <mat-icon>menu</mat-icon>
-            </button>
-          </mat-grid-tile>
-          <mat-grid-tile colspan="7">
-            <div class="title-section">
-              <a class="navbar-brand title" routerLink="/">
-                <h2><i class="material-icons">local_library</i> {{title}} <span class="subtitle">{{subTitle}}</span></h2>
-              </a>
-            </div>
-          </mat-grid-tile>
-        </mat-grid-list>
-      </nav>
+
+      <div class="mat-toolbar" color="primary">
+        <button mat-button class="menu" (click)="sidenav.open()" style="float:left;">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <div>
+          <i class="material-icons" style="float:left;">local_library</i>
+        </div>
+        <div style="float:left;">
+          <h2 class="mat-display-1">{{title}}
+            <span class="subtitle">{{subTitle}}</span>
+          </h2>
+        </div>
+        <span style="clear:both;"></span>
+      </div>
+
     </section>
     <section class="main-content">
       <router-outlet></router-outlet>
