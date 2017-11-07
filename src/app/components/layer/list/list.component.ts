@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
+  selectedTabIndex: number;
+
   constructor() { }
 
   ngOnInit() {
