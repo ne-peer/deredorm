@@ -21,7 +21,8 @@ import {
   MatTabsModule,
   MatGridListModule,
   MatAutocompleteModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatExpansionModule
 } from '@angular/material';
 
 // AngularFire Components
@@ -100,7 +101,8 @@ const appRoutes: Routes = [
     MatTabsModule,
     MatGridListModule,
     MatAutocompleteModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent],
