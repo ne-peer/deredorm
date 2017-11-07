@@ -6,17 +6,12 @@
           {{unit?.name}}
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <div>
-
-      </div>
-      <div>
-        <mat-list dense>
-          <div *ngFor="let person of unit?.member; let i = index;" [routerLink]="['/idol', person]">
-            <span class="main-color list-elem">{{person}}</span>
-          </div>
-        </mat-list>
-        <p class="to-detail-link main-color" [routerLink]="['/unit', unit.id]">ユニット詳細へ</p>
-      </div>
+      <mat-list>
+        <mat-list-item *ngFor="let person of unit?.member" [routerLink]="['/idol', person]">
+          <span class="main-color list-elem">{{person}}</span>
+        </mat-list-item>
+      </mat-list>
+      <p class="to-detail-link" [routerLink]="['/unit', unit.id]">ユニット詳細へ</p>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
