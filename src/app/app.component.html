@@ -2,27 +2,35 @@
   <mat-sidenav #sidenav class="sidenav">
     <app-side-navbar></app-side-navbar>
   </mat-sidenav>
-  <div>
-    <section class="header">
-      <nav class="navbar">
-        <mat-grid-list cols="8" rowHeight="50px">
-          <mat-grid-tile colspan="1">
-            <button mat-button class="menu" (click)="sidenav.open()">
-              <mat-icon>menu</mat-icon>
-            </button>
-          </mat-grid-tile>
-          <mat-grid-tile colspan="7">
-            <div class="title-section">
-              <a class="navbar-brand title" routerLink="/">
-                <h2><i class="material-icons">local_library</i> {{title}} <span class="subtitle">{{subTitle}}</span></h2>
-              </a>
-            </div>
-          </mat-grid-tile>
-        </mat-grid-list>
-      </nav>
-    </section>
-    <section class="main-content">
-      <router-outlet></router-outlet>
-    </section>
-  </div>
+  <section class="header">
+    <nav class="navbar">
+      <mat-grid-list cols="8" rowHeight="50px">
+        <mat-grid-tile colspan="1">
+          <button mat-button class="menu" (click)="sidenav.open()">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="7">
+          <div class="title-section">
+            <a class="navbar-brand title" routerLink="/">
+              <h2>
+                <i class="material-icons">local_library</i> {{title}}
+                <span class="subtitle">{{subTitle}}</span>
+              </h2>
+            </a>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </nav>
+  </section>
+  <section class="main-content">
+    <router-outlet></router-outlet>
+  </section>
+  <section class="footer main-background">
+    <footer>
+      <div>
+        <i class="material-icons">local_library</i>
+      </div>
+    </footer>
+  </section>
 </mat-sidenav-container>
