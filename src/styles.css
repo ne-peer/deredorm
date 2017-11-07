@@ -37,15 +37,18 @@ section.width-min {
 }
 
 /* loading */
-.load-icon {
-	animation: rotate 2s linear infinite;
+.loading {
+    height: 1200px;
+    color: #ffffff;
+    text-align: center;
+
+    background: linear-gradient(90deg, #b0003a, #e91e63, #ff6090);
+    background-size: 600% 600%;
+    animation: gradation 6s ease infinite;
 }
 
-@keyframes rotate { 
-    0% {
-     transform: rotateY(0deg);
-    }
-      100% {  
-      transform: rotateY(360deg);
-    }
+@keyframes gradation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
