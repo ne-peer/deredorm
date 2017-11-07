@@ -23,9 +23,6 @@ import {
   MatAutocompleteModule
 } from '@angular/material';
 
-// 2.0.0-beta.11で対応: This will enforce that only the "mat" prefix is used for all selectors.
-import { MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
-
 // AngularFire Components
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -103,9 +100,7 @@ const appRoutes: Routes = [
     MatGridListModule,
     MatAutocompleteModule
   ],
-  providers: [
-    { provide: MATERIAL_COMPATIBILITY_MODE, useValue: true }
-  ],
+  providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
     GoToComponent
