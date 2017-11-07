@@ -7,11 +7,13 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
       <mat-list>
-        <mat-list-item *ngFor="let person of unit?.member" [routerLink]="['/idol', person]">
-          <span class="main-color list-elem">{{person}}</span>
+        <mat-list-item *ngFor="let person of unit?.member">
+          <span class="main-color list-elem" [routerLink]="['/idol', person]">{{person}}</span>
         </mat-list-item>
       </mat-list>
-      <p class="to-detail-link" [routerLink]="['/unit', unit.id]">ユニット詳細へ</p>
+      <mat-action-row>
+        <button mat-button [routerLink]="['/unit', unit.id]">ユニット詳細へ</button>
+      </mat-action-row>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

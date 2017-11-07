@@ -35,8 +35,4 @@ export class UnitListComponent {
     return array;
   }
 
-  private isShowMember(index: number): boolean {
-    return index < 5;
-  }
-
 }
