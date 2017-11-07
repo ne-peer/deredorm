@@ -17,8 +17,7 @@
     color: #0275d8;
 }
 
-/* md-list style */
-md-list-item {
+mat-list-item {
     cursor: pointer;
 }
 

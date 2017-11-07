@@ -1,31 +1,3 @@
-mat-card.cute {
-    background: #FCE4EC;
-}
-
-span.cute {
-    color: #E91E63;
-}
-
-mat-card.cool {
-    background: #E8EAF6;
-}
-
-span.cool {
-    color: #3F51B5;
-}
-
-mat-card.passion {
-    background: #FFF3E0;
-}
-
-span.passion {
-    color: #FF9800;
-}
-
-.anchor-text {
-    font-size: 8px;
-}
-
 mat-grid-tile div {
     width: 65%;
 }
