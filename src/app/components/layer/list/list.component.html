@@ -1,14 +1,19 @@
-<mat-tab-group>
+<mat-tab-group [(selectedIndex)]="selectedTabIndex">
   <mat-tab label="アイドル">
     <div class="search-area">
       <app-dere-autocomplete></app-dere-autocomplete>
     </div>
-    <app-dere-list></app-dere-list>
+    <div>
+      <app-dere-list></app-dere-list>
+    </div>
   </mat-tab>
   <mat-tab label="ユニット">
     <div class="search-area">
       <app-unit-autocomplete></app-unit-autocomplete>
     </div>
-    <app-unit-list></app-unit-list>
+    <div *ngIf="selectedTabIndex == 1">
+      <!-- ExpantionPanel on Tabsのバグ対応: https://github.com/angular/material2/issues/5269 -->
+      <app-unit-list></app-unit-list>
+    </div>
   </mat-tab>
 </mat-tab-group>
