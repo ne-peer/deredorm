@@ -1,3 +1,8 @@
+.unit-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 .list-elem {
     margin-top: 3px;
     margin-left: 30px;
