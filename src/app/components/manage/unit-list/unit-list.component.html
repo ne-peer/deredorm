@@ -1,9 +1,9 @@
 <div class="unit-list">
   <mat-accordion>
-    <mat-expansion-panel *ngFor="let unit of units" hideToggle="true">
-      <mat-expansion-panel-header>
+    <mat-expansion-panel *ngFor="let unit of units">
+      <mat-expansion-panel-header collapsedHeight="70px">
         <mat-panel-title>
-          {{unit?.name}}
+          <span class="unit-name">{{unit?.name}}</span>
         </mat-panel-title>
       </mat-expansion-panel-header>
       <mat-list>
