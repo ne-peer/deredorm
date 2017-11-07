@@ -6,6 +6,7 @@
 .list-elem {
     margin-left: 30px;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .to-detail-link {
