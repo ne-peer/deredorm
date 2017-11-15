@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
+import { DOCUMENT, Meta } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   title = 'Deredorm';
   subTitle = 'imas libraries';
 
-  constructor( @Inject(DOCUMENT) private document: any, private router: Router) { }
+  constructor( @Inject(DOCUMENT) private document: any, private router: Router, private metaService: Meta) { }
 
   ngOnInit() {
     /**
@@ -26,6 +26,18 @@ export class AppComponent implements OnInit {
       }
       window.scrollTo(0, 0);
     });
+
+    // add meta information
+    this.metaService.addTags([
+      { property: 'site_name', content: 'Deredorm - シンデレラガールズ ライブラリ' },
+      { property: 'title', content: 'アイドルとユニットの検索' },
+      { property: 'description', content: 'アイドルとユニットの一覧と検索ができます。' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:site_name', content: 'Deredorm - シンデレラガールズ ライブラリ' },
+      { property: 'og:title', content: 'アイドルとユニットの検索' },
+      { property: 'og:description', content: 'アイドルとユニットの一覧と検索ができます。' },
+      { property: 'og:image', content: 'https://github.com/ne-peer/deredorm/raw/master/resource/meta/meta-image.png' },
+    ], true);
   }
 
   atUnitList() {
