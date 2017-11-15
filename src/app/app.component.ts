@@ -31,11 +31,11 @@ export class AppComponent implements OnInit {
     this.metaService.addTags([
       { property: 'site_name', content: 'Deredorm - シンデレラガールズ ライブラリ' },
       { property: 'title', content: 'アイドルとユニットの検索' },
-      { property: 'description', content: 'アイドルとユニットの一覧と検索ができます。' },
+      { property: 'description', content: 'Deredormはアイドルマスターシンデレラガールズの情報ライブラリです。キャラクターの所属ユニットやプロフィールを閲覧することができます。' },
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Deredorm - シンデレラガールズ ライブラリ' },
       { property: 'og:title', content: 'アイドルとユニットの検索' },
-      { property: 'og:description', content: 'アイドルとユニットの一覧と検索ができます。' },
+      { property: 'og:description', content: 'Deredormはアイドルマスターシンデレラガールズの情報ライブラリです。キャラクターの所属ユニットやプロフィールを閲覧することができます。' },
       { property: 'og:image', content: 'https://github.com/ne-peer/deredorm/raw/master/resource/meta/meta-image.png' },
     ], true);
   }
