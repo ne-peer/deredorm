@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class StarlightdbService {
+export class CardService {
 
   constructor() { }
 
