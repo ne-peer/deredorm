@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Jsonp } from '@angular/http';
+import { Http } from '@angular/http';
 
 import { Hosts } from '../../../constants/api/hosts';
 import { Card } from '../../../models/api/starlightdb/card/card';
@@ -9,7 +9,7 @@ export class CardService {
 
   public card: Card;
 
-  constructor(private jsonp: Jsonp) { }
+  constructor(private http: Http) { }
 
   /**
    * カード取得
@@ -18,12 +18,12 @@ export class CardService {
    * @param string incProfile
    * @return void
    */
-  public findCharInfo(cardNo: number): void {
+  public findCard(cardNo: number): void {
     // request url
     const requestUrl = Hosts.API_HOST_STARLIGHTDB + '/api/v1/card_t/' + cardNo;
 
     // connection
-    this.jsonp.get(requestUrl).subscribe(data => {
+    this.http.get(requestUrl).subscribe(data => {
       if (data.status !== 200) {
         console.log(`Web api connection failure. url=[${requestUrl}]`);
         return '';
