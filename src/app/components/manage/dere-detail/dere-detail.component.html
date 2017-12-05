@@ -5,7 +5,7 @@
     </a>
   </div>
   <div class="grid grid-pad">
-  <!-- <div>
+    <!-- <div>
     Api Response: {{diagnostic}}
   </div> -->
     <div *ngIf="idol?.aliases === null;">
@@ -37,52 +37,57 @@
               </mat-list>
             </div>
             <div>
-              <mat-list dense class="models">
+              <mat-list dense class="models profile">
                 <p matSubheader>プロフィール</p>
-                <mat-grid-list cols="4" rowHeight="2:1">
-                  <mat-grid-tile>
-                    <div>年齢</div>
-                  </mat-grid-tile>
-                  <mat-grid-tile [colspan]="3">
-                    <div>{{imasdb.prof?.age}} 歳</div>
-                  </mat-grid-tile>
-                  <mat-grid-tile>
-                    <div>身長</div>
-                  </mat-grid-tile>
-                  <mat-grid-tile [colspan]="3">
-                    <div>{{imasdb.prof?.height}} cm</div>
-                  </mat-grid-tile>
-                  <mat-grid-tile>
-                    <div>体重</div>
-                  </mat-grid-tile>
-                  <mat-grid-tile [colspan]="3">
-                    <div>{{imasdb.prof?.weight}} kg</div>
-                  </mat-grid-tile>
-                  <mat-grid-tile>
-                    <div>Proportion</div>
-                  </mat-grid-tile>
-                  <mat-grid-tile [colspan]="3">
-                    <div>{{imasdb.prof?.bust}} / {{imasdb.prof?.waist}} / {{imasdb.prof?.hip}}</div>
-                  </mat-grid-tile>
-                  <mat-grid-tile>
-                    <div>血液型</div>
-                  </mat-grid-tile>
-                  <mat-grid-tile [colspan]="3">
-                    <div>{{imasdb.prof?.bloodType}}</div>
-                  </mat-grid-tile>
-                  <mat-grid-tile>
-                    <div>趣味</div>
-                  </mat-grid-tile>
-                  <mat-grid-tile [colspan]="3">
-                    <div>{{imasdb.prof?.hobby}}</div>
-                  </mat-grid-tile>
-                  <mat-grid-tile>
-                    <div>誕生日</div>
-                  </mat-grid-tile>
-                  <mat-grid-tile [colspan]="3">
-                    <div>{{imasdb.char?.birthMonth}}月 {{imasdb.char?.birthDay}}日</div>
-                  </mat-grid-tile>
-                </mat-grid-list>
+                <mat-list-item class="list-content">
+                  <div fxLayout="row">
+                    <mat-icon mat-list-icon>assessment</mat-icon>
+                    <p fxFlex="30" class="prop">年齢</p>
+                    <p fxFlex="70" class="value">{{imasdb.prof?.age}} 歳</p>
+                  </div>
+                </mat-list-item>
+                <mat-list-item class="list-content">
+                  <div fxLayout="row">
+                    <mat-icon mat-list-icon>assessment</mat-icon>
+                    <p fxFlex="30" class="prop">身長</p>
+                    <p fxFlex="70" class="value">{{imasdb.prof?.height}} cm</p>
+                  </div>
+                </mat-list-item>
+                <mat-list-item class="list-content">
+                  <div fxLayout="row">
+                    <mat-icon mat-list-icon>assessment</mat-icon>
+                    <p fxFlex="30" class="prop">体重</p>
+                    <p fxFlex="70" class="value">{{imasdb.prof?.weight}} kg</p>
+                  </div>
+                </mat-list-item>
+                <mat-list-item class="list-content">
+                  <div fxLayout="row">
+                    <mat-icon mat-list-icon>assessment</mat-icon>
+                    <p fxFlex="30" class="prop">Proportion</p>
+                    <p fxFlex="70" class="value">{{imasdb.prof?.bust}} / {{imasdb.prof?.waist}} / {{imasdb.prof?.hip}}</p>
+                  </div>
+                </mat-list-item>
+                <mat-list-item class="list-content">
+                  <div fxLayout="row">
+                    <mat-icon mat-list-icon>assessment</mat-icon>
+                    <p fxFlex="30" class="prop">血液型</p>
+                    <p fxFlex="70" class="value">{{imasdb.prof?.bloodType}}</p>
+                  </div>
+                </mat-list-item>
+                <mat-list-item class="list-content">
+                  <div fxLayout="row">
+                    <mat-icon mat-list-icon>assessment</mat-icon>
+                    <p fxFlex="30" class="prop">趣味</p>
+                    <p fxFlex="70" class="value">{{imasdb.prof?.hobby}}</p>
+                  </div>
+                </mat-list-item>
+                <mat-list-item class="list-content">
+                  <div fxLayout="row">
+                    <mat-icon mat-list-icon>assessment</mat-icon>
+                    <p fxFlex="30" class="prop">誕生日</p>
+                    <p fxFlex="470" class="value">{{imasdb.char?.birthMonth}}月 {{imasdb.char?.birthDay}}日</p>
+                  </div>
+                </mat-list-item>
               </mat-list>
             </div>
             <div>
@@ -163,7 +168,7 @@
             </div>
           </mat-card-content>
         </mat-card>
-        
+
         <mat-card *ngFor="let card of sldbCard?.cards">
           <mat-card-header>
             <mat-card-title>
