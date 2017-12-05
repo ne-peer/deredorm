@@ -4,7 +4,8 @@ export class Overview {
         public id: string,
         public name: string,
         public kana: string,
-        public latest_hash: string
+        public latest_hash: string,
+        public cards: number[]
     ) { }
 
 }
