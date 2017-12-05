@@ -33,12 +33,15 @@ export class CardService {
       const res = data.json()['result'];
       const ignoreFields = ['rarity', 'chara', 'skill', 'leadSkill', 'valist'];
 
+      const fetchedCards: Card[] = [];
       for (const oneCard of res) {
         const card = new Card();
         card.fillFromJSON(oneCard, true, ignoreFields);
 
-        this.cards.push(card);
+        fetchedCards.push(card);
       }
+
+      this.cards = fetchedCards;
     });
   }
 

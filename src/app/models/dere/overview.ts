@@ -5,7 +5,7 @@ export class Overview {
         public name: string,
         public kana: string,
         public latest_hash: string,
-        public cards: number[]
+        public sldb_cards: number[]
     ) { }
 
 }
