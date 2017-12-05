@@ -7,7 +7,7 @@ import { Card } from '../../../models/api/starlightdb/card/card';
 @Injectable()
 export class CardService {
 
-  public card: Card;
+  public cards: Card[];
 
   constructor(private http: Http) { }
 
@@ -18,7 +18,7 @@ export class CardService {
    * @param string incProfile
    * @return void
    */
-  public findCard(cardNo: number): void {
+  public findCard(cardNo: string): void {
     // request url
     const requestUrl = Hosts.API_HOST_STARLIGHTDB + '/api/v1/card_t/' + cardNo;
 
@@ -29,15 +29,16 @@ export class CardService {
         return '';
       }
 
-      const res = data.json()['result'][0];
+      // json to object
+      const res = data.json()['result'];
       const ignoreFields = ['rarity', 'chara', 'skill', 'leadSkill', 'valist'];
 
-      /**
-       * キャラクター情報をシリアライズ
-       */
-      const card = new Card();
-      card.fillFromJSON(res, true, ignoreFields);
-      this.card = card;
+      for (const oneCard of res) {
+        const card = new Card();
+        card.fillFromJSON(oneCard, true, ignoreFields);
+
+        this.cards.push(card);
+      }
     });
   }
 
