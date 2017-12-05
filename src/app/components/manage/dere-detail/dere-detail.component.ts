@@ -5,15 +5,15 @@ import { MatSnackBar } from '@angular/material';
 
 import { Overview } from '../../../models/dere/overview';
 import { Idol } from '../../../models/dere/idol';
-import { UnitUtilService } from '../../../services/manage/unit-util.service';
 import { ImasdbService } from '../../../services/api/imasdb.service';
 import { GoToComponent } from '../../action/snack/go-to/go-to.component';
+import { CardService } from '../../../services/api/starlightdb/card.service';
 
 @Component({
   selector: 'app-dere-detail',
   templateUrl: './dere-detail.component.html',
   styleUrls: ['./dere-detail.component.css'],
-  providers: [UnitUtilService, ImasdbService],
+  providers: [ImasdbService, CardService],
   entryComponents: [GoToComponent]
 })
 export class DereDetailComponent {
@@ -30,20 +30,39 @@ export class DereDetailComponent {
    * コンストラクタ
    */
   constructor(private activatedRoute: ActivatedRoute, private db: AngularFireDatabase,
-    private unitUtil: UnitUtilService, private imasdb: ImasdbService, public snackBar: MatSnackBar) {
+    private imasdb: ImasdbService, private sldbCard: CardService, public snackBar: MatSnackBar) {
 
     this.db.list<Overview>('/core/dere_overview').valueChanges<Overview>().subscribe(ov => this.overviews = ov);
     this.db.list<Idol>('/core/dere_list').valueChanges<Idol>().subscribe(idols => this.idols = idols);
+
+    // StarlightAPIからCardsを取得する処理
+    const cardsFetch = (cards: number[]) => {
+      const commaCards: string = cards.join();
+      this.sldbCard.findCard(commaCards);
+    };
 
     // Sulg取得＆idolのdetail取得
     this.activatedRoute.params.subscribe((params: Params) => {
       const requestName: string = params['name'];
 
-      this.db.object<Overview>(`/core/dere_overview/${requestName}`).valueChanges<Overview>().subscribe(ov => {
-        this.overview = ov;
-        this.db.object<Idol>(`/core/dere_list/${ov.id}`).valueChanges<Idol>().subscribe(idol => this.idol = idol);
+      const fetchFirebasePromise = () => {
+        return new Promise(resolve => {
+          // fetch firebase
+          this.db.object<Overview>(`/core/dere_overview/${requestName}`).valueChanges<Overview>().subscribe(ov => {
+            this.overview = ov;
+            this.db.object<Idol>(`/core/dere_list/${ov.id}`).valueChanges<Idol>().subscribe(idol => this.idol = idol);
+
+            resolve(ov);
+          });
+        });
+      };
+
+      fetchFirebasePromise().then((ov: Overview) => {
+        // fetch starlightdb api
+        cardsFetch(ov.sldb_cards);
       });
 
+      // fetch imasdb api
       this.imasdb.findCharInfo(requestName, true);
     });
   }
@@ -85,6 +104,6 @@ export class DereDetailComponent {
   }
 
   // かいはつよう
-  get diagnostic() { return JSON.stringify(this.imasdb.char); }
+  get diagnostic() { return JSON.stringify(this.sldbCard.cards); }
 
 }

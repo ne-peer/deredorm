@@ -13,3 +13,15 @@ mat-grid-tile div {
     padding-left: 20px;
     padding-right: 80px;
 }
+
+.profile .list-content div {
+    width: 100%;
+}
+
+.profile mat-icon {
+    margin-right: 16px;
+}
+
+.profile p {
+    padding-top: 6px;
+}
