@@ -59,7 +59,6 @@ export class DereDetailComponent {
 
       fetchFirebasePromise().then((ov: Overview) => {
         // fetch starlightdb api
-        console.log(ov);
         cardsFetch(ov.sldb_cards);
       });
 
