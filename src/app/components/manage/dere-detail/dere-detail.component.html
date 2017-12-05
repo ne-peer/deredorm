@@ -163,6 +163,19 @@
             </div>
           </mat-card-content>
         </mat-card>
+        
+        <mat-card *ngFor="let card of sldbCard?.cards">
+          <mat-card-header>
+            <mat-card-title>
+              <h4>{{card.title}}</h4>
+            </mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="https://hoshimoriuta.kirara.ca/spread/{{card.id}}.png">
+          <img mat-card-image src="https://hoshimoriuta.kirara.ca/spread/{{card.evolutionId}}.png">
+          <mat-card-content>
+            <!-- content -->
+          </mat-card-content>
+        </mat-card>
 
         <mat-card *ngFor="let alias of idol?.aliases" id="{{alias.id}}">
           <mat-card-header>
