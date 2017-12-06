@@ -29,3 +29,7 @@ mat-icon {
     padding-top: 5px;
     margin-right: 4px;
 }
+
+.spacer {
+    flex: 1 1 auto;
+}

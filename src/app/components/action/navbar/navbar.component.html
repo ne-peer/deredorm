@@ -1,13 +1,27 @@
 <mat-toolbar class="toolbar">
   <mat-toolbar-row>
     <button mat-button class="title-logo" routerLink="/">deredorm</button>
-    <div fxLayout="row" fxLayoutGap="10px" class="menu">
-      <div fxFlex="auto">
-        <button mat-button routerLink="/idol"><mat-icon>star_half</mat-icon>アイドル</button>
+
+    <!-- for desctop -->
+    <div fxShow fxHide.xs class="menu">
+      <div fxLayout="row" fxLayoutGap="10px">
+        <div fxFlex="auto">
+          <button mat-button routerLink="/idol">
+            <mat-icon>star_half</mat-icon>アイドル</button>
+        </div>
+        <div fxFlex="auto">
+          <button mat-button routerLink="/unit">
+            <mat-icon>group</mat-icon>ユニット</button>
+        </div>
       </div>
-      <div fxFlex="auto">
-        <button mat-button routerLink="/unit"><mat-icon>group</mat-icon>ユニット</button>
-      </div>
+    </div>
+
+    <!-- for smartphone -->
+    <span class="spacer"></span>
+    <div fxHide fxShow.xs class="menu">
+      <span class="spacer">
+        aaaa
+      </span>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
