@@ -9,6 +9,14 @@
     background: #e91e63;
 }
 
+.dark-color {
+    color: #454d5d;
+}
+
+.lightgray-background {
+    background: #f8f9fa;
+}
+
 .display-none {
     display: none;
 }

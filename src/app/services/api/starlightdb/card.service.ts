@@ -18,7 +18,7 @@ export class CardService {
    * @param string incProfile
    * @return void
    */
-  public findCard(cardNo: string): void {
+  public findCard(cardNo: string, isRemoveFirst: boolean): void {
     // request url
     const requestUrl = Hosts.API_HOST_STARLIGHTDB + '/api/v1/card_t/' + cardNo;
 
@@ -39,6 +39,11 @@ export class CardService {
         card.fillFromJSON(oneCard, true, ignoreFields);
 
         fetchedCards.push(card);
+      }
+
+      // 1件目は汎用的情報なのでオプションにより取り除く
+      if (isRemoveFirst) {
+        fetchedCards.shift();
       }
 
       this.cards = fetchedCards;

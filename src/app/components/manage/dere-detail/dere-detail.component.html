@@ -5,9 +5,10 @@
     </a>
   </div>
   <div class="grid grid-pad">
-    <!-- <div>
-    Api Response: {{diagnostic}}
-  </div> -->
+    <!-- <div style="background-color:#333;color:#aaa;font-size:8px;word-break:break-all;">
+      Api Response:
+      <br />{{diagnostic}}
+    </div> -->
     <div *ngIf="idol?.aliases === null;">
       <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     </div>
@@ -169,11 +170,14 @@
           </mat-card-content>
         </mat-card>
 
-        <mat-card *ngFor="let card of sldbCard?.cards">
+        <mat-card *ngFor="let card of sldbCard?.cards" class="lightgray-background">
           <mat-card-header>
             <mat-card-title>
-              <h4>{{card.title}}</h4>
+              <h4 class="dark-color">{{card.title}}</h4>
             </mat-card-title>
+            <mat-card-subtitle>
+              アイドルマスタシンデレラガールズ スターライトステージ
+            </mat-card-subtitle>
           </mat-card-header>
           <img mat-card-image src="https://hoshimoriuta.kirara.ca/spread/{{card.id}}.png">
           <img mat-card-image src="https://hoshimoriuta.kirara.ca/spread/{{card.evolutionId}}.png">
@@ -185,7 +189,7 @@
         <mat-card *ngFor="let alias of idol?.aliases" id="{{alias.id}}">
           <mat-card-header>
             <mat-card-title>
-              <h4>
+              <h4 class="dark-color">
                 <span>{{alias.alias_name === undefined ? "ノーマル" : alias.alias_name}}</span>
               </h4>
             </mat-card-title>

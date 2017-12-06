@@ -38,7 +38,7 @@ export class DereDetailComponent {
     // StarlightAPIからCardsを取得する処理
     const cardsFetch = (cards: number[]) => {
       const commaCards: string = cards.join();
-      this.sldbCard.findCard(commaCards);
+      this.sldbCard.findCard(commaCards, true);
     };
 
     // Sulg取得＆idolのdetail取得
