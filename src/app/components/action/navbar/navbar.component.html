@@ -7,11 +7,11 @@
       <div fxLayout="row" fxLayoutGap="10px">
         <div fxFlex="auto">
           <button mat-button routerLink="/idol">
-            <mat-icon>star_half</mat-icon>アイドル</button>
+            <mat-icon>star_half</mat-icon>アイドル一覧</button>
         </div>
         <div fxFlex="auto">
           <button mat-button routerLink="/unit">
-            <mat-icon>group</mat-icon>ユニット</button>
+            <mat-icon>group</mat-icon>ユニット一覧</button>
         </div>
       </div>
     </div>
@@ -19,9 +19,19 @@
     <!-- for smartphone -->
     <span class="spacer"></span>
     <div fxHide fxShow.xs class="menu">
-      <span class="spacer">
-        aaaa
-      </span>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>search</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/idol">
+          <mat-icon>star_half</mat-icon>
+          <span>アイドル一覧　</span>
+        </button>
+        <button mat-menu-item routerLink="/unit">
+          <mat-icon>group</mat-icon>
+          <span>ユニット一覧　</span>
+        </button>
+      </mat-menu>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>

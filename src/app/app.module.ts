@@ -23,7 +23,8 @@ import {
   MatAutocompleteModule,
   MatProgressBarModule,
   MatExpansionModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatMenuModule
 } from '@angular/material';
 
 // AngularFire Components
@@ -106,7 +107,8 @@ const appRoutes: Routes = [
     MatAutocompleteModule,
     MatProgressBarModule,
     MatExpansionModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent],
