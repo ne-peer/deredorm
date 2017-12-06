@@ -1,17 +1,17 @@
 # Deredorm
 
 **Deredorm** is website (japanese only) of idols profile archive from IDOLM@STER series.  
-
 This project to made with [Angular](https://angular.io/), [Material2](https://material.angular.io/) and [Firebase](https://firebase.google.com) platform.
 
-It's working on [deredorm.ne-peer.com](http://deredorm.ne-peer.com/)
+It's working on [deredorm.ne-peer.com](http://deredorm.ne-peer.com/).
 
-<img src="./resource/doc/image/screenshot_20170818.png" height="400px">
+<img src="./resource/doc/image/rdm_site-image.png" height="400px">
 
+&nbsp;
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
 ## Special thanks
-To develop this project, we used resource below. Thank you.
+To develop this project, we used resource below. Thank you!
 
 - [isaisstillalive/imas_cg_hash](https://github.com/isaisstillalive/imas_cg_hash) (@isaisstillalive)
 - [mryp/imascggallery-data](https://github.com/mryp/imascggallery-data) (@mryp)
