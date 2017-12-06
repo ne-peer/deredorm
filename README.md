@@ -16,6 +16,7 @@ To develop this project, we used resource below. Thank you.
 - [isaisstillalive/imas_cg_hash](https://github.com/isaisstillalive/imas_cg_hash) (@isaisstillalive)
 - [mryp/imascggallery-data](https://github.com/mryp/imascggallery-data) (@mryp)
 - [api.imas-db.jp](http://api.imas-db.jp/) (@imas_DB)
+- [starlight.kirara.ca](https://starlight.kirara.ca/) (@summertriangle-dev)
 
 ## Development
 
