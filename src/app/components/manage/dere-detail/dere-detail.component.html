@@ -119,7 +119,7 @@
                   </mat-list-item>
                 </ng-template>
                 <ng-template #thenBlock>
-                  <mat-list-item *ngFor="let unit of idol?.units" class="list-content">
+                  <mat-list-item *ngFor="let unit of idol?.units" class="list-content pointer">
                     <mat-icon mat-list-icon>group</mat-icon>
                     <h2 matLine [routerLink]="['/unit', unit.id]">
                       {{ unit.name }}
