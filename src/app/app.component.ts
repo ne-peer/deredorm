@@ -8,8 +8,6 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Deredorm';
-  subTitle = 'imas libraries';
 
   constructor( @Inject(DOCUMENT) private document: any, private router: Router) { }
 
@@ -26,18 +24,6 @@ export class AppComponent implements OnInit {
       }
       window.scrollTo(0, 0);
     });
-  }
-
-  atUnitList() {
-    let isOnUnit = false;
-
-    const currentUrl: string = this.document.location.href;
-
-    if (currentUrl.indexOf('unit') !== -1) {
-      isOnUnit = true;
-    }
-
-    return isOnUnit;
   }
 
 }

@@ -11,13 +11,6 @@
   width: 300px;
 }
 
-section.header {
-  margin-bottom: 20px;
-  -webkit-box-shadow: 0 8px 6px -6px #999;
-  -moz-box-shadow: 0 8px 6px -6px #999;
-  box-shadow: 0 8px 6px -6px #999;
-}
-
 section.main-content {
   max-width: 1280px;
   margin: 0 auto;
@@ -35,10 +28,6 @@ section.footer div {
   color: #ffffff;
 }
 
-.link-button {
-    text-decoration: none;
-}
-
 mat-sidenav {
   background-color: #eee;
 }
@@ -51,24 +40,7 @@ button.menu {
   border-radius: 0.3em;	
 }
 
-mat-icon { 
-  font-size: 24px;
-}
-
-nav.navbar {
-  background: #e91e63;
-}
-
-a.title {
-  font-family: Helvetica;
-  color: #fff;
-}
-
 .search-area {
   margin-top: 20px;
   margin-bottom: 10px;
-}
-
-.title-logo {
-  font-family: Lato;
 }

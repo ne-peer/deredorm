@@ -22,7 +22,8 @@ import {
   MatGridListModule,
   MatAutocompleteModule,
   MatProgressBarModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatToolbarModule
 } from '@angular/material';
 
 // AngularFire Components
@@ -42,6 +43,7 @@ import { UnitListComponent } from './components/manage/unit-list/unit-list.compo
 import { UnitAutocompleteComponent } from './components/action/unit-autocomplete/unit-autocomplete.component';
 import { ListComponent } from './components/layer/list/list.component';
 import { GoToComponent } from './components/action/snack/go-to/go-to.component';
+import { NavbarComponent } from './components/action/navbar/navbar.component';
 
 // Firebase seittings
 const firebaseConfig = {
@@ -54,7 +56,7 @@ const firebaseConfig = {
 
 // Routes
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'search', pathMatch: 'full' },
+  { path: '', redirectTo: 'idol', pathMatch: 'full' },
   { path: 'search', component: ListComponent },
   { path: 'oauth', component: OauthComponent },
   { path: 'idol', component: DereListComponent },
@@ -76,6 +78,7 @@ const appRoutes: Routes = [
     UnitAutocompleteComponent,
     ListComponent,
     GoToComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -102,7 +105,8 @@ const appRoutes: Routes = [
     MatGridListModule,
     MatAutocompleteModule,
     MatProgressBarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
