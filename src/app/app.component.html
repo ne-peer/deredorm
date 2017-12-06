@@ -3,25 +3,7 @@
     <app-side-navbar></app-side-navbar>
   </mat-sidenav>
   <section class="header">
-    <nav class="navbar">
-      <mat-grid-list cols="8" rowHeight="50px">
-        <mat-grid-tile colspan="1">
-          <button mat-button class="menu" (click)="sidenav.open()">
-            <mat-icon>menu</mat-icon>
-          </button>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="7">
-          <div class="title-section">
-            <a class="navbar-brand title" routerLink="/">
-              <h2>
-                <i class="material-icons">local_library</i> {{title}}
-                <span class="subtitle">{{subTitle}}</span>
-              </h2>
-            </a>
-          </div>
-        </mat-grid-tile>
-      </mat-grid-list>
-    </nav>
+    <app-navbar></app-navbar>
   </section>
   <section class="main-content">
     <router-outlet></router-outlet>

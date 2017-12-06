@@ -1,7 +1,13 @@
+<div>
+  <app-dere-autocomplete></app-dere-autocomplete>
+</div>
+<div *ngIf="overviews === undefined;" class="progress">
+  <mat-spinner></mat-spinner>
+</div>
 <div fxLayoutWrap>
   <div fxFlex="25" fxFlex.sm="33.3" fxFlex.xs="50" *ngFor="let overview of overviews" [routerLink]="['/idol', overview.name]">
     <mat-grid-list cols="1" rowHeight="1:1">
-      <mat-grid-tile class="cursor-pointer">
+      <mat-grid-tile class="pointer">
         <mat-card>
           <img mat-card-image src="http://125.6.169.35/idolmaster/image_sp/card/l/{{overview.latest_hash}}.jpg" alt="{{overview.name}}'s latest card img.'">
         </mat-card>
