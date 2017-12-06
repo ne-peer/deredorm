@@ -59,20 +59,16 @@ nav.navbar {
   background: #e91e63;
 }
 
-.title-section {
-  padding-top: 5px;
-}
-
 a.title {
   font-family: Helvetica;
   color: #fff;
 }
 
-span.subtitle {
-  font-size: 20px;
-}
-
 .search-area {
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+.title-logo {
+  font-family: Lato;
 }
