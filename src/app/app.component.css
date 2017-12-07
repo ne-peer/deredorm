@@ -18,14 +18,21 @@ section.main-content {
 }
 
 section.footer {
-  height: 80px;
+  height: 240px;
 }
 
-section.footer div {
+section.footer .footer-icon {
   width: 32px;
   margin: 0 auto;
   padding-top: 26px;
   color: #ffffff;
+}
+
+section.footer .receive {
+  padding: 22px;
+  color: #e7e9ed;
+  font-size: 8px;
+  text-align: center;
 }
 
 mat-sidenav {
