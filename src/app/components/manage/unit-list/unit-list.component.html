@@ -1,6 +1,9 @@
 <div>
   <app-unit-autocomplete></app-unit-autocomplete>
 </div>
+<div *ngIf="units === undefined;" class="progress">
+  <mat-spinner></mat-spinner>
+</div>
 <div class="unit-list">
   <mat-accordion>
     <mat-expansion-panel *ngFor="let unit of units">
