@@ -21,8 +21,8 @@ export class DereListComponent {
    * @param db AngularFireDatabase
    */
   constructor(private db: AngularFireDatabase) {
-    this.db.list<Overview>('/core/dere_overview').valueChanges<Overview>().subscribe(ovs => this.overviews = this.shuffle(ovs));
-    this.db.list<Idol>('/core/dere_list').valueChanges<Idol>().subscribe(idols => this.idols = idols);
+    this.db.list<Overview>('/core/dere_overview').valueChanges().subscribe(ovs => this.overviews = this.shuffle(ovs));
+    this.db.list<Idol>('/core/dere_list').valueChanges().subscribe(idols => this.idols = idols);
   }
 
   private shuffle(array: any) {

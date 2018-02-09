@@ -32,8 +32,8 @@ export class DereDetailComponent {
   constructor(private activatedRoute: ActivatedRoute, private db: AngularFireDatabase,
     private imasdb: ImasdbService, private sldbCard: CardService, public snackBar: MatSnackBar) {
 
-    this.db.list<Overview>('/core/dere_overview').valueChanges<Overview>().subscribe(ov => this.overviews = ov);
-    this.db.list<Idol>('/core/dere_list').valueChanges<Idol>().subscribe(idols => this.idols = idols);
+    this.db.list<Overview>('/core/dere_overview').valueChanges().subscribe(ov => this.overviews = ov);
+    this.db.list<Idol>('/core/dere_list').valueChanges().subscribe(idols => this.idols = idols);
 
     // StarlightAPIからCardsを取得する処理
     const cardsFetch = (cards: number[]) => {
@@ -48,9 +48,9 @@ export class DereDetailComponent {
       const fetchFirebasePromise = () => {
         return new Promise(resolve => {
           // fetch firebase
-          this.db.object<Overview>(`/core/dere_overview/${requestName}`).valueChanges<Overview>().subscribe(ov => {
+          this.db.object<Overview>(`/core/dere_overview/${requestName}`).valueChanges().subscribe(ov => {
             this.overview = ov;
-            this.db.object<Idol>(`/core/dere_list/${ov.id}`).valueChanges<Idol>().subscribe(idol => this.idol = idol);
+            this.db.object<Idol>(`/core/dere_list/${ov.id}`).valueChanges().subscribe(idol => this.idol = idol);
 
             resolve(ov);
           });

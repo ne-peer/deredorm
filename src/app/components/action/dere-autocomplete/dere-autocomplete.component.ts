@@ -28,7 +28,7 @@ export class DereAutocompleteComponent implements OnInit {
    * コンストラクタ
    */
   constructor(private db: AngularFireDatabase, private router: Router) {
-    this.afOverviews = this.db.list<Overview>('/core/dere_overview').valueChanges<Overview>();
+    this.afOverviews = this.db.list<Overview>('/core/dere_overview').valueChanges();
   }
 
   ngOnInit() {
