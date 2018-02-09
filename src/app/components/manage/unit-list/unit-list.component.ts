@@ -19,7 +19,7 @@ export class UnitListComponent {
    * @param db AngularFireDatabase
    */
   constructor(private db: AngularFireDatabase) {
-    this.db.list<Unit>('/core/unit_list').valueChanges<Unit>().subscribe(units => this.units = this.shuffle(units));
+    this.db.list<Unit>('/core/unit_list').valueChanges().subscribe(units => this.units = this.shuffle(units));
   }
 
   private shuffle(array: any) {

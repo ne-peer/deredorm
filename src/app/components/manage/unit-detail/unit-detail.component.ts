@@ -19,13 +19,13 @@ export class UnitDetailComponent {
    * コンストラクタ
    */
   constructor(private activatedRoute: ActivatedRoute, private db: AngularFireDatabase) {
-    this.db.list<Unit>('/core/unit_list').valueChanges<Unit>().subscribe(units => this.units = units);
+    this.db.list<Unit>('/core/unit_list').valueChanges().subscribe(units => this.units = units);
 
     // クエリストリング取得
     this.activatedRoute.params.subscribe((params: Params) => {
       const query: string = params['unit'];
 
-      this.db.object<Unit>(`/core/unit_list/${query}`).valueChanges<Unit>().subscribe(unit => this.unit = unit);
+      this.db.object<Unit>(`/core/unit_list/${query}`).valueChanges().subscribe(unit => this.unit = unit);
     });
   }
 

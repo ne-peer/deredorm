@@ -28,7 +28,7 @@ export class UnitAutocompleteComponent implements OnInit {
    * コンストラクタ
    */
   constructor(private db: AngularFireDatabase, private router: Router) {
-    this.afUnits = this.db.list<Unit>('/core/unit_list').valueChanges<Unit>();
+    this.afUnits = this.db.list<Unit>('/core/unit_list').valueChanges();
   }
 
   ngOnInit() {
