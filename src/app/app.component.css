@@ -18,13 +18,14 @@ section.main-content {
 }
 
 section.footer {
-  height: 240px;
+  margin-top: 80px;
+  height: 340px;
 }
 
 section.footer .footer-icon {
   width: 32px;
   margin: 0 auto;
-  padding-top: 26px;
+  padding-top: 46px;
   color: #ffffff;
 }
 
