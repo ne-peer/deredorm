@@ -5,7 +5,7 @@
     </a>
   </div>
   <div *ngIf="doShow()">
-    <mat-card>
+    <mat-card class="card">
       <mat-card-header>
         <mat-card-title>
           <h3><span>{{unit?.name}}</span></h3>
@@ -18,9 +18,9 @@
             <p matSubheader>メンバー</p>
             <mat-list-item *ngFor="let person of unit?.member" class="list-content" [routerLink]="['/idol', person]">
               <mat-icon mat-list-icon>favorite</mat-icon>
-              <h6 matLine>
-                <span class="main-color">{{person}}</span>
-              </h6>
+              <p matLine class="main-color" style="font-size: 18px;">
+                {{person}}
+              </p>
             </mat-list-item>
           </mat-list>
         </div>

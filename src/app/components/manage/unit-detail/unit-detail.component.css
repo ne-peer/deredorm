@@ -17,3 +17,11 @@
     padding-left: 20px;
     padding-right: 80px;
 }
+
+.card {
+    background-color: #f0f1f4;
+}
+
+.list-content {
+    cursor: pointer;
+}
