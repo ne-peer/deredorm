@@ -10,8 +10,6 @@ import { AuthGuardService } from '../../../services/web/auth-guard.service';
 })
 export class ExistComponent implements OnInit {
 
-  private route;
-
   constructor(private authGuard: AuthGuardService, private acRouter: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {

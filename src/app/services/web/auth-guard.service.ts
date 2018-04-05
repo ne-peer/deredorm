@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { AsyncLocalStorage } from 'angular-async-local-storage';
 
 @Injectable()
 export class AuthGuardService implements CanActivate {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, protected localStorage: AsyncLocalStorage) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     if (localStorage.getItem('currentUser')) {
