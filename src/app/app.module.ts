@@ -47,6 +47,7 @@ import { UnitAutocompleteComponent } from './components/action/unit-autocomplete
 import { ListComponent } from './components/layer/list/list.component';
 import { GoToComponent } from './components/action/snack/go-to/go-to.component';
 import { NavbarComponent } from './components/action/navbar/navbar.component';
+import { ExistComponent } from './components/user/exist/exist.component';
 
 // Firebase seittings
 const firebaseConfig = {
@@ -66,6 +67,7 @@ const appRoutes: Routes = [
   { path: 'unit', component: UnitListComponent },
   { path: 'idol/:name', component: DereDetailComponent },
   { path: 'unit/:unit', component: UnitDetailComponent },
+  { path: 'manage', component: ExistComponent },
 ];
 
 @NgModule({
@@ -82,6 +84,7 @@ const appRoutes: Routes = [
     ListComponent,
     GoToComponent,
     NavbarComponent,
+    ExistComponent,
   ],
   imports: [
     BrowserModule,
