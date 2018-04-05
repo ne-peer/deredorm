@@ -61,7 +61,6 @@ const firebaseConfig = {
 // Routes
 const appRoutes: Routes = [
   { path: '', redirectTo: 'idol', pathMatch: 'full' },
-  { path: 'search', component: ListComponent },
   { path: 'oauth', component: OauthComponent },
   { path: 'idol', component: DereListComponent },
   { path: 'unit', component: UnitListComponent },
