@@ -18,7 +18,16 @@ mat-card {
 .progress {
     width: 100px;
     margin: 0 auto;
-    background-color: rgba(255,255,255,0);
+    background-color: rgba(255, 255, 255, 0);
     padding-top: 40px;
     padding-bottom: 40px;
+}
+
+img {
+    opacity: 0;
+    transition: opacity 500ms;
+}
+
+img.ng-lazyloaded {
+    opacity: 1;
 }
