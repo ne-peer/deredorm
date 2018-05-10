@@ -15,6 +15,19 @@ export class OauthComponent implements OnInit {
 
   constructor(private afAuth: AngularFireAuth, protected localStorage: LocalStorage) { }
 
+  ngOnInit() {
+    this.afAuth.authState.subscribe(res => {
+      if (!res) {
+        console.log('not logged in ');
+        return;
+      }
+      console.log('logged in ');
+      const user = new User(res.uid, res.displayName);
+      this.user = user;
+      this.localStorage.setItem('user', user).subscribe(() => { });
+    });
+  };
+
   signInWithGoogle() {
     this.afAuth.auth
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
@@ -39,20 +52,5 @@ export class OauthComponent implements OnInit {
   signOut() {
     this.afAuth.auth.signOut();
   }
-
-  ngOnInit() {
-    this.afAuth.authState.subscribe(res => {
-      if (!res) {
-        console.log('not logged in ');
-        return;
-      }
-      console.log('logged in ');
-      const user = new User(res.uid, res.displayName);
-      this.user = user;
-      this.localStorage.setItem('user', user).subscribe(() => { });
-    });
-  };
-
-  get diagnostic() { return JSON.stringify(this.user); }
 
 }
