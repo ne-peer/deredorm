@@ -42,8 +42,7 @@ export class OauthComponent implements OnInit {
     this.afAuth.auth
       .signInWithPopup(new firebase.auth.TwitterAuthProvider())
       .then(res => {
-        console.log(res);
-        const user = new User('999', 'ichinose');
+        const user = new User(res.user.uid, res.user.displayName);
         this.user = user;
         this.localStorage.setItem('user', user).subscribe(() => { });
       });
@@ -51,6 +50,8 @@ export class OauthComponent implements OnInit {
 
   signOut() {
     this.afAuth.auth.signOut();
+    this.localStorage.removeItem('user').subscribe(() => {});
+    this.user = null;
   }
 
 }
