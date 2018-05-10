@@ -1,5 +1,5 @@
 .container-flux {
-  min-height: 1100px;
+  /* something */
 }
 
 .sidenav-content {
@@ -13,13 +13,14 @@
 
 section.main-content {
   max-width: 1280px;
+  min-height: 70vh;
   margin: 0 auto;
   margin-bottom: 15px;
 }
 
 section.footer {
   margin-top: 80px;
-  height: 340px;
+  height: 224;
 }
 
 section.footer .footer-icon {
@@ -45,7 +46,7 @@ button.menu {
   color: #fff;
   padding-top: 8px;
   padding-bottom: 8px;
-  border-radius: 0.3em;	
+  border-radius: 0.3em;
 }
 
 .search-area {

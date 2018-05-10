@@ -26,6 +26,7 @@
     "@angular/platform-browser-dynamic": "^5.2.9",
     "@angular/platform-server": "^5.2.9",
     "@angular/router": "^5.2.9",
+    "@ngx-pwa/local-storage": "^5.3.0",
     "angularfire2": "^5.0.0-rc.5",
     "camelcase": "^5.0.0",
     "core-js": "^2.5.4",

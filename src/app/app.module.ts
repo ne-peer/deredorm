@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { LocalStorageModule } from '@ngx-pwa/local-storage';
 
 // Used material2 (for UI) Components
 import {
@@ -47,6 +48,7 @@ import { UnitAutocompleteComponent } from './components/action/unit-autocomplete
 import { ListComponent } from './components/layer/list/list.component';
 import { GoToComponent } from './components/action/snack/go-to/go-to.component';
 import { NavbarComponent } from './components/action/navbar/navbar.component';
+import { ExistComponent } from './components/user/exist/exist.component';
 
 // Firebase seittings
 const firebaseConfig = {
@@ -60,12 +62,12 @@ const firebaseConfig = {
 // Routes
 const appRoutes: Routes = [
   { path: '', redirectTo: 'idol', pathMatch: 'full' },
-  { path: 'search', component: ListComponent },
   { path: 'oauth', component: OauthComponent },
   { path: 'idol', component: DereListComponent },
   { path: 'unit', component: UnitListComponent },
   { path: 'idol/:name', component: DereDetailComponent },
   { path: 'unit/:unit', component: UnitDetailComponent },
+  { path: 'manage', component: ExistComponent },
 ];
 
 @NgModule({
@@ -82,6 +84,7 @@ const appRoutes: Routes = [
     ListComponent,
     GoToComponent,
     NavbarComponent,
+    ExistComponent,
   ],
   imports: [
     BrowserModule,
@@ -97,6 +100,7 @@ const appRoutes: Routes = [
     JsonpModule,
     FlexLayoutModule,
     LazyLoadImageModule,
+    LocalStorageModule,
     // Material2 components for UI.
     MatButtonModule,
     MatCardModule,
