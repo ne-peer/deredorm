@@ -5,9 +5,6 @@ This project to made with [Angular](https://angular.io/), [Material2](https://ma
 
 It's working on [deredorm.ne-peer.com](http://deredorm.ne-peer.com/).
 
-<img src="./resource/doc/image/rdm_site-image.png" height="400px">
-
-&nbsp;
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
 ## Special thanks
@@ -17,6 +14,15 @@ To develop this project, we used resource below. Thank you!
 - [mryp/imascggallery-data](https://github.com/mryp/imascggallery-data) (@mryp)
 - [api.imas-db.jp](http://api.imas-db.jp/) (@imas_DB)
 - [starlight.kirara.ca](https://starlight.kirara.ca/) (@summertriangle-dev)
+
+## Deployment
+```bash
+$ ng build --prod --output-hashing all
+```
+
+> --output-hashing all
+>
+> hash contents of the generated files and append hash to the file name to facilitate browser cache busting (any change to file content will result in different hash and hence browser is forced to load a new version of the file)
 
 ## Development
 
