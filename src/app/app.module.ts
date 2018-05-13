@@ -9,7 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { LocalStorageModule } from '@ngx-pwa/local-storage';
 
 // Used material2 (for UI) Components
 import {
@@ -100,7 +99,6 @@ const appRoutes: Routes = [
     JsonpModule,
     FlexLayoutModule,
     LazyLoadImageModule,
-    LocalStorageModule,
     // Material2 components for UI.
     MatButtonModule,
     MatCardModule,
