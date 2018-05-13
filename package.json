@@ -34,6 +34,7 @@
     "hammerjs": "^2.0.8",
     "ng-lazyload-image": "^3.4.2",
     "rxjs": "^6.1.0",
+    "rxjs-compat": "^6.1.0",
     "ts-helpers": "^1.1.2",
     "typescript": "^2.7.2",
     "webpack": "^4.8.3",
