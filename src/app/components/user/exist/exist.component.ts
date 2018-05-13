@@ -12,9 +12,10 @@ import { User } from '../../../models/store/user';
 })
 export class ExistComponent implements OnInit {
 
-  private user: User;
+  public user: User;
 
-  constructor(private authGuard: AuthGuardService, private acRouter: ActivatedRoute, private router: Router, protected localStorage: LocalStorage) { }
+  constructor(private authGuard: AuthGuardService, private acRouter: ActivatedRoute,
+    private router: Router, protected localStorage: LocalStorage) { }
 
   ngOnInit() {
     const loggedIn: boolean = this.authGuard.canActivate(this.acRouter.snapshot, this.router.routerState.snapshot);

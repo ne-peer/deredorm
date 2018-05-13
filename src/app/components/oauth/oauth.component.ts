@@ -11,7 +11,7 @@ import { User } from '../../models/store/user';
 })
 export class OauthComponent implements OnInit {
 
-  private user: User;
+  public user: User;
 
   constructor(private afAuth: AngularFireAuth, protected localStorage: LocalStorage) { }
 
