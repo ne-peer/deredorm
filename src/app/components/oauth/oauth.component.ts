@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
 import { LocalStorage } from '@ngx-pwa/local-storage';
 import { User } from '../../models/store/user';
+require('firebase/auth');
 
 @Component({
   selector: 'app-oauth',
@@ -12,8 +12,11 @@ import { User } from '../../models/store/user';
 export class OauthComponent implements OnInit {
 
   public user: User;
+  private firebase;
 
-  constructor(private afAuth: AngularFireAuth, protected localStorage: LocalStorage) { }
+  constructor(private afAuth: AngularFireAuth, protected localStorage: LocalStorage) {
+    this.firebase = require('firebase/app');
+  }
 
   ngOnInit() {
     this.afAuth.authState.subscribe(res => {
@@ -30,7 +33,7 @@ export class OauthComponent implements OnInit {
 
   signInWithGoogle() {
     this.afAuth.auth
-      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .signInWithPopup(new this.firebase.auth.GoogleAuthProvider())
       .then(res => {
         const user = new User(res.user.uid, res.user.displayName);
         this.user = user;
@@ -40,7 +43,7 @@ export class OauthComponent implements OnInit {
 
   signInWithTwitter() {
     this.afAuth.auth
-      .signInWithPopup(new firebase.auth.TwitterAuthProvider())
+      .signInWithPopup(new this.firebase.auth.TwitterAuthProvider())
       .then(res => {
         const user = new User(res.user.uid, res.user.displayName);
         this.user = user;
@@ -50,7 +53,7 @@ export class OauthComponent implements OnInit {
 
   signOut() {
     this.afAuth.auth.signOut();
-    this.localStorage.removeItem('user').subscribe(() => {});
+    this.localStorage.removeItem('user').subscribe(() => { });
     this.user = null;
   }
 
