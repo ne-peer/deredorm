@@ -48,6 +48,8 @@ import { ListComponent } from './components/layer/list/list.component';
 import { GoToComponent } from './components/action/snack/go-to/go-to.component';
 import { NavbarComponent } from './components/action/navbar/navbar.component';
 import { ExistComponent } from './components/user/exist/exist.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 // Firebase seittings
 const firebaseConfig = {
@@ -114,7 +116,8 @@ const appRoutes: Routes = [
     MatExpansionModule,
     MatToolbarModule,
     MatMenuModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent],
