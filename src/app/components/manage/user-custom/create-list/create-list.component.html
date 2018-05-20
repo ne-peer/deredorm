@@ -1,3 +1,21 @@
-<p>
-  create-list works!
-</p>
+<div class="uk-container">
+
+  <div>
+    <div *ngFor="let card of chars" class="uk-margin-top">
+      <h1 class="uk-heading-line">
+        <span>{{ card.kanji_spaced }}</span>
+      </h1>
+      <div fxLayout="row wrap" fxLayoutAlign="center center">
+        <div *ngFor="let num of card.cards" class="pointer">
+          <div style="padding:1vh;" fxShow fxHide.gt-sm>
+            <img mat-card-image width="96" lazyLoad="https://truecolor.kirara.ca/icon_card/{{ num }}.png" defaultImage="assets/cg-gray-600.jpg">
+          </div>
+          <div style="padding:1vh;" fxHide fxShow.gt-sm>
+            <img mat-card-image width="128" lazyLoad="https://truecolor.kirara.ca/icon_card/{{ num }}.png" defaultImage="assets/cg-gray-600.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

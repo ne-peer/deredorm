@@ -59,3 +59,16 @@ section.width-min {
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
+
+/* ng-lazy load */
+img.ng-lazyloaded {
+    animation: fadein .5s;
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
