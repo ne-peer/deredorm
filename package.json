@@ -25,6 +25,7 @@
     "@angular/platform-browser": "^6.0.1",
     "@angular/platform-browser-dynamic": "^6.0.1",
     "@angular/platform-server": "^6.0.1",
+    "@angular/pwa": "^0.6.1",
     "@angular/router": "^6.0.1",
     "@ngx-pwa/local-storage": "^6.0.0-beta.7",
     "angularfire2": "^5.0.0-rc.5",
@@ -38,7 +39,8 @@
     "ts-helpers": "^1.1.2",
     "typescript": "^2.7.2",
     "webpack": "^4.8.3",
-    "zone.js": "^0.8.25"
+    "zone.js": "^0.8.25",
+    "@angular/service-worker": "^6.0.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.1",
