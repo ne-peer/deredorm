@@ -50,6 +50,8 @@ import { NavbarComponent } from './components/action/navbar/navbar.component';
 import { ExistComponent } from './components/user/exist/exist.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { CreateListComponent } from './components/manage/user-custom/create-list/create-list.component';
+import { HomeComponent } from './components/manage/user-custom/home/home.component';
 
 // Firebase seittings
 const firebaseConfig = {
@@ -68,7 +70,8 @@ const appRoutes: Routes = [
   { path: 'unit', component: UnitListComponent },
   { path: 'idol/:name', component: DereDetailComponent },
   { path: 'unit/:unit', component: UnitDetailComponent },
-  { path: 'manage', component: ExistComponent },
+  { path: 'manage', component: HomeComponent },
+  { path: 'manage/list/create', component: CreateListComponent },
 ];
 
 @NgModule({
@@ -86,6 +89,8 @@ const appRoutes: Routes = [
     GoToComponent,
     NavbarComponent,
     ExistComponent,
+    CreateListComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,21 +5,26 @@
   <mat-spinner></mat-spinner>
 </div>
 <div class="unit-list">
-  <mat-accordion>
-    <mat-expansion-panel *ngFor="let unit of units">
-      <mat-expansion-panel-header collapsedHeight="70px">
-        <mat-panel-title>
-          <span class="unit-name">{{unit?.name}}</span>
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <mat-list>
-        <mat-list-item *ngFor="let person of unit?.member">
-          <span class="main-color list-elem" [routerLink]="['/idol', person]">{{person}}</span>
-        </mat-list-item>
-      </mat-list>
-      <mat-action-row>
-        <button mat-button [routerLink]="['/unit', unit.id]">ユニット詳細へ</button>
-      </mat-action-row>
-    </mat-expansion-panel>
-  </mat-accordion>
+  <div *ngFor="let unit of units">
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <p class="uk-text-large" style="color:#555">{{ unit.name }}</p>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="uk-position-relative uk-visible-toggle uk-light" uk-slider>
+          <ul class="uk-slider-items uk-child-width-1-4 uk-child-width-1-6@m">
+            <li *ngFor="let person of unit?.member" class="pointer" style="max-height:42vh" [routerLink]="['/idol', person.name]">
+              <img lazyLoad="https://truecolor.kirara.ca/card/{{ person.lc }}.png" defaultImage="assets/cg-gray-600.jpg">
+            </li>
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
 </div>

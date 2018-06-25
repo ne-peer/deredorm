@@ -1,11 +1,14 @@
-# Deredorm
+<div>
+  <h1 align="center">Deredorm</h1>
+  <p align="center">Webapps of idols profile archive from IDOLM@STER series.</p>
+</div>
 
-**Deredorm** is website (japanese only) of idols profile archive from IDOLM@STER series.  
-This project to made with [Angular](https://angular.io/), [Material2](https://material.angular.io/) and [Firebase](https://firebase.google.com) platform.
+&nbsp;
 
-It's working on [deredorm.ne-peer.com](http://deredorm.ne-peer.com/).
+It's working on [deredorm.ne-peer.com](http://deredorm.ne-peer.com/)
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
+This project made by Angular, Material2 and Firebase platform.  
+Was generated with angular-cli version 1.0.0-beta.28.3.
 
 ## Special thanks
 To develop this project, we used resource below. Thank you!
