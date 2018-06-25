@@ -16,7 +16,7 @@
       <mat-card-content>
         <div class="uk-position-relative uk-visible-toggle uk-light" uk-slider>
           <ul class="uk-slider-items uk-child-width-1-4 uk-child-width-1-6@m">
-            <li *ngFor="let person of unit?.member" style="max-height:42vh">
+            <li *ngFor="let person of unit?.member" class="pointer" style="max-height:42vh" [routerLink]="['/idol', person.name]">
               <img lazyLoad="https://truecolor.kirara.ca/card/{{ person.lc }}.png" defaultImage="assets/cg-gray-600.jpg">
             </li>
           </ul>
