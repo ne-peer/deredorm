@@ -16,10 +16,10 @@
         <div style="margin-bottom: 16px;">
           <mat-list dense class="member">
             <p matSubheader>メンバー</p>
-            <mat-list-item *ngFor="let person of unit?.member" class="list-content" [routerLink]="['/idol', person]">
+            <mat-list-item *ngFor="let person of unit?.member" class="list-content" [routerLink]="['/idol', person.name]">
               <mat-icon mat-list-icon>favorite</mat-icon>
               <p matLine class="main-color" style="font-size: 18px;">
-                {{person}}
+                {{person.name}}
               </p>
             </mat-list-item>
           </mat-list>
