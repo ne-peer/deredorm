@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { firebase } from '@firebase/app';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { auth } from 'firebase/app';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { LocalStorage } from '@ngx-pwa/local-storage';
 import { User } from '../../models/store/user';
 require('firebase/auth');
@@ -31,7 +31,7 @@ export class OauthComponent implements OnInit {
 
   signInWithGoogle() {
     this.afAuth.auth
-      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .signInWithPopup(new auth.GoogleAuthProvider())
       .then(res => {
         const user = new User(res.user.uid, res.user.displayName);
 
@@ -44,7 +44,7 @@ export class OauthComponent implements OnInit {
 
   signInWithTwitter() {
     this.afAuth.auth
-      .signInWithPopup(new firebase.auth.TwitterAuthProvider())
+      .signInWithPopup(new auth.TwitterAuthProvider())
       .then(res => {
         const user = new User(res.user.uid, res.user.displayName);
 

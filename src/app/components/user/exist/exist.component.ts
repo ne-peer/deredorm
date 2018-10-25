@@ -20,7 +20,7 @@ export class ExistComponent implements OnInit {
   ngOnInit() {
     const loggedIn: boolean = this.authGuard.canActivate(this.acRouter.snapshot, this.router.routerState.snapshot);
 
-    this.localStorage.getItem('user').subscribe(user => this.user = user);
+    // this.localStorage.getItem('user').subscribe(user => this.user = user);
   }
 
 }
