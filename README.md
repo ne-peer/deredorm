@@ -7,8 +7,10 @@
 
 It's working on [deredorm.ne-peer.com](http://deredorm.ne-peer.com/)
 
-This project made by Angular, Material2 and Firebase platform.  
+Deredorm made by Angular, Material2 and Firebase platform.  
 Was generated with angular-cli version 1.0.0-beta.28.3.
+
+This project create for my learning of angular (first version 2.x).
 
 ## Special thanks
 To develop this project, we used resource below. Thank you!
