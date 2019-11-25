@@ -29,7 +29,7 @@
     "@angular/pwa": "^0.10.3",
     "@angular/router": "^7.0.1",
     "@angular/service-worker": "^7.0.1",
-    "@ngx-pwa/local-storage": "^7.0.0",
+    "@ngx-pwa/local-storage": "^7.4.2",
     "camelcase": "^5.0.0",
     "core-js": "^2.5.4",
     "firebase": "5.5.5",
