@@ -407,10 +407,10 @@
     tree-kill "1.2.0"
     webpack-sources "1.2.0"
 
-"@ngx-pwa/local-storage@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@ngx-pwa/local-storage/-/local-storage-7.0.0.tgz#aeb5188d92a9708792900805bef0f6441fe80955"
-  integrity sha512-D4Ji6np1lVTO0bP1sIkbzn3ieZ/4vzShDSAHqJBhbhoE/QYUGS9yI5C9DTNkIflWFNne7uYKc+0apRqQQVwRmg==
+"@ngx-pwa/local-storage@^7.4.2":
+  version "7.4.2"
+  resolved "https://registry.yarnpkg.com/@ngx-pwa/local-storage/-/local-storage-7.4.2.tgz#0fe093f7f18726b848d6c84bdcf7f9fb98531e2c"
+  integrity sha512-i/GLwo6FCaL4+avHt0/o1lDWMSFlcqGi/sei6eu75uB/vgSaEoy7QVYLan+jB3P2SBW2LCYj8iTs/niiXUj2lQ==
   dependencies:
     tslib "^1.9.0"
 
