@@ -7508,10 +7508,10 @@ uglifyjs-webpack-plugin@^1.2.4:
     webpack-sources "^1.1.0"
     worker-farm "^1.5.2"
 
-uikit@^3.0.0-rc.2:
-  version "3.0.0-rc.20"
-  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.0.0-rc.20.tgz#28623e939ec301ccef0a5d4d5f14ead3aa1ea8c0"
-  integrity sha512-LJvZkAHa0xM8JbrRDBUR3EiAYquqjIe638XSNisVvpnBamrJkj67TFOrSLUJbHFj3akMX4F28EJp5vV5MDEdPA==
+uikit@^3.3.7:
+  version "3.3.7"
+  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.3.7.tgz#0f7fd0be9f4583c55c0bf8d1ac0f715bc42cb573"
+  integrity sha512-vY7chSjBpu3hgFHFbl/Cr2cUodoEew69uPPQl2E0WcK6UkG2DYhgV0XNDMNLpeGGfrw6C+H9cW89I7Gq7N8Ylw==
 
 ultron@~1.1.0:
   version "1.1.1"
