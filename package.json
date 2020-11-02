@@ -30,7 +30,7 @@
     "@angular/router": "^7.0.1",
     "@angular/service-worker": "^7.0.1",
     "@ngx-pwa/local-storage": "^7.0.0",
-    "camelcase": "^5.0.0",
+    "camelcase": "^6.2.0",
     "core-js": "^2.5.4",
     "firebase": "5.5.5",
     "hammerjs": "^2.0.8",
